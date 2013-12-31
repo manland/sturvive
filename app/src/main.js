@@ -36,13 +36,12 @@ require(['goo/entities/GooRunner',
 
   //var sc = new StarComponent(goo.world, true);
 
-  new BulletComponent(goo.world, true);
-
   //new FinalZoneComponent(goo.world, true);
 
   var b = TouchButton.build('shootButton', function() {
-    var d = EntityHelper.getDistance(camera.entity, sc.entity);
-    console.log(d);
+    // var d = EntityHelper.getDistance(camera.entity, sc.entity);
+    // console.log(d);
+    new BulletComponent(goo.world, EntityHelper.getPosition(camera.entity), {x:0, y:0, z:0}, false);
   });
   document.getElementsByTagName('body')[0].appendChild(b);
   
