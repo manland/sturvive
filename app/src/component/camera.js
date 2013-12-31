@@ -53,10 +53,6 @@ define('component/Camera', [
     var div = InputHelper.entity('camera', this.entity);
   };
 
-  CameraComponent.prototype.getPickRay = function(x, y, w, h, ray) {
-    return this.camera.getPickRay(x, y, w, h, ray);
-  };
-
   return CameraComponent;
 
 });
