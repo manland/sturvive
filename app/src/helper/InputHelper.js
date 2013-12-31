@@ -1,8 +1,13 @@
-define('InputHelper', ['material/Colored'], function(ColoredMaterial) {
+define('InputHelper', 
+  ['UrlHelper', 'material/Colored'], 
+  function(UrlHelper, ColoredMaterial) {
 
   var mainContainer = document.createElement('div');
   mainContainer.classList.add('inputHelperMainContainer');
-  document.getElementsByTagName('body')[0].appendChild(mainContainer);
+
+  if(UrlHelper.isDev()) {
+    document.getElementsByTagName('body')[0].appendChild(mainContainer);
+  }
 
   function addRange(div, name, min, max, step, value, onUpdate) {
     var container = document.createElement('div');

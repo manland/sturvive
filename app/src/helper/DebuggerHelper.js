@@ -1,4 +1,6 @@
-define('DebuggerHelper', function() {
+define('DebuggerHelper',
+  ['UrlHelper'],
+  function(UrlHelper) {
 
   //DEBUGGER
   var divDebug = document.createElement('div');
@@ -6,7 +8,11 @@ define('DebuggerHelper', function() {
   divDebug.style.top = '80px';
   divDebug.style.right = 0;
   divDebug.color = 'white';
-  document.getElementsByTagName('body')[0].appendChild(divDebug);
+  
+  if(UrlHelper.isDev()) {
+    document.getElementsByTagName('body')[0].appendChild(divDebug);
+  }
+
   function updateDebug() {
     var innerHTML = '';
     for(var i=0, len=arguments.length; i<len; i=i+2) {
