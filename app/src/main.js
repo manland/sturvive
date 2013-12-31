@@ -3,6 +3,7 @@ require(['goo/entities/GooRunner',
   'component/SunComponent',
   'component/StarComponent',
   'component/FinalZoneComponent',
+  'component/BulletComponent',
   'helper/EntityHelper',
   'helper/TouchButton'
 ], function ( GooRunner,
@@ -10,6 +11,7 @@ require(['goo/entities/GooRunner',
   SunComponent,
   StarComponent,
   FinalZoneComponent,
+  BulletComponent,
   EntityHelper,
   TouchButton) {
   
@@ -32,7 +34,9 @@ require(['goo/entities/GooRunner',
   
   var camera = new CameraComponent(goo.world, true);
 
-  var sc = new StarComponent(goo.world, true);
+  //var sc = new StarComponent(goo.world, true);
+
+  new BulletComponent(goo.world, true);
 
   //new FinalZoneComponent(goo.world, true);
 
