@@ -91,10 +91,6 @@ define('component/FinalZoneComponent', [
     InputHelper.coloredMaterial('color', this.material, div);
   };
 
-  FinalZoneComponent.prototype.select = function() {
-    return false;
-  };
-
   return FinalZoneComponent;
 
 });

@@ -37,10 +37,6 @@ define('component/StarComponent', [
     InputHelper.coloredMaterial('color', this.material, div);
   };
 
-  StarComponent.prototype.select = function() {
-    return false;
-  };
-
   return StarComponent;
 
 });

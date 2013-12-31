@@ -31,10 +31,6 @@ define('component/SunComponent', [
     var div = InputHelper.entity('Sun', this.entity);
   };
 
-  SunComponent.prototype.select = function() {
-    return false;
-  };
-
   return SunComponent;
 
 });
