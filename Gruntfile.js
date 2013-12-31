@@ -64,6 +64,15 @@ module.exports = function ( grunt ) {
           '<%= build_dir %>/app/src/**/*.js'   
         ],
         dest: '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.js'
+      },
+      compile_css: {
+        options: {
+          banner: '<%= meta.banner %>'
+        },
+        src: [ 
+          '<%= app_files.stylesheet %>',
+        ],
+        dest: '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
       }
     },
 
@@ -93,7 +102,7 @@ module.exports = function ( grunt ) {
         src: [
           '<%= concat.compile_js.dest %>',
           '<%= vendor_files.css %>',
-          '<%= app_files.stylesheet %>'
+          '<%= concat.compile_css.dest %>'
         ]
       }
     },
@@ -157,11 +166,19 @@ module.exports = function ( grunt ) {
     },
 
     connect: {
-      server: {
+      build: {
         options: {
           port: 8080,
           base: '<%= build_dir %>/app',
           keepalive: false,
+          hostname: '*'
+        }
+      },
+      compile: {
+        options: {
+          port: 8080,
+          base: '<%= compile_dir %>',
+          keepalive: true,
           hostname: '*'
         }
       }
@@ -173,9 +190,11 @@ module.exports = function ( grunt ) {
 
   grunt.registerTask( 'build', [ 'clean', 'copy:build', 'index:build'] );
   
-  grunt.registerTask( 'compile', [ 'jshint', 'karma:compile:start', 'build', 'concat:compile_js', 'uglify:compile', 'copy:compile', 'index:compile'] );
+  grunt.registerTask( 'compile', [ 'jshint', /*'karma:compile:start',*/ 'build', 'concat:compile_js', 'concat:compile_css', 'uglify:compile', 'copy:compile', 'index:compile'] );
 
-  grunt.registerTask( 'dev', [ 'connect','jshint', 'karma:build:start', 'watch' ] );
+  grunt.registerTask( 'compile-dev', [ 'compile', 'connect:compile' ] );
+
+  grunt.registerTask( 'dev', [ 'connect:build','jshint', 'karma:build:start', /*'karma:build:run',*/ 'build', 'watch' ] );
 
   grunt.registerTask( 'default', [ 'build'] );
 
