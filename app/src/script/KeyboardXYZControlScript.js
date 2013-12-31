@@ -38,14 +38,14 @@ define('script/KeyboardXYZControlScript',
 
     KeyboardHelper.listen(
       67,//TOUCH C
-      function() { this.yRotation = 0.1; },
+      function() { this.yRotation = 0.05; },
       function() { this.yRotation = 0; },
       this
     );
 
     KeyboardHelper.listen(
       86,//TOUCH V
-      function() { this.yRotation = -0.1; },
+      function() { this.yRotation = -0.05; },
       function() { this.yRotation = 0; },
       this
     );
