@@ -1,25 +1,17 @@
 require(['goo/entities/GooRunner',
-  'goo/entities/systems/PickingSystem',
-  'goo/picking/PrimitivePickLogic',
-  'goo/math/Ray',
   'component/CameraComponent',
   'component/SunComponent',
   'component/StarComponent',
   'component/FinalZoneComponent',
   'helper/EntityHelper',
-  'helper/TouchButton',
-  'goo/renderer/bounds/BoundingSphere'
+  'helper/TouchButton'
 ], function ( GooRunner,
-  PickingSystem,
-  PrimitivePickLogic,
-  Ray,
   CameraComponent,
   SunComponent,
   StarComponent,
   FinalZoneComponent,
   EntityHelper,
-  TouchButton,
-  BoundingSphere) {
+  TouchButton) {
   
   'use strict';
 
@@ -43,8 +35,6 @@ require(['goo/entities/GooRunner',
   var sc = new StarComponent(goo.world, true);
 
   //new FinalZoneComponent(goo.world, true);
-
-  console.log(sc.entity);
 
   var b = TouchButton.build('shootButton', function() {
     var d = EntityHelper.getDistance(camera.entity, sc.entity);
