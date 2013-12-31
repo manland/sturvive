@@ -215,10 +215,7 @@ module.exports = function ( grunt ) {
     var dirRE = new RegExp( '^('+this.data.dir+')\/', 'g' );
     
     var jsFiles = filterForJS( this.filesSrc ).map( function ( file ) {
-      console.log(file);
-      var f = file.replace('app/vendor', 'vendor').replace( dirRE, '' );
-      console.log(f);
-      return f;
+      return file.replace('app/vendor', 'vendor').replace( dirRE, '' );
     });
 
     var lessFiles = filterForLESS( this.filesSrc ).map( function ( file ) {
