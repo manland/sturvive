@@ -4,6 +4,9 @@ define('component/Camera', [
   'goo/scripts/OrbitCamControlScript',
   'goo/shapes/ShapeCreator',
   'goo/entities/EntityUtils',
+  'MobileHelper',
+  'script/mobileXYZControlScript',
+  'script/KeyboardXYZControlScript',
   'InputHelper'
 ], function (
   Component,
@@ -11,20 +14,31 @@ define('component/Camera', [
   OrbitCamControlScript,
   ShapeCreator,
   EntityUtils,
+  MobileHelper,
+  MobileXYZControlScript,
+  KeyboardXYZControlScript,
   InputHelper
   ) {
   
   'use strict';
 
-  function CameraComponent(world, optScript, showHelper) {
+  function CameraComponent(world, showHelper) {
     this.type = 'CameraComponent';
 
     this.camera = new Camera(35, 1, 0.1, 1000);
+
+    var script;
+    if(MobileHelper.isMobile()) {
+      script = new MobileXYZControlScript();
+    } else {
+      script = new KeyboardXYZControlScript();
+    }
+
     this.entity =  EntityUtils.createTypicalEntity(
       world, 
       this.camera, 
       [0,0,7], 
-      optScript ? optScript : new OrbitCamControlScript()
+      script
     );
     this.entity.addToWorld();
 

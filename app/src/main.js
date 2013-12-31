@@ -9,8 +9,6 @@ require(['goo/entities/GooRunner',
   'component/Sun',
   'component/Star',
   'component/FinalZone',
-  'script/mobileXYZControlScript',
-  'script/KeyboardXYZControlScript',
   'EntityHelper',
   'helper/TouchButton',
   'goo/renderer/bounds/BoundingSphere'
@@ -25,8 +23,6 @@ require(['goo/entities/GooRunner',
   SunComponent,
   StarComponent,
   FinalZoneComponent,
-  MobileXYZControlScript,
-  KeyboardXYZControlScript,
   EntityHelper,
   TouchButton,
   BoundingSphere) {
@@ -47,9 +43,8 @@ require(['goo/entities/GooRunner',
   document.body.appendChild(goo.renderer.domElement);
   
   var sun = new SunComponent(goo.world, true);
-  var control = new MobileXYZControlScript();
-  control = new KeyboardXYZControlScript();
-  var camera = new CameraComponent(goo.world, control, true);
+  
+  var camera = new CameraComponent(goo.world, true);
 
   var sc = new StarComponent(goo.world, true);
 
