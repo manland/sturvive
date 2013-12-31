@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Renderer</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/jquery/jquery-1.9.1.min.js"> </script>
+    <script src="scripts/jquery/jquery.jstree.js"> </script>
+    <script src="scripts/setupTree.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/jstree/style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html"><img class="logo" src="images/goo.png" width="128" height="128" /></a><h3>Classes</h3><input type="text" id="classSearch" placeholder="Search classes" /><ul><li><a href>goo</a><ul><li><a href>addons</a><ul><li><a href>box2d</a><ul><li><a href>systems</a><ul><li><a href="Box2DSystem.html">Box2DSystem</a></li></ul></li></ul></li><li><a href>cannon</a><ul><li><a href>systems</a><ul><li><a href="CannonjsSystem.html">CannonjsSystem</a></li></ul></li></ul></li><li><a href>howler</a><ul><li><a href>systems</a><ul><li><a href="HowlerSystem.html">HowlerSystem</a></li></ul></li></ul></li><li><a href>soundmanager2</a><ul><li><a href>systems</a><ul><li><a href="SoundManager2System.html">SoundManager2System</a></li></ul></li></ul></li><li><a href>terrain</a><ul><li><a href="Terrain.html">Terrain</a></li></ul></li><li><a href>water</a><ul><li><a href="FlatWaterRenderer.html">FlatWaterRenderer</a></li><li><a href="ProjectedGridWaterRenderer.html">ProjectedGridWaterRenderer</a></li></ul></li></ul></li><li><a href>animation</a><ul><li><a href>blendtree</a><ul><li><a href="BinaryLERPSource.html">BinaryLERPSource</a></li><li><a href="ClipSource.html">ClipSource</a></li><li><a href="ExclusiveClipSource.html">ExclusiveClipSource</a></li><li><a href="FrozenClipSource.html">FrozenClipSource</a></li><li><a href="InclusiveClipSource.html">InclusiveClipSource</a></li><li><a href="ManagedTransformSource.html">ManagedTransformSource</a></li></ul></li><li><a href>clip</a><ul><li><a href="AbstractAnimationChannel.html">AbstractAnimationChannel</a></li><li><a href="AnimationClip.html">AnimationClip</a></li><li><a href="AnimationClipInstance.html">AnimationClipInstance</a></li><li><a href="InterpolatedFloatChannel.html">InterpolatedFloatChannel</a></li><li><a href="JointChannel.html">JointChannel</a></li><li><a href="JointData.html">JointData</a></li><li><a href="TransformChannel.html">TransformChannel</a></li><li><a href="TransformData.html">TransformData</a></li><li><a href="TriggerChannel.html">TriggerChannel</a></li><li><a href="TriggerData.html">TriggerData</a></li></ul></li><li><a href>layer</a><ul><li><a href="AnimationLayer.html">AnimationLayer</a></li><li><a href="LayerLERPBlender.html">LayerLERPBlender</a></li></ul></li><li><a href>state</a><ul><li><a href="AbstractState.html">AbstractState</a></li><li><a href="AbstractTransitionState.html">AbstractTransitionState</a></li><li><a href="FadeTransitionState.html">FadeTransitionState</a></li><li><a href="FrozenTransitionState.html">FrozenTransitionState</a></li><li><a href="SteadyState.html">SteadyState</a></li><li><a href="SyncFadeTransitionState.html">SyncFadeTransitionState</a></li></ul></li><li><a href="Joint.html">Joint</a></li><li><a href="Skeleton.html">Skeleton</a></li><li><a href="SkeletonPose.html">SkeletonPose</a></li></ul></li><li><a href>debug</a><ul><li><a href>components</a><ul><li><a href="MarkerComponent.html">MarkerComponent</a></li></ul></li><li><a href>systems</a><ul><li><a href="MarkerSystem.html">MarkerSystem</a></li></ul></li><li><a href="Debugger.html">Debugger</a></li><li><a href="EntityCounter.html">EntityCounter</a></li></ul></li><li><a href>entities</a><ul><li><a href>components</a><ul><li><a href="AnimationComponent.html">AnimationComponent</a></li><li><a href="CSSTransformComponent.html">CSSTransformComponent</a></li><li><a href="CameraComponent.html">CameraComponent</a></li><li><a href="Component.html">Component</a></li><li><a href="LightComponent.html">LightComponent</a></li><li><a href="MeshDataComponent.html">MeshDataComponent</a></li><li><a href="MeshRendererComponent.html">MeshRendererComponent</a></li><li><a href="OccludeeComponent.html">OccludeeComponent</a></li><li><a href="2dd25cccb9.html">OccluderComponent</a></li><li><a href="ParticleComponent.html">ParticleComponent</a></li><li><a href="PortalComponent.html">PortalComponent</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="TransformComponent.html">TransformComponent</a></li></ul></li><li><a href>managers</a><ul><li><a href="EntityManager.html">EntityManager</a></li></ul></li><li><a href>systems</a><ul><li><a href="AnimationSystem.html">AnimationSystem</a></li><li><a href="BoundingUpdateSystem.html">BoundingUpdateSystem</a></li><li><a href="CameraDebugSystem.html">CameraDebugSystem</a></li><li><a href="CameraSystem.html">CameraSystem</a></li><li><a href="DebugRenderSystem.html">DebugRenderSystem</a></li><li><a href="GizmoRenderSystem.html">GizmoRenderSystem</a></li><li><a href="GridRenderSystem.html">GridRenderSystem</a></li><li><a href="LightDebugSystem.html">LightDebugSystem</a></li><li><a href="LightingSystem.html">LightingSystem</a></li><li><a href="0c78d6e6fd.html">OcclusionCullingSystem</a></li><li><a href="ParticlesSystem.html">ParticlesSystem</a></li><li><a href="PickingSystem.html">PickingSystem</a></li><li><a href="PortalSystem.html">PortalSystem</a></li><li><a href="RenderSystem.html">RenderSystem</a></li><li><a href="ScriptSystem.html">ScriptSystem</a></li><li><a href="System.html">System</a></li><li><a href="TextSystem.html">TextSystem</a></li><li><a href="TransformSystem.html">TransformSystem</a></li></ul></li><li><a href="Entity.html">Entity</a></li><li><a href="EntityUtils.html">EntityUtils</a></li><li><a href="GooRunner.html">GooRunner</a></li><li><a href="World.html">World</a></li></ul></li><li><a href>loaders</a><ul><li><a href>dds</a><ul><li><a href="DdsLoader.html">DdsLoader</a></li></ul></li><li><a href>handlers</a><ul><li><a href="ComponentHandler.html">ComponentHandler</a></li><li><a href="ConfigHandler.html">ConfigHandler</a></li></ul></li><li><a href="DynamicLoader.html">DynamicLoader</a></li><li><a href="JsonUtils.html">JsonUtils</a></li><li><a href="Loader.html">Loader</a></li></ul></li><li><a href>math</a><ul><li><a href="MathUtils.html">MathUtils</a></li><li><a href="Matrix.html">Matrix</a></li><li><a href="Matrix2x2.html">Matrix2x2</a></li><li><a href="Matrix3x3.html">Matrix3x3</a></li><li><a href="Matrix4x4.html">Matrix4x4</a></li><li><a href="Plane.html">Plane</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Ray.html">Ray</a></li><li><a href="Transform.html">Transform</a></li><li><a href="Vector.html">Vector</a></li><li><a href="Vector2.html">Vector2</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Vector4.html">Vector4</a></li></ul></li><li><a href>noise</a><ul><li><a href="Noise.html">Noise</a></li><li><a href="ValueNoise.html">ValueNoise</a></li></ul></li><li><a href>particles</a><ul><li><a href="Particle.html">Particle</a></li><li><a href="ParticleEmitter.html">ParticleEmitter</a></li><li><a href="ParticleInfluence.html">ParticleInfluence</a></li><li><a href="ParticleUtils.html">ParticleUtils</a></li></ul></li><li><a href>renderer</a><ul><li><a href>bounds</a><ul><li><a href="BoundingBox.html">BoundingBox</a></li><li><a href="BoundingSphere.html">BoundingSphere</a></li><li><a href="BoundingVolume.html">BoundingVolume</a></li></ul></li><li><a href>light</a><ul><li><a href="DirectionalLight.html">DirectionalLight</a></li><li><a href="Light.html">Light</a></li><li><a href="PointLight.html">PointLight</a></li><li><a href="SpotLight.html">SpotLight</a></li></ul></li><li><a href>pass</a><ul><li><a href="Composer.html">Composer</a></li><li><a href="FullscreenUtil.html">FullscreenUtil</a></li><li><a href="RenderPass.html">RenderPass</a></li><li><a href="RenderTarget.html">RenderTarget</a></li></ul></li><li><a href>scanline</a><ul><li><a href="BoundingBoxOcclusionChecker.html">BoundingBoxOcclusionChecker</a></li><li><a href="BoundingSphereOcclusionChecker.html">BoundingSphereOcclusionChecker</a></li><li><a href="Edge.html">Edge</a></li><li><a href="EdgeData.html">EdgeData</a></li><li><a href="EdgeMap.html">EdgeMap</a></li><li><a href="OccludeeTriangleData.html">OccludeeTriangleData</a></li><li><a href="OccluderTriangleData.html">OccluderTriangleData</a></li><li><a href="SoftwareRenderer.html">SoftwareRenderer</a></li></ul></li><li><a href>shaders</a><ul><li><a href="ShaderBuilder.html">ShaderBuilder</a></li><li><a href="ShaderFragment.html">ShaderFragment</a></li><li><a href="ShaderLib.html">ShaderLib</a></li></ul></li><li><a href>shadow</a><ul><li><a href="ShadowHandler.html">ShadowHandler</a></li></ul></li><li><a href="BufferData.html">BufferData</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Material.html">Material</a></li><li><a href="MeshData.html">MeshData</a></li><li><a href="OcclusionPartitioner.html">OcclusionPartitioner</a></li><li><a href="RenderQueue.html">RenderQueue</a></li><li><a href="Renderer.html">Renderer</a></li><li><a href="RendererRecord.html">RendererRecord</a></li><li><a href="Shader.html">Shader</a></li><li><a href="ShaderCall.html">ShaderCall</a></li><li><a href="SimplePartitioner.html">SimplePartitioner</a></li><li><a href="Texture.html">Texture</a></li><li><a href="TextureCreator.html">TextureCreator</a></li><li><a href="Util.html">Util</a></li></ul></li><li><a href>scripts</a><ul><li><a href="BasicControlScript.html">BasicControlScript</a></li><li><a href="Flycam.html">Flycam</a></li><li><a href="MouseLookControlScript.html">MouseLookControlScript</a></li><li><a href="OrbitCamControlScript.html">OrbitCamControlScript</a></li><li><a href="WASDControlScript.html">WASDControlScript</a></li></ul></li><li><a href>shapes</a><ul><li><a href="Box.html">Box</a></li><li><a href="Cylinder.html">Cylinder</a></li><li><a href="Disk.html">Disk</a></li><li><a href="FilledPolygon.html">FilledPolygon</a></li><li><a href="PolyLine.html">PolyLine</a></li><li><a href="ProjectedGrid.html">ProjectedGrid</a></li><li><a href="Quad.html">Quad</a></li><li><a href="ShapeCreator.html">ShapeCreator</a></li><li><a href="SimpleBox.html">SimpleBox</a></li><li><a href="Sphere.html">Sphere</a></li><li><a href="Surface.html">Surface</a></li><li><a href="Torus.html">Torus</a></li></ul></li><li><a href>statemachine</a><ul><li><a href>actions</a><ul><li><a href="WaitAction.html">WaitAction</a></li></ul></li><li><a href="FSMComponent.html">FSMComponent</a></li><li><a href="FSMSystem.html">FSMSystem</a></li><li><a href="FSMUtil.html">FSMUtil</a></li></ul></li><li><a href>util</a><ul><li><a href="Ajax.html">Ajax</a></li><li><a href="ColorUtil.html">ColorUtil</a></li><li><a href="GameUtils.html">GameUtils</a></li><li><a href="Grid.html">Grid</a></li><li><a href="Handy.html">Handy</a></li><li><a href="Latch.html">Latch</a></li><li><a href="ShapeCreatorMemoized.html">ShapeCreatorMemoized</a></li><li><a href="Stats.html">Stats</a></li><li><a href="TangentGenerator.html">TangentGenerator</a></li></ul></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createPanel">createPanel</a></li><li><a href="global.html#displayInfo">displayInfo</a></li><li><a href="global.html#far">far</a></li><li><a href="global.html#filterProperties">filterProperties</a></li><li><a href="global.html#getFilterList">getFilterList</a></li><li><a href="global.html#textureMode">textureMode</a></li><li><a href="global.html#updateMarker">updateMarker</a></li></ul>
+</nav>
+<div id="main">
+    
+    <h1 class="page-title">Class: Renderer</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    
+      goo\renderer/Renderer
+    
+    </h2>
+    
+    
+        <div class="class-description"><p>The renderer handles displaying of graphics data to a render context.</p></div>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<h4 class="name"><a href="#Renderer"><span class="type-signature"></span>new Renderer</a><span class="signature">(object parameters)</span><span class="type-signature"></span></h4>
+
+    
+    </div>
+    
+			<h3 class="subsection-title">Member summary</h3>
+			<table class="summary">
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">object</span></td>
+	<td><a class="summaryLink" href="#capabilities">capabilities</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">WebGLRenderingContext</span></td>
+	<td><a class="summaryLink" href="#context">context</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#currentHeight">currentHeight</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#currentWidth">currentWidth</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionCompressedTextureS3TC">glExtensionCompressedTextureS3TC</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionDepthTexture">glExtensionDepthTexture</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionElementIndexUInt">glExtensionElementIndexUInt</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionStandardDerivatives">glExtensionStandardDerivatives</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionTextureFilterAnisotropic">glExtensionTextureFilterAnisotropic</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionTextureFloat">glExtensionTextureFloat</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionTextureFloatLinear">glExtensionTextureFloatLinear</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">boolean</span></td>
+	<td><a class="summaryLink" href="#glExtensionTextureHalfFloat">glExtensionTextureHalfFloat</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature"><a href="RendererRecord.html">RendererRecord</a></span></td>
+	<td><a class="summaryLink" href="#rendererRecord">rendererRecord</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">string</span></td>
+	<td><a class="summaryLink" href="#shaderPrecision">shaderPrecision</a><br />
+		<span class="description"><p>Can be one of: <ul><li>lowp</li><li>mediump</li><li>highp</li></ul><br />If the shader doesn't specify a precision, a string declaring this precision will be added.</p></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#viewportHeight">viewportHeight</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#viewportWidth">viewportWidth</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#viewportX">viewportX</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#viewportY">viewportY</a><br />
+		<span class="description"></td>
+	</td>
+</tr>
+				
+			</table>
+		
+    
+        <h3 class="subsection-title">Method summary</h3>
+        
+        <table class="summary">
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#checkResize">checkResize</a> <span class="signature">(<span class="optional"><a href="Camera.html">Camera</a> camera</span>)</span><br />
+	<span class="description"><p>Checks if this.domElement.offsetWidth or Height / this.downScale is unequal to this.domElement.width or height<br />if that is the case it will call this.setSize<br />It also checks if the camera aspect changed and will update it calling camera.setFrustumPerspective()</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#readPixels">readPixels</a> <span class="signature">(x, y, width, height, store)</span><br />
+	<span class="description"><p>Read pixels to a typed array (ArrayBufferView)</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#render">render</a> <span class="signature">(<a href="Entity.html">Entity</a>[] renderList, <a href="Camera.html">Camera</a> camera, <a href="Light.html">Light</a>[] lights, <span class="optional"><a href="RenderTarget.html">RenderTarget</a> renderTarget</span> = null, <span class="optional">boolean clear</span> = false)</span><br />
+	<span class="description"><p>Renders a "renderable" or a list of renderables. Handles all setup and updates of materials/shaders and states.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setClearColor">setClearColor</a> <span class="signature">(number r, number g, number b, number a)</span><br />
+	<span class="description"><p>Set the background color of the 3D view. All colors are defined in the range 0.0 - 1.0</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setSize">setSize</a> <span class="signature">(number width, number height)</span><br />
+	<span class="description"><p>Sets this.domElement.width and height using the parameters.<br />Then it calls this.setViewport(0, 0, width, height);<br />Finally it resets the hardwarePicking.pickingTarget</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setViewport">setViewport</a> <span class="signature">(<span class="optional">number x</span>, <span class="optional">number y</span>, <span class="optional">number width</span>, <span class="optional">number height</span>)</span><br />
+	<span class="description"><p>Sets this.viewportX and viewportY to the parameters or to 0<br />Sets this.viewportWidth and viewportHeight to the parameters or to this.domElement.width and height.<br />Finally it calls this.context.viewport(x,y,w,h) with the resulting values.</p></td>
+	</td>
+</tr>
+        </table>
+    
+		
+		<hr />
+	  
+	  		<h3 class="subsection-title">Constructor</h3>
+	      
+<dt>
+    <h4 class="name" id="Renderer"><span class="type-signature"></span>new Renderer<span class="signature">(object parameters)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Constructor. It accepts a JSON object containing the settings for the renderer.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Renderer settings.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>alpha</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last"><p>Enables the possibility to render non-opaque pixels</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>premultipliedAlpha</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last"><p>Whether the colors are premultiplied with the alpha channel.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>antialias</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last"><p>Enables antialiasing.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>stencil</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last"><p>Enables the stencil buffer.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>preserveDrawingBuffer</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>canvas</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">canvas</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><p>If not supplied, Renderer will create a new canvas</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>onError</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function(string)</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><p>Called with message when error occurs</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+	  
+   
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="capabilities"><span class="type-signature"></span>capabilities<span class="type-signature"> :object</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxTexureSize</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum 2D texture size</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxCubemapSize</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum cubemap size</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxRenderbufferSize</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum renderbuffer size</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxViewPortDims</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number[]</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum viewport size [x, y]</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxVertexTextureUnits</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum vertex shader texture units</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxFragmentTextureUnits</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum fragment shader texture units</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxCombinedTextureUnits</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum total texture units</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxVertexAttributes</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum vertex attributes</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxVertexUniformVectors</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum vertex uniform vectors</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxFragmentUniformVectors</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum fragment uniform vectors</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxVaryingVectors</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Maximum varying vectors</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>aliasedPointSizeRange</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Point size min/max [min, max]</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>aliasedLineWidthRange</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Line width min/max [min, max]</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>samples</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Antialiasing sample size</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>sampleBuffers</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Sample buffer count</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>depthBits</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Depth bits</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>stencilBits</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Stencil bits</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>subpixelBits</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Sub-pixel bits</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>supportedExtensionsList</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Supported extension as an array</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>renderer</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Renderer name</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>vendor</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Vendor name</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>version</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Version string</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>shadingLanguageVersion</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Shadinglanguage version string</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="context"><span class="type-signature"></span>context<span class="type-signature"> :WebGLRenderingContext</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="currentHeight"><span class="type-signature"></span>currentHeight<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="currentWidth"><span class="type-signature"></span>currentWidth<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionCompressedTextureS3TC"><span class="type-signature"></span>glExtensionCompressedTextureS3TC<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionDepthTexture"><span class="type-signature"></span>glExtensionDepthTexture<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionElementIndexUInt"><span class="type-signature"></span>glExtensionElementIndexUInt<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionStandardDerivatives"><span class="type-signature"></span>glExtensionStandardDerivatives<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionTextureFilterAnisotropic"><span class="type-signature"></span>glExtensionTextureFilterAnisotropic<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionTextureFloat"><span class="type-signature"></span>glExtensionTextureFloat<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionTextureFloatLinear"><span class="type-signature"></span>glExtensionTextureFloatLinear<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="glExtensionTextureHalfFloat"><span class="type-signature"></span>glExtensionTextureHalfFloat<span class="type-signature"> :boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="rendererRecord"><span class="type-signature"></span>rendererRecord<span class="type-signature"> :<a href="RendererRecord.html">RendererRecord</a></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="shaderPrecision"><span class="type-signature"></span>shaderPrecision<span class="type-signature"> :string</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Can be one of: <ul><li>lowp</li><li>mediump</li><li>highp</li></ul><br />If the shader doesn't specify a precision, a string declaring this precision will be added.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="viewportHeight"><span class="type-signature"></span>viewportHeight<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="viewportWidth"><span class="type-signature"></span>viewportWidth<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="viewportX"><span class="type-signature"></span>viewportX<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="viewportY"><span class="type-signature"></span>viewportY<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="checkResize"><span class="type-signature"></span>checkResize<span class="signature">(<span class="optional"><a href="Camera.html">Camera</a> camera</span>)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Checks if this.domElement.offsetWidth or Height / this.downScale is unequal to this.domElement.width or height<br />if that is the case it will call this.setSize<br />It also checks if the camera aspect changed and will update it calling camera.setFrustumPerspective()</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>camera</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Camera.html">Camera</a></span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"><p>optional camera argument</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="readPixels"><span class="type-signature"></span>readPixels<span class="signature">(x, y, width, height, store)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Read pixels to a typed array (ArrayBufferView)</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>x offset of rectangle to read from</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>y offset of rectangle to read from</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>width of rectangle to read from</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>height of rectangle to read from</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>ArrayBufferView to store data in (Uint8Array)</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">(<a href="Entity.html">Entity</a>[] renderList, <a href="Camera.html">Camera</a> camera, <a href="Light.html">Light</a>[] lights, <span class="optional"><a href="RenderTarget.html">RenderTarget</a> renderTarget</span> = null, <span class="optional">boolean clear</span> = false)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Renders a "renderable" or a list of renderables. Handles all setup and updates of materials/shaders and states.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>renderList</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Entity.html">Entity</a>[]</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><p>A list of "renderables". Eg Entities with the right components or objects with mesh data, material and transform</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>camera</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Camera.html">Camera</a></span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><p>Main camera for rendering</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>lights</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Light.html">Light</a>[]</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><p>Lights used in the rendering</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>renderTarget</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RenderTarget.html">RenderTarget</a></span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last"><p>Optional rendertarget to use as target for rendering, or null to render to the screen</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>clear</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last"><p>true/false to clear or not clear all types, or an object in the form <code>{color:true/false, depth:true/false, stencil:true/false}</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setClearColor"><span class="type-signature"></span>setClearColor<span class="signature">(number r, number g, number b, number a)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Set the background color of the 3D view. All colors are defined in the range 0.0 - 1.0</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>r</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Red</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>g</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Green</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Blue</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Alpha</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setSize"><span class="type-signature"></span>setSize<span class="signature">(number width, number height)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets this.domElement.width and height using the parameters.<br />Then it calls this.setViewport(0, 0, width, height);<br />Finally it resets the hardwarePicking.pickingTarget</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setViewport"><span class="type-signature"></span>setViewport<span class="signature">(<span class="optional">number x</span>, <span class="optional">number y</span>, <span class="optional">number width</span>, <span class="optional">number height</span>)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets this.viewportX and viewportY to the parameters or to 0<br />Sets this.viewportWidth and viewportHeight to the parameters or to this.domElement.width and height.<br />Finally it calls this.context.viewport(x,y,w,h) with the resulting values.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"><p>optional x coordinate</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"><p>optional y coordinate</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"><p>optional width coordinate</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"><p>optional height coordinate</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc</a> on Wed Nov 06 2013 15:03:37 GMT+0100 (MEZ)
+</footer>
+<script> prettyPrint(); </script>
+</body>
+</html>

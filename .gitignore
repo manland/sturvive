@@ -1,0 +1,8 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+node_modules/*
+bin/*
+build/*
+test-coverage/*

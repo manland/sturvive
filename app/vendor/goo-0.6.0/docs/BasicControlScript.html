@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: BasicControlScript</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/jquery/jquery-1.9.1.min.js"> </script>
+    <script src="scripts/jquery/jquery.jstree.js"> </script>
+    <script src="scripts/setupTree.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/jstree/style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html"><img class="logo" src="images/goo.png" width="128" height="128" /></a><h3>Classes</h3><input type="text" id="classSearch" placeholder="Search classes" /><ul><li><a href>goo</a><ul><li><a href>addons</a><ul><li><a href>box2d</a><ul><li><a href>systems</a><ul><li><a href="Box2DSystem.html">Box2DSystem</a></li></ul></li></ul></li><li><a href>cannon</a><ul><li><a href>systems</a><ul><li><a href="CannonjsSystem.html">CannonjsSystem</a></li></ul></li></ul></li><li><a href>howler</a><ul><li><a href>systems</a><ul><li><a href="HowlerSystem.html">HowlerSystem</a></li></ul></li></ul></li><li><a href>soundmanager2</a><ul><li><a href>systems</a><ul><li><a href="SoundManager2System.html">SoundManager2System</a></li></ul></li></ul></li><li><a href>terrain</a><ul><li><a href="Terrain.html">Terrain</a></li></ul></li><li><a href>water</a><ul><li><a href="FlatWaterRenderer.html">FlatWaterRenderer</a></li><li><a href="ProjectedGridWaterRenderer.html">ProjectedGridWaterRenderer</a></li></ul></li></ul></li><li><a href>animation</a><ul><li><a href>blendtree</a><ul><li><a href="BinaryLERPSource.html">BinaryLERPSource</a></li><li><a href="ClipSource.html">ClipSource</a></li><li><a href="ExclusiveClipSource.html">ExclusiveClipSource</a></li><li><a href="FrozenClipSource.html">FrozenClipSource</a></li><li><a href="InclusiveClipSource.html">InclusiveClipSource</a></li><li><a href="ManagedTransformSource.html">ManagedTransformSource</a></li></ul></li><li><a href>clip</a><ul><li><a href="AbstractAnimationChannel.html">AbstractAnimationChannel</a></li><li><a href="AnimationClip.html">AnimationClip</a></li><li><a href="AnimationClipInstance.html">AnimationClipInstance</a></li><li><a href="InterpolatedFloatChannel.html">InterpolatedFloatChannel</a></li><li><a href="JointChannel.html">JointChannel</a></li><li><a href="JointData.html">JointData</a></li><li><a href="TransformChannel.html">TransformChannel</a></li><li><a href="TransformData.html">TransformData</a></li><li><a href="TriggerChannel.html">TriggerChannel</a></li><li><a href="TriggerData.html">TriggerData</a></li></ul></li><li><a href>layer</a><ul><li><a href="AnimationLayer.html">AnimationLayer</a></li><li><a href="LayerLERPBlender.html">LayerLERPBlender</a></li></ul></li><li><a href>state</a><ul><li><a href="AbstractState.html">AbstractState</a></li><li><a href="AbstractTransitionState.html">AbstractTransitionState</a></li><li><a href="FadeTransitionState.html">FadeTransitionState</a></li><li><a href="FrozenTransitionState.html">FrozenTransitionState</a></li><li><a href="SteadyState.html">SteadyState</a></li><li><a href="SyncFadeTransitionState.html">SyncFadeTransitionState</a></li></ul></li><li><a href="Joint.html">Joint</a></li><li><a href="Skeleton.html">Skeleton</a></li><li><a href="SkeletonPose.html">SkeletonPose</a></li></ul></li><li><a href>debug</a><ul><li><a href>components</a><ul><li><a href="MarkerComponent.html">MarkerComponent</a></li></ul></li><li><a href>systems</a><ul><li><a href="MarkerSystem.html">MarkerSystem</a></li></ul></li><li><a href="Debugger.html">Debugger</a></li><li><a href="EntityCounter.html">EntityCounter</a></li></ul></li><li><a href>entities</a><ul><li><a href>components</a><ul><li><a href="AnimationComponent.html">AnimationComponent</a></li><li><a href="CSSTransformComponent.html">CSSTransformComponent</a></li><li><a href="CameraComponent.html">CameraComponent</a></li><li><a href="Component.html">Component</a></li><li><a href="LightComponent.html">LightComponent</a></li><li><a href="MeshDataComponent.html">MeshDataComponent</a></li><li><a href="MeshRendererComponent.html">MeshRendererComponent</a></li><li><a href="OccludeeComponent.html">OccludeeComponent</a></li><li><a href="2dd25cccb9.html">OccluderComponent</a></li><li><a href="ParticleComponent.html">ParticleComponent</a></li><li><a href="PortalComponent.html">PortalComponent</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="TransformComponent.html">TransformComponent</a></li></ul></li><li><a href>managers</a><ul><li><a href="EntityManager.html">EntityManager</a></li></ul></li><li><a href>systems</a><ul><li><a href="AnimationSystem.html">AnimationSystem</a></li><li><a href="BoundingUpdateSystem.html">BoundingUpdateSystem</a></li><li><a href="CameraDebugSystem.html">CameraDebugSystem</a></li><li><a href="CameraSystem.html">CameraSystem</a></li><li><a href="DebugRenderSystem.html">DebugRenderSystem</a></li><li><a href="GizmoRenderSystem.html">GizmoRenderSystem</a></li><li><a href="GridRenderSystem.html">GridRenderSystem</a></li><li><a href="LightDebugSystem.html">LightDebugSystem</a></li><li><a href="LightingSystem.html">LightingSystem</a></li><li><a href="0c78d6e6fd.html">OcclusionCullingSystem</a></li><li><a href="ParticlesSystem.html">ParticlesSystem</a></li><li><a href="PickingSystem.html">PickingSystem</a></li><li><a href="PortalSystem.html">PortalSystem</a></li><li><a href="RenderSystem.html">RenderSystem</a></li><li><a href="ScriptSystem.html">ScriptSystem</a></li><li><a href="System.html">System</a></li><li><a href="TextSystem.html">TextSystem</a></li><li><a href="TransformSystem.html">TransformSystem</a></li></ul></li><li><a href="Entity.html">Entity</a></li><li><a href="EntityUtils.html">EntityUtils</a></li><li><a href="GooRunner.html">GooRunner</a></li><li><a href="World.html">World</a></li></ul></li><li><a href>loaders</a><ul><li><a href>dds</a><ul><li><a href="DdsLoader.html">DdsLoader</a></li></ul></li><li><a href>handlers</a><ul><li><a href="ComponentHandler.html">ComponentHandler</a></li><li><a href="ConfigHandler.html">ConfigHandler</a></li></ul></li><li><a href="DynamicLoader.html">DynamicLoader</a></li><li><a href="JsonUtils.html">JsonUtils</a></li><li><a href="Loader.html">Loader</a></li></ul></li><li><a href>math</a><ul><li><a href="MathUtils.html">MathUtils</a></li><li><a href="Matrix.html">Matrix</a></li><li><a href="Matrix2x2.html">Matrix2x2</a></li><li><a href="Matrix3x3.html">Matrix3x3</a></li><li><a href="Matrix4x4.html">Matrix4x4</a></li><li><a href="Plane.html">Plane</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Ray.html">Ray</a></li><li><a href="Transform.html">Transform</a></li><li><a href="Vector.html">Vector</a></li><li><a href="Vector2.html">Vector2</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Vector4.html">Vector4</a></li></ul></li><li><a href>noise</a><ul><li><a href="Noise.html">Noise</a></li><li><a href="ValueNoise.html">ValueNoise</a></li></ul></li><li><a href>particles</a><ul><li><a href="Particle.html">Particle</a></li><li><a href="ParticleEmitter.html">ParticleEmitter</a></li><li><a href="ParticleInfluence.html">ParticleInfluence</a></li><li><a href="ParticleUtils.html">ParticleUtils</a></li></ul></li><li><a href>renderer</a><ul><li><a href>bounds</a><ul><li><a href="BoundingBox.html">BoundingBox</a></li><li><a href="BoundingSphere.html">BoundingSphere</a></li><li><a href="BoundingVolume.html">BoundingVolume</a></li></ul></li><li><a href>light</a><ul><li><a href="DirectionalLight.html">DirectionalLight</a></li><li><a href="Light.html">Light</a></li><li><a href="PointLight.html">PointLight</a></li><li><a href="SpotLight.html">SpotLight</a></li></ul></li><li><a href>pass</a><ul><li><a href="Composer.html">Composer</a></li><li><a href="FullscreenUtil.html">FullscreenUtil</a></li><li><a href="RenderPass.html">RenderPass</a></li><li><a href="RenderTarget.html">RenderTarget</a></li></ul></li><li><a href>scanline</a><ul><li><a href="BoundingBoxOcclusionChecker.html">BoundingBoxOcclusionChecker</a></li><li><a href="BoundingSphereOcclusionChecker.html">BoundingSphereOcclusionChecker</a></li><li><a href="Edge.html">Edge</a></li><li><a href="EdgeData.html">EdgeData</a></li><li><a href="EdgeMap.html">EdgeMap</a></li><li><a href="OccludeeTriangleData.html">OccludeeTriangleData</a></li><li><a href="OccluderTriangleData.html">OccluderTriangleData</a></li><li><a href="SoftwareRenderer.html">SoftwareRenderer</a></li></ul></li><li><a href>shaders</a><ul><li><a href="ShaderBuilder.html">ShaderBuilder</a></li><li><a href="ShaderFragment.html">ShaderFragment</a></li><li><a href="ShaderLib.html">ShaderLib</a></li></ul></li><li><a href>shadow</a><ul><li><a href="ShadowHandler.html">ShadowHandler</a></li></ul></li><li><a href="BufferData.html">BufferData</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Material.html">Material</a></li><li><a href="MeshData.html">MeshData</a></li><li><a href="OcclusionPartitioner.html">OcclusionPartitioner</a></li><li><a href="RenderQueue.html">RenderQueue</a></li><li><a href="Renderer.html">Renderer</a></li><li><a href="RendererRecord.html">RendererRecord</a></li><li><a href="Shader.html">Shader</a></li><li><a href="ShaderCall.html">ShaderCall</a></li><li><a href="SimplePartitioner.html">SimplePartitioner</a></li><li><a href="Texture.html">Texture</a></li><li><a href="TextureCreator.html">TextureCreator</a></li><li><a href="Util.html">Util</a></li></ul></li><li><a href>scripts</a><ul><li><a href="BasicControlScript.html">BasicControlScript</a></li><li><a href="Flycam.html">Flycam</a></li><li><a href="MouseLookControlScript.html">MouseLookControlScript</a></li><li><a href="OrbitCamControlScript.html">OrbitCamControlScript</a></li><li><a href="WASDControlScript.html">WASDControlScript</a></li></ul></li><li><a href>shapes</a><ul><li><a href="Box.html">Box</a></li><li><a href="Cylinder.html">Cylinder</a></li><li><a href="Disk.html">Disk</a></li><li><a href="FilledPolygon.html">FilledPolygon</a></li><li><a href="PolyLine.html">PolyLine</a></li><li><a href="ProjectedGrid.html">ProjectedGrid</a></li><li><a href="Quad.html">Quad</a></li><li><a href="ShapeCreator.html">ShapeCreator</a></li><li><a href="SimpleBox.html">SimpleBox</a></li><li><a href="Sphere.html">Sphere</a></li><li><a href="Surface.html">Surface</a></li><li><a href="Torus.html">Torus</a></li></ul></li><li><a href>statemachine</a><ul><li><a href>actions</a><ul><li><a href="WaitAction.html">WaitAction</a></li></ul></li><li><a href="FSMComponent.html">FSMComponent</a></li><li><a href="FSMSystem.html">FSMSystem</a></li><li><a href="FSMUtil.html">FSMUtil</a></li></ul></li><li><a href>util</a><ul><li><a href="Ajax.html">Ajax</a></li><li><a href="ColorUtil.html">ColorUtil</a></li><li><a href="GameUtils.html">GameUtils</a></li><li><a href="Grid.html">Grid</a></li><li><a href="Handy.html">Handy</a></li><li><a href="Latch.html">Latch</a></li><li><a href="ShapeCreatorMemoized.html">ShapeCreatorMemoized</a></li><li><a href="Stats.html">Stats</a></li><li><a href="TangentGenerator.html">TangentGenerator</a></li></ul></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createPanel">createPanel</a></li><li><a href="global.html#displayInfo">displayInfo</a></li><li><a href="global.html#far">far</a></li><li><a href="global.html#filterProperties">filterProperties</a></li><li><a href="global.html#getFilterList">getFilterList</a></li><li><a href="global.html#textureMode">textureMode</a></li><li><a href="global.html#updateMarker">updateMarker</a></li></ul>
+</nav>
+<div id="main">
+    
+    <h1 class="page-title">Class: BasicControlScript</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    
+      goo\scripts/BasicControlScript
+    
+    </h2>
+    
+    
+        <div class="class-description"><p>Make an entity controllable via mouse and keyboard. WASD keys move the entity towards the back, left,<br />front and right respectively. Shift causes speed to drop to a tenth. R and F move it up or down. Q and E roll it<br />towards the left or right. The arrow keys cause the entity to rotate, as does dragging with the mouse.</p></div>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<h4 class="name"><a href="#BasicControlScript"><span class="type-signature"></span>new BasicControlScript</a><span class="signature">(Element domElement)</span><span class="type-signature"></span></h4>
+
+    
+    </div>
+    
+			<h3 class="subsection-title">Member summary</h3>
+			<table class="summary">
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#movementSpeed">movementSpeed</a><br />
+		<span class="description"><p>The regular speed of the entity.</p></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature"></span><span class="type-signature">number</span></td>
+	<td><a class="summaryLink" href="#rollSpeed">rollSpeed</a><br />
+		<span class="description"><p>The regular speed of the entity when rolling.</p></td>
+	</td>
+</tr>
+				
+			</table>
+		
+    
+		
+		<hr />
+	  
+	  		<h3 class="subsection-title">Constructor</h3>
+	      
+<dt>
+    <h4 class="name" id="BasicControlScript"><span class="type-signature"></span>new BasicControlScript<span class="signature">(Element domElement)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>domElement</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Element to add mouse/key listeners to</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+	  
+   
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="movementSpeed"><span class="type-signature"></span>movementSpeed<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The regular speed of the entity.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy"><li>10.0</li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="rollSpeed"><span class="type-signature"></span>rollSpeed<span class="type-signature"> :number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The regular speed of the entity when rolling.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy"><li>2.0</li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc</a> on Wed Nov 06 2013 15:03:20 GMT+0100 (MEZ)
+</footer>
+<script> prettyPrint(); </script>
+</body>
+</html>

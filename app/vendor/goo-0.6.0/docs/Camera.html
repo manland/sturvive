@@ -1,0 +1,3368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Camera</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/jquery/jquery-1.9.1.min.js"> </script>
+    <script src="scripts/jquery/jquery.jstree.js"> </script>
+    <script src="scripts/setupTree.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/jstree/style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html"><img class="logo" src="images/goo.png" width="128" height="128" /></a><h3>Classes</h3><input type="text" id="classSearch" placeholder="Search classes" /><ul><li><a href>goo</a><ul><li><a href>addons</a><ul><li><a href>box2d</a><ul><li><a href>systems</a><ul><li><a href="Box2DSystem.html">Box2DSystem</a></li></ul></li></ul></li><li><a href>cannon</a><ul><li><a href>systems</a><ul><li><a href="CannonjsSystem.html">CannonjsSystem</a></li></ul></li></ul></li><li><a href>howler</a><ul><li><a href>systems</a><ul><li><a href="HowlerSystem.html">HowlerSystem</a></li></ul></li></ul></li><li><a href>soundmanager2</a><ul><li><a href>systems</a><ul><li><a href="SoundManager2System.html">SoundManager2System</a></li></ul></li></ul></li><li><a href>terrain</a><ul><li><a href="Terrain.html">Terrain</a></li></ul></li><li><a href>water</a><ul><li><a href="FlatWaterRenderer.html">FlatWaterRenderer</a></li><li><a href="ProjectedGridWaterRenderer.html">ProjectedGridWaterRenderer</a></li></ul></li></ul></li><li><a href>animation</a><ul><li><a href>blendtree</a><ul><li><a href="BinaryLERPSource.html">BinaryLERPSource</a></li><li><a href="ClipSource.html">ClipSource</a></li><li><a href="ExclusiveClipSource.html">ExclusiveClipSource</a></li><li><a href="FrozenClipSource.html">FrozenClipSource</a></li><li><a href="InclusiveClipSource.html">InclusiveClipSource</a></li><li><a href="ManagedTransformSource.html">ManagedTransformSource</a></li></ul></li><li><a href>clip</a><ul><li><a href="AbstractAnimationChannel.html">AbstractAnimationChannel</a></li><li><a href="AnimationClip.html">AnimationClip</a></li><li><a href="AnimationClipInstance.html">AnimationClipInstance</a></li><li><a href="InterpolatedFloatChannel.html">InterpolatedFloatChannel</a></li><li><a href="JointChannel.html">JointChannel</a></li><li><a href="JointData.html">JointData</a></li><li><a href="TransformChannel.html">TransformChannel</a></li><li><a href="TransformData.html">TransformData</a></li><li><a href="TriggerChannel.html">TriggerChannel</a></li><li><a href="TriggerData.html">TriggerData</a></li></ul></li><li><a href>layer</a><ul><li><a href="AnimationLayer.html">AnimationLayer</a></li><li><a href="LayerLERPBlender.html">LayerLERPBlender</a></li></ul></li><li><a href>state</a><ul><li><a href="AbstractState.html">AbstractState</a></li><li><a href="AbstractTransitionState.html">AbstractTransitionState</a></li><li><a href="FadeTransitionState.html">FadeTransitionState</a></li><li><a href="FrozenTransitionState.html">FrozenTransitionState</a></li><li><a href="SteadyState.html">SteadyState</a></li><li><a href="SyncFadeTransitionState.html">SyncFadeTransitionState</a></li></ul></li><li><a href="Joint.html">Joint</a></li><li><a href="Skeleton.html">Skeleton</a></li><li><a href="SkeletonPose.html">SkeletonPose</a></li></ul></li><li><a href>debug</a><ul><li><a href>components</a><ul><li><a href="MarkerComponent.html">MarkerComponent</a></li></ul></li><li><a href>systems</a><ul><li><a href="MarkerSystem.html">MarkerSystem</a></li></ul></li><li><a href="Debugger.html">Debugger</a></li><li><a href="EntityCounter.html">EntityCounter</a></li></ul></li><li><a href>entities</a><ul><li><a href>components</a><ul><li><a href="AnimationComponent.html">AnimationComponent</a></li><li><a href="CSSTransformComponent.html">CSSTransformComponent</a></li><li><a href="CameraComponent.html">CameraComponent</a></li><li><a href="Component.html">Component</a></li><li><a href="LightComponent.html">LightComponent</a></li><li><a href="MeshDataComponent.html">MeshDataComponent</a></li><li><a href="MeshRendererComponent.html">MeshRendererComponent</a></li><li><a href="OccludeeComponent.html">OccludeeComponent</a></li><li><a href="2dd25cccb9.html">OccluderComponent</a></li><li><a href="ParticleComponent.html">ParticleComponent</a></li><li><a href="PortalComponent.html">PortalComponent</a></li><li><a href="ScriptComponent.html">ScriptComponent</a></li><li><a href="TransformComponent.html">TransformComponent</a></li></ul></li><li><a href>managers</a><ul><li><a href="EntityManager.html">EntityManager</a></li></ul></li><li><a href>systems</a><ul><li><a href="AnimationSystem.html">AnimationSystem</a></li><li><a href="BoundingUpdateSystem.html">BoundingUpdateSystem</a></li><li><a href="CameraDebugSystem.html">CameraDebugSystem</a></li><li><a href="CameraSystem.html">CameraSystem</a></li><li><a href="DebugRenderSystem.html">DebugRenderSystem</a></li><li><a href="GizmoRenderSystem.html">GizmoRenderSystem</a></li><li><a href="GridRenderSystem.html">GridRenderSystem</a></li><li><a href="LightDebugSystem.html">LightDebugSystem</a></li><li><a href="LightingSystem.html">LightingSystem</a></li><li><a href="0c78d6e6fd.html">OcclusionCullingSystem</a></li><li><a href="ParticlesSystem.html">ParticlesSystem</a></li><li><a href="PickingSystem.html">PickingSystem</a></li><li><a href="PortalSystem.html">PortalSystem</a></li><li><a href="RenderSystem.html">RenderSystem</a></li><li><a href="ScriptSystem.html">ScriptSystem</a></li><li><a href="System.html">System</a></li><li><a href="TextSystem.html">TextSystem</a></li><li><a href="TransformSystem.html">TransformSystem</a></li></ul></li><li><a href="Entity.html">Entity</a></li><li><a href="EntityUtils.html">EntityUtils</a></li><li><a href="GooRunner.html">GooRunner</a></li><li><a href="World.html">World</a></li></ul></li><li><a href>loaders</a><ul><li><a href>dds</a><ul><li><a href="DdsLoader.html">DdsLoader</a></li></ul></li><li><a href>handlers</a><ul><li><a href="ComponentHandler.html">ComponentHandler</a></li><li><a href="ConfigHandler.html">ConfigHandler</a></li></ul></li><li><a href="DynamicLoader.html">DynamicLoader</a></li><li><a href="JsonUtils.html">JsonUtils</a></li><li><a href="Loader.html">Loader</a></li></ul></li><li><a href>math</a><ul><li><a href="MathUtils.html">MathUtils</a></li><li><a href="Matrix.html">Matrix</a></li><li><a href="Matrix2x2.html">Matrix2x2</a></li><li><a href="Matrix3x3.html">Matrix3x3</a></li><li><a href="Matrix4x4.html">Matrix4x4</a></li><li><a href="Plane.html">Plane</a></li><li><a href="Quaternion.html">Quaternion</a></li><li><a href="Ray.html">Ray</a></li><li><a href="Transform.html">Transform</a></li><li><a href="Vector.html">Vector</a></li><li><a href="Vector2.html">Vector2</a></li><li><a href="Vector3.html">Vector3</a></li><li><a href="Vector4.html">Vector4</a></li></ul></li><li><a href>noise</a><ul><li><a href="Noise.html">Noise</a></li><li><a href="ValueNoise.html">ValueNoise</a></li></ul></li><li><a href>particles</a><ul><li><a href="Particle.html">Particle</a></li><li><a href="ParticleEmitter.html">ParticleEmitter</a></li><li><a href="ParticleInfluence.html">ParticleInfluence</a></li><li><a href="ParticleUtils.html">ParticleUtils</a></li></ul></li><li><a href>renderer</a><ul><li><a href>bounds</a><ul><li><a href="BoundingBox.html">BoundingBox</a></li><li><a href="BoundingSphere.html">BoundingSphere</a></li><li><a href="BoundingVolume.html">BoundingVolume</a></li></ul></li><li><a href>light</a><ul><li><a href="DirectionalLight.html">DirectionalLight</a></li><li><a href="Light.html">Light</a></li><li><a href="PointLight.html">PointLight</a></li><li><a href="SpotLight.html">SpotLight</a></li></ul></li><li><a href>pass</a><ul><li><a href="Composer.html">Composer</a></li><li><a href="FullscreenUtil.html">FullscreenUtil</a></li><li><a href="RenderPass.html">RenderPass</a></li><li><a href="RenderTarget.html">RenderTarget</a></li></ul></li><li><a href>scanline</a><ul><li><a href="BoundingBoxOcclusionChecker.html">BoundingBoxOcclusionChecker</a></li><li><a href="BoundingSphereOcclusionChecker.html">BoundingSphereOcclusionChecker</a></li><li><a href="Edge.html">Edge</a></li><li><a href="EdgeData.html">EdgeData</a></li><li><a href="EdgeMap.html">EdgeMap</a></li><li><a href="OccludeeTriangleData.html">OccludeeTriangleData</a></li><li><a href="OccluderTriangleData.html">OccluderTriangleData</a></li><li><a href="SoftwareRenderer.html">SoftwareRenderer</a></li></ul></li><li><a href>shaders</a><ul><li><a href="ShaderBuilder.html">ShaderBuilder</a></li><li><a href="ShaderFragment.html">ShaderFragment</a></li><li><a href="ShaderLib.html">ShaderLib</a></li></ul></li><li><a href>shadow</a><ul><li><a href="ShadowHandler.html">ShadowHandler</a></li></ul></li><li><a href="BufferData.html">BufferData</a></li><li><a href="Camera.html">Camera</a></li><li><a href="Material.html">Material</a></li><li><a href="MeshData.html">MeshData</a></li><li><a href="OcclusionPartitioner.html">OcclusionPartitioner</a></li><li><a href="RenderQueue.html">RenderQueue</a></li><li><a href="Renderer.html">Renderer</a></li><li><a href="RendererRecord.html">RendererRecord</a></li><li><a href="Shader.html">Shader</a></li><li><a href="ShaderCall.html">ShaderCall</a></li><li><a href="SimplePartitioner.html">SimplePartitioner</a></li><li><a href="Texture.html">Texture</a></li><li><a href="TextureCreator.html">TextureCreator</a></li><li><a href="Util.html">Util</a></li></ul></li><li><a href>scripts</a><ul><li><a href="BasicControlScript.html">BasicControlScript</a></li><li><a href="Flycam.html">Flycam</a></li><li><a href="MouseLookControlScript.html">MouseLookControlScript</a></li><li><a href="OrbitCamControlScript.html">OrbitCamControlScript</a></li><li><a href="WASDControlScript.html">WASDControlScript</a></li></ul></li><li><a href>shapes</a><ul><li><a href="Box.html">Box</a></li><li><a href="Cylinder.html">Cylinder</a></li><li><a href="Disk.html">Disk</a></li><li><a href="FilledPolygon.html">FilledPolygon</a></li><li><a href="PolyLine.html">PolyLine</a></li><li><a href="ProjectedGrid.html">ProjectedGrid</a></li><li><a href="Quad.html">Quad</a></li><li><a href="ShapeCreator.html">ShapeCreator</a></li><li><a href="SimpleBox.html">SimpleBox</a></li><li><a href="Sphere.html">Sphere</a></li><li><a href="Surface.html">Surface</a></li><li><a href="Torus.html">Torus</a></li></ul></li><li><a href>statemachine</a><ul><li><a href>actions</a><ul><li><a href="WaitAction.html">WaitAction</a></li></ul></li><li><a href="FSMComponent.html">FSMComponent</a></li><li><a href="FSMSystem.html">FSMSystem</a></li><li><a href="FSMUtil.html">FSMUtil</a></li></ul></li><li><a href>util</a><ul><li><a href="Ajax.html">Ajax</a></li><li><a href="ColorUtil.html">ColorUtil</a></li><li><a href="GameUtils.html">GameUtils</a></li><li><a href="Grid.html">Grid</a></li><li><a href="Handy.html">Handy</a></li><li><a href="Latch.html">Latch</a></li><li><a href="ShapeCreatorMemoized.html">ShapeCreatorMemoized</a></li><li><a href="Stats.html">Stats</a></li><li><a href="TangentGenerator.html">TangentGenerator</a></li></ul></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#createPanel">createPanel</a></li><li><a href="global.html#displayInfo">displayInfo</a></li><li><a href="global.html#far">far</a></li><li><a href="global.html#filterProperties">filterProperties</a></li><li><a href="global.html#getFilterList">getFilterList</a></li><li><a href="global.html#textureMode">textureMode</a></li><li><a href="global.html#updateMarker">updateMarker</a></li></ul>
+</nav>
+<div id="main">
+    
+    <h1 class="page-title">Class: Camera</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    
+      goo\renderer/Camera
+    
+    </h2>
+    
+    
+        <div class="class-description"><p>This class represents a view into a 3d scene and how that view should map to a 2D rendering surface.</p></div>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<h4 class="name"><a href="#Camera"><span class="type-signature"></span>new Camera</a><span class="signature">(Number fov, Number aspect, Number near, Number far)</span><span class="type-signature"></span></h4>
+
+    
+    </div>
+    
+			<h3 class="subsection-title">Member summary</h3>
+			<table class="summary">
+				
+					
+<tr>
+	<td><span class="type-signature">&lt;static> </span><span class="type-signature"></span></td>
+	<td><a class="summaryLink" href="#Inside">Inside</a><br />
+		<span class="description"><p>Intersection response from camera.intersect</p></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature">&lt;static> </span><span class="type-signature"></span></td>
+	<td><a class="summaryLink" href="#Intersects">Intersects</a><br />
+		<span class="description"><p>Intersection response from camera.intersect</p></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature">&lt;static> </span><span class="type-signature"></span></td>
+	<td><a class="summaryLink" href="#Outside">Outside</a><br />
+		<span class="description"><p>Intersection response from camera.intersect</p></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature">&lt;static> </span><span class="type-signature"></span></td>
+	<td><a class="summaryLink" href="#Parallel">Parallel</a><br />
+		<span class="description"><p>Projection mode for parallel/ortographic frustum</p></td>
+	</td>
+</tr>
+				
+					
+<tr>
+	<td><span class="type-signature">&lt;static> </span><span class="type-signature"></span></td>
+	<td><a class="summaryLink" href="#Perspective">Perspective</a><br />
+		<span class="description"><p>Projection mode for perspective frustum</p></td>
+	</td>
+</tr>
+				
+			</table>
+		
+    
+        <h3 class="subsection-title">Method summary</h3>
+        
+        <table class="summary">
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#checkInverseModelView">checkInverseModelView</a> <span class="signature">()</span><br />
+	<span class="description"><p>update inverse modelView if necessary.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#checkInverseModelViewProjection">checkInverseModelViewProjection</a> <span class="signature">()</span><br />
+	<span class="description"><p>update inverse modelViewProjection if necessary.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#checkModelView">checkModelView</a> <span class="signature">()</span><br />
+	<span class="description"><p>update modelView if necessary.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#checkModelViewProjection">checkModelViewProjection</a> <span class="signature">()</span><br />
+	<span class="description"><p>update modelViewProjection if necessary.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#checkProjection">checkProjection</a> <span class="signature">()</span><br />
+	<span class="description"><p>update projection if necessary.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#contains">contains</a> <span class="signature">(bound)</span><br />
+	<span class="description"><p>Checks a bounding volume against the planes of this camera's frustum and returns if it is completely inside of, outside of, or intersecting.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#getFrustumCoordinates">getFrustumCoordinates</a> <span class="signature">(worldPos, store)</span><br />
+	<span class="description"><p>Converts a position in world coordinate space to a x,y,z frustum position using the current settings of this camera.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#getPickRay">getPickRay</a> <span class="signature">(screenX, screenY, screenWidth, screenHeight, store)</span><br />
+	<span class="description"><p>Calculate a Pick Ray using the given screen position at the near plane of this camera and the camera's position in space.<br />removed: param flipVertical if true, we'll flip the screenPosition on the y axis. This is useful when you are dealing with non-opengl coordinate<br />           systems.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#getScreenCoordinates">getScreenCoordinates</a> <span class="signature">(worldPos, screenWidth, screenHeight, store)</span><br />
+	<span class="description"><p>Converts a position in world coordinate space to an x,y screen position and depth value using the current settings of this camera.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#getWorldCoordinates">getWorldCoordinates</a> <span class="signature">(screenX, screenY, screenWidth, screenHeight, zDepth, store)</span><br />
+	<span class="description"><p>Converts a local x,y screen position and depth value to world coordinates based on the current settings of this camera.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#lookAt">lookAt</a> <span class="signature">(<a href="Vector3.html">Vector3</a> pos, <a href="Vector3.html">Vector3</a> worldUpVector)</span><br />
+	<span class="description"><p>A convenience method for auto-setting the frame based on a world position the user desires the camera to look at. It points the camera towards<br />the given position using the difference between that position and the current camera location as a direction vector and the general<br />worldUpVector to compute up and left camera vectors.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#normalize">normalize</a> <span class="signature">()</span><br />
+	<span class="description"><p>Ensure our up, left and direction are unit-length vectors.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#onFrameChange">onFrameChange</a> <span class="signature">()</span><br />
+	<span class="description"><p>Updates the values of the world planes associated with this camera.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#onFrustumChange">onFrustumChange</a> <span class="signature">()</span><br />
+	<span class="description"><p>Updates internal frustum coefficient values to reflect the current frustum plane values.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#pack">pack</a> <span class="signature">(sceneBounds)</span><br />
+	<span class="description"><p>Compress this camera's near and far frustum planes to be smaller if possible, using the given bounds as a<br />measure.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setFrame">setFrame</a> <span class="signature">(location, left, up, direction)</span><br />
+	<span class="description"><p>Sets the axes and location of the camera. Similar to setAxes, but sets camera<br />location as well.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setFrustum">setFrustum</a> <span class="signature">(near, far, left, right, top, bottom)</span><br />
+	<span class="description"><p>Sets the frustum plane values of this camera using the given values.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setFrustumPerspective">setFrustumPerspective</a> <span class="signature">(fovY, aspect, near, far)</span><br />
+	<span class="description"><p>Sets the frustum plane values of this camera using the given perspective values.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setProjectionMode">setProjectionMode</a> <span class="signature">(ProjectionMode projectionMode)</span><br />
+	<span class="description"><p>Sets the projection mode of the camera. (Camera.Perspective / Camera.Parallel)</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setToObliqueMatrix">setToObliqueMatrix</a> <span class="signature">(clipPlane)</span><br />
+	<span class="description"><p>Clipping using oblique frustums</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#setViewPort">setViewPort</a> <span class="signature">(left, right, bottom, top)</span><br />
+	<span class="description"><p>Sets the boundaries of this camera's viewport to the given values</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#update">update</a> <span class="signature">()</span><br />
+	<span class="description"><p>Forces all aspect of the camera to be updated from internal values, and sets all dirty flags to true so that the next apply() call will fully<br />set this camera to the render context.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#updateModelViewMatrix">updateModelViewMatrix</a> <span class="signature">()</span><br />
+	<span class="description"><p>Updates the value of our model view matrix.</p></td>
+	</td>
+</tr>
+        
+            
+<tr>
+	<td>
+	<span class="type-signature"></span>
+	</td>
+	<td><a class="summaryLink" href="#updateProjectionMatrix">updateProjectionMatrix</a> <span class="signature">()</span><br />
+	<span class="description"><p>Updates the value of our projection matrix.</p></td>
+	</td>
+</tr>
+        </table>
+    
+		
+		<hr />
+	  
+	  		<h3 class="subsection-title">Constructor</h3>
+	      
+<dt>
+    <h4 class="name" id="Camera"><span class="type-signature"></span>new Camera<span class="signature">(Number fov, Number aspect, Number near, Number far)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fov</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the full vertical angle of view, in degrees.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>aspect</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>aspect ratio</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>near</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>near plane distance</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>far</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>far plane distance</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+	  
+   
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="Inside"><span class="type-signature">&lt;static> </span>Inside<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Intersection response from camera.intersect</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="Intersects"><span class="type-signature">&lt;static> </span>Intersects<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Intersection response from camera.intersect</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="Outside"><span class="type-signature">&lt;static> </span>Outside<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Intersection response from camera.intersect</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="Parallel"><span class="type-signature">&lt;static> </span>Parallel<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Projection mode for parallel/ortographic frustum</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="Perspective"><span class="type-signature">&lt;static> </span>Perspective<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Projection mode for perspective frustum</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="checkInverseModelView"><span class="type-signature"></span>checkInverseModelView<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>update inverse modelView if necessary.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="checkInverseModelViewProjection"><span class="type-signature"></span>checkInverseModelViewProjection<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>update inverse modelViewProjection if necessary.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="checkModelView"><span class="type-signature"></span>checkModelView<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>update modelView if necessary.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="checkModelViewProjection"><span class="type-signature"></span>checkModelViewProjection<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>update modelViewProjection if necessary.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="checkProjection"><span class="type-signature"></span>checkProjection<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>update projection if necessary.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="contains"><span class="type-signature"></span>contains<span class="signature">(bound)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Checks a bounding volume against the planes of this camera's frustum and returns if it is completely inside of, outside of, or intersecting.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>bound</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the bound to check for culling</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>intersection type</p>
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getFrustumCoordinates"><span class="type-signature"></span>getFrustumCoordinates<span class="signature">(worldPos, store)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Converts a position in world coordinate space to a x,y,z frustum position using the current settings of this camera.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>worldPos</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the position in space to retrieve frustum coordinates for.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Use to avoid object creation. if not null, the results are stored in the given vector and returned. Otherwise, a new vector is<br />           created.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>a vector containing the x,y,z frustum position</p>
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getPickRay"><span class="type-signature"></span>getPickRay<span class="signature">(screenX, screenY, screenWidth, screenHeight, store)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Calculate a Pick Ray using the given screen position at the near plane of this camera and the camera's position in space.<br />removed: param flipVertical if true, we'll flip the screenPosition on the y axis. This is useful when you are dealing with non-opengl coordinate<br />           systems.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenX</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen x position</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenY</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen y position</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenWidth</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen width</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenHeight</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen height</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the Ray to store the result in. If false, a new Ray is created and returned.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the resulting Ray.</p>
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getScreenCoordinates"><span class="type-signature"></span>getScreenCoordinates<span class="signature">(worldPos, screenWidth, screenHeight, store)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Converts a position in world coordinate space to an x,y screen position and depth value using the current settings of this camera.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>worldPos</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the position in space to retrieve screen coordinates for.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenWidth</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen width</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenHeight</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen height</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Use to avoid object creation. if not null, the results are stored in the given vector and returned. Otherwise, a new vector is<br />           created.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>a vector containing the screen coordinates as x and y and the distance as a percent between near and far planes.</p>
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getWorldCoordinates"><span class="type-signature"></span>getWorldCoordinates<span class="signature">(screenX, screenY, screenWidth, screenHeight, zDepth, store)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Converts a local x,y screen position and depth value to world coordinates based on the current settings of this camera.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenX</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen x position</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenY</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen y position</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenWidth</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen width</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>screenHeight</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the screen height</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>zDepth</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the depth into the camera view to take our point. 0 indicates the near plane of the camera and 1 indicates the far plane.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>store</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Use to avoid object creation. if not null, the results are stored in the given vector and returned. Otherwise, a new vector is<br />           created.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>a vector containing the world coordinates.</p>
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="lookAt"><span class="type-signature"></span>lookAt<span class="signature">(<a href="Vector3.html">Vector3</a> pos, <a href="Vector3.html">Vector3</a> worldUpVector)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>A convenience method for auto-setting the frame based on a world position the user desires the camera to look at. It points the camera towards<br />the given position using the difference between that position and the current camera location as a direction vector and the general<br />worldUpVector to compute up and left camera vectors.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>pos</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Where to look at in terms of world coordinates.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>worldUpVector</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Vector3.html">Vector3</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>A normalized vector indicating the up direction of the world. (often Vector3#UNIT_Y or Vector3#UNIT_Z).</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="normalize"><span class="type-signature"></span>normalize<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Ensure our up, left and direction are unit-length vectors.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="onFrameChange"><span class="type-signature"></span>onFrameChange<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Updates the values of the world planes associated with this camera.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="onFrustumChange"><span class="type-signature"></span>onFrustumChange<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Updates internal frustum coefficient values to reflect the current frustum plane values.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="pack"><span class="type-signature"></span>pack<span class="signature">(sceneBounds)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Compress this camera's near and far frustum planes to be smaller if possible, using the given bounds as a<br />measure.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>sceneBounds</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the scene bounds</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setFrame"><span class="type-signature"></span>setFrame<span class="signature">(location, left, up, direction)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets the axes and location of the camera. Similar to setAxes, but sets camera<br />location as well.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>up</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>direction</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setFrustum"><span class="type-signature"></span>setFrustum<span class="signature">(near, far, left, right, top, bottom)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets the frustum plane values of this camera using the given values.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>near</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>far</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>right</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>top</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bottom</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setFrustumPerspective"><span class="type-signature"></span>setFrustumPerspective<span class="signature">(fovY, aspect, near, far)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets the frustum plane values of this camera using the given perspective values.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fovY</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the full angle of view on the Y axis, in degrees.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>aspect</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>the aspect ratio of our view (generally in [0,1]). Often this is canvas width / canvas height.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>near</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>our near plane value</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>far</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>our far plane value</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setProjectionMode"><span class="type-signature"></span>setProjectionMode<span class="signature">(ProjectionMode projectionMode)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets the projection mode of the camera. (Camera.Perspective / Camera.Parallel)</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>projectionMode</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">ProjectionMode</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The new projection mode - Camera.Perspective or Camera.Parallel</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setToObliqueMatrix"><span class="type-signature"></span>setToObliqueMatrix<span class="signature">(clipPlane)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Clipping using oblique frustums</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>clipPlane</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>clipping plane</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setViewPort"><span class="type-signature"></span>setViewPort<span class="signature">(left, right, bottom, top)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets the boundaries of this camera's viewport to the given values</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>right</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bottom</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>top</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Forces all aspect of the camera to be updated from internal values, and sets all dirty flags to true so that the next apply() call will fully<br />set this camera to the render context.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="updateModelViewMatrix"><span class="type-signature"></span>updateModelViewMatrix<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Updates the value of our model view matrix.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="updateProjectionMatrix"><span class="type-signature"></span>updateProjectionMatrix<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Updates the value of our projection matrix.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc</a> on Wed Nov 06 2013 15:03:22 GMT+0100 (MEZ)
+</footer>
+<script> prettyPrint(); </script>
+</body>
+</html>
