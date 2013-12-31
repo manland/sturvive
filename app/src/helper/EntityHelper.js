@@ -1,4 +1,4 @@
-define('EntityHelper', function() {
+define('helper/EntityHelper', function() {
 
   var getPosition = function getPosition(entity) {
     return {

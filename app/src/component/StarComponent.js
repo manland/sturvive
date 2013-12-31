@@ -1,9 +1,9 @@
-define('component/Star', [
+define('component/StarComponent', [
   'goo/entities/components/Component',
   'goo/shapes/ShapeCreator',
   'goo/entities/EntityUtils',
-  'material/Colored',
-  'InputHelper'
+  'material/ColoredMaterial',
+  'helper/InputHelper'
 ], function (
   Component,
   ShapeCreator,

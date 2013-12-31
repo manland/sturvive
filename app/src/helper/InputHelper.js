@@ -1,5 +1,5 @@
-define('InputHelper', 
-  ['UrlHelper', 'material/Colored'], 
+define('helper/InputHelper', 
+  ['helper/UrlHelper', 'material/ColoredMaterial'], 
   function(UrlHelper, ColoredMaterial) {
 
   var mainContainer = document.createElement('div');

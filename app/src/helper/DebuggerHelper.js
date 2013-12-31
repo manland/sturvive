@@ -1,5 +1,5 @@
-define('DebuggerHelper',
-  ['UrlHelper'],
+define('helper/DebuggerHelper',
+  ['helper/UrlHelper'],
   function(UrlHelper) {
 
   //DEBUGGER

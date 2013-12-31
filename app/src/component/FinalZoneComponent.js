@@ -1,11 +1,11 @@
-define('component/FinalZone', [
+define('component/FinalZoneComponent', [
   'goo/entities/components/Component',
   'goo/math/Vector3',
   'goo/shapes/ShapeCreator',
   'goo/entities/EntityUtils',
   'goo/shapes/Disk',
-  'material/Colored',
-  'InputHelper',
+  'material/ColoredMaterial',
+  'helper/InputHelper',
   'goo/particles/ParticleUtils', 'goo/entities/components/ParticleComponent',
   'goo/renderer/TextureCreator', 'goo/renderer/Material', 'goo/renderer/shaders/ShaderLib'
 ], function (

@@ -1,5 +1,5 @@
-define('script/mobileXYZControlScript', 
-  ['helper/TouchButton', 'DebuggerHelper'], 
+define('script/MobileXYZControlScript', 
+  ['helper/TouchButton', 'helper/DebuggerHelper'], 
   function(TouchButton, DebuggerHelper) {
 
   function MobileXYZControlScript() {

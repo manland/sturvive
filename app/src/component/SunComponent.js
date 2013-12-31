@@ -1,8 +1,8 @@
-define('component/Sun', [
+define('component/SunComponent', [
   'goo/entities/components/Component',
   'goo/renderer/light/PointLight',
   'goo/entities/EntityUtils',
-  'InputHelper'
+  'helper/InputHelper'
 ], function (
   Component,
   PointLight,

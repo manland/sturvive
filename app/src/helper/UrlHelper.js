@@ -1,4 +1,4 @@
-define('UrlHelper', function() {
+define('helper/UrlHelper', function() {
 
   var isDev = 
     document.URL.indexOf('localhost') !== -1 || 

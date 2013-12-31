@@ -1,22 +1,26 @@
-define('component/Camera', [
+define('component/CameraComponent', [
   'goo/entities/components/Component',
   'goo/renderer/Camera',
   'goo/scripts/OrbitCamControlScript',
   'goo/shapes/ShapeCreator',
   'goo/entities/EntityUtils',
-  'MobileHelper',
-  'script/mobileXYZControlScript',
+
+  'script/MobileXYZControlScript',
   'script/KeyboardXYZControlScript',
-  'InputHelper'
+
+  'helper/MobileHelper',
+  'helper/InputHelper'
 ], function (
   Component,
   Camera,
   OrbitCamControlScript,
   ShapeCreator,
   EntityUtils,
-  MobileHelper,
+
   MobileXYZControlScript,
   KeyboardXYZControlScript,
+  
+  MobileHelper,
   InputHelper
   ) {
   

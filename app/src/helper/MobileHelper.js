@@ -1,4 +1,4 @@
-define('MobileHelper', function() {
+define('helper/MobileHelper', function() {
 
   var isMobile = {
     Android: function() {

@@ -1,5 +1,5 @@
 define('script/KeyboardXYZControlScript', 
-  ['KeyboardHelper', 'DebuggerHelper'], 
+  ['helper/KeyboardHelper', 'helper/DebuggerHelper'], 
   function(KeyboardHelper, DebuggerHelper) {
 
   function KeyboardXYZControlScript() {

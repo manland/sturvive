@@ -1,4 +1,4 @@
-define('material/Colored', [
+define('material/ColoredMaterial', [
   'goo/renderer/Material',
   'goo/renderer/shaders/ShaderLib'
 ], function(Material, ShaderLib) {
@@ -37,42 +37,6 @@ define('material/Colored', [
         HighlightSize: 1,
         OutlineWidth: 1,
         ShadowSize: 0.12
-      };
-      return mat;
-    },
-    buildStem: function() {
-      var mat = Material.createMaterial( ShaderLib.simpleLit, 'StemMaterial');
-      mat.uniforms = {
-        materialAmbient: [0, 0.2, 0, 0],
-        materialDiffuse: [0, 0.1, 0, 0],
-        materialEmissive: [0, 0.1, 0, 0],
-        materialSpecular: [0, 0.1, 0, 0],
-        materialSpecularPower: 1,
-        opacity: 1
-      };
-      return mat;
-    },
-    buildSoil: function() {
-      var mat = Material.createMaterial( ShaderLib.simpleLit, 'SoilMaterial');
-      mat.uniforms = {
-        materialAmbient: [0, 0.3, 0, 0],
-        materialDiffuse: [0, 0.1, 0, 0],
-        materialEmissive: [0, 0.1, 0, 0],
-        materialSpecular: [0, 0, 0, 0],
-        materialSpecularPower: 0,
-        opacity: 1
-      };
-      return mat;
-    },
-    buildBee: function() {
-      var mat = Material.createMaterial( ShaderLib.simpleLit, 'SoilMaterial');
-      mat.uniforms = {
-        materialAmbient: [0, 0, 0, 0],
-        materialDiffuse: [1, 1, 0, 0],
-        materialEmissive: [0, 0, 0, 0],
-        materialSpecular: [0, 0, 0, 0],
-        materialSpecularPower: 0,
-        opacity: 1
       };
       return mat;
     },

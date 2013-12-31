@@ -1,4 +1,4 @@
-define('KeyboardHelper', function() {
+define('helper/KeyboardHelper', function() {
 
   var handlers = {};
 
