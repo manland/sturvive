@@ -6,7 +6,8 @@ require(['goo/entities/GooRunner',
   'component/BulletComponent',
   'helper/EntityHelper',
   'helper/TouchButton',
-  'helper/KeyboardHelper'
+  'helper/KeyboardHelper',
+  'helper/MobileHelper'
 ], function ( GooRunner,
   CameraComponent,
   SunComponent,
@@ -15,7 +16,8 @@ require(['goo/entities/GooRunner',
   BulletComponent,
   EntityHelper,
   TouchButton,
-  KeyboardHelper) {
+  KeyboardHelper,
+  MobileHelper) {
   
   'use strict';
 
@@ -44,27 +46,29 @@ require(['goo/entities/GooRunner',
 
   //new FinalZoneComponent(goo.world, true);
 
-  KeyboardHelper.listen(32, function() {
-    new BulletComponent(
-      goo.world, 
-      EntityHelper.getPosition(camera.entity), 
-      camera.getBulletPosition(), 
-      camera.script.yRotationAcc,
-      entities,
-      false
+  if(MobileHelper.isMobile()) {
+    document.getElementsByTagName('body')[0].appendChild(
+      TouchButton.build('shootButton', function() {
+        new BulletComponent(
+          goo.world, 
+          EntityHelper.getPosition(camera.entity), 
+          camera.getBulletPosition(), 
+          camera.script.yRotationAcc,
+          entities,
+          false);
+      })
     );
-  }, function() {}, null);
-
-  document.getElementsByTagName('body')[0].appendChild(
-    TouchButton.build('shootButton', function() {
+  } else {
+    KeyboardHelper.listen(32, function() {
       new BulletComponent(
         goo.world, 
         EntityHelper.getPosition(camera.entity), 
         camera.getBulletPosition(), 
         camera.script.yRotationAcc,
         entities,
-        false);
-    })
-  );
+        false
+      );
+    }, function() {}, null);
+  }
   
 });
