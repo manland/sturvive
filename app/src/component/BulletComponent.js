@@ -16,14 +16,20 @@ define('component/BulletComponent', [
   
   'use strict';
 
-  function BulletComponent(world, from, to, showHelper) {
+  function BulletComponent(world, from, to, yRotation, allEntities, showHelper) {
     this.type = 'BulletComponent';
 
     this.shape = ShapeCreator.createCylinder( 15, 0.1);
     this.material = new ColoredMaterial.buildStar();
 
-    this.entity = EntityUtils.createTypicalEntity( world, this.shape, this.material, new RunEntityScript(to));
-    this.entity.transformComponent.setTranslation( from.x, from.y, from.z );
+    this.entity = EntityUtils.createTypicalEntity( 
+      world, 
+      this.shape, 
+      this.material,
+      new RunEntityScript(yRotation, allEntities)
+    );
+    this.entity.transformComponent.setTranslation( from.x, from.y-0.5, from.z );
+    this.entity.transformComponent.setRotation( 0.01, yRotation, 0 );
     this.entity.beeDataComponent = this;
     this.entity.addToWorld();
 

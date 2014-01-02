@@ -1,6 +1,6 @@
 define('script/MobileXYZControlScript', 
-  ['helper/TouchButton', 'helper/DebuggerHelper'], 
-  function(TouchButton, DebuggerHelper) {
+  ['helper/TouchButton', 'helper/DebuggerHelper', 'goo/math/Vector3', 'helper/MathHelper'], 
+  function(TouchButton, DebuggerHelper, Vector3, MathHelper) {
 
   function MobileXYZControlScript() {
     this.x = 0;
@@ -45,13 +45,8 @@ define('script/MobileXYZControlScript',
 
   MobileXYZControlScript.prototype.run = function(camera) {
     this.yRotationAcc = this.yRotationAcc + this.yRotation;
-    var x = this.x;
-    var z = this.z;
-    if(this.yRotationAcc !== 0) {
-      x = x * Math.cos(this.yRotationAcc) - z * Math.sin(this.yRotationAcc);
-      z = x * Math.sin(this.yRotationAcc) + z * Math.cos(this.yRotationAcc);
-    }
-    camera.transformComponent.addTranslation(x, 0, -z);
+    var v = MathHelper.rotateVectorByYRad(new Vector3(this.x, 0, this.z), this.yRotationAcc);
+    camera.transformComponent.addTranslation(v.x, 0, -v.z);
     camera.transformComponent.setRotation(0, this.yRotationAcc, 0);
   };
 

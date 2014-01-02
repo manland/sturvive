@@ -1,47 +1,30 @@
 define('script/RunEntityScript', 
-  ['goo/math/Vector3'], 
-  function (Vector3) {
+  ['goo/math/Vector3', 'helper/EntityHelper', 'helper/MathHelper'], 
+  function (Vector3, EntityHelper, MathHelper) {
   
   'use strict';
 
   var speed = 1;
 
-  function RunEntityScript(to) {
-    this.to = to;
+  function RunEntityScript(yRotation, allEntities) {
+    this.allEntities = allEntities;
+
+    var v = MathHelper.rotateVectorByYRad(new Vector3(0, 0, speed), yRotation);
+    this.xBy = v.x;
+    this.zBy = v.z;
   }
 
   RunEntityScript.prototype.run = function(entity) {
-    var toX = 0, toY = 0, toZ = 0;
-    var toPosition = this.to;
+    entity.transformComponent.addTranslation(this.xBy, 0, -this.zBy);
 
-    var myX = entity.transformComponent.transform.translation.x;
-    var myY = entity.transformComponent.transform.translation.y;
-    var myZ = entity.transformComponent.transform.translation.z;
-
-    if(myX === toPosition.x && myY === toPosition.y && myZ === toPosition.z) {
-      return;
+    for(var i=0, len=this.allEntities.length; i<len; i++) {
+      if(EntityHelper.getDistance(entity, this.allEntities[i]) < 0) {
+        this.allEntities[i].removeFromWorld();
+        this.allEntities.splice(i, 1);
+        entity.removeFromWorld();
+        return;
+      }
     }
-
-    if(myX < toPosition.x) {
-      toX = myX + speed;
-    } else if(myX > toPosition.x) {
-      toX = myX - speed;
-    }
-    if(myY < toPosition.y) {
-      toY = myY + speed;
-    } else if(myY > toPosition.y) {
-      toY = myY - speed;
-    }
-    if(myZ < toPosition.z) {
-      toZ = myZ + speed;
-    } else if(myZ > toPosition.z) {
-      toZ = myZ - speed;
-    }
-
-    console.log(Vector3.toString());
-
-    entity.transformComponent.lookAt( new Vector3(toPosition.x, toPosition.y, toPosition.z), Vector3.UNIT_Y );
-    entity.transformComponent.setTranslation( toX, toY, toZ );
   };
 
   return RunEntityScript;

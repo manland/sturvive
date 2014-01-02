@@ -5,7 +5,8 @@ require(['goo/entities/GooRunner',
   'component/FinalZoneComponent',
   'component/BulletComponent',
   'helper/EntityHelper',
-  'helper/TouchButton'
+  'helper/TouchButton',
+  'helper/KeyboardHelper'
 ], function ( GooRunner,
   CameraComponent,
   SunComponent,
@@ -13,7 +14,8 @@ require(['goo/entities/GooRunner',
   FinalZoneComponent,
   BulletComponent,
   EntityHelper,
-  TouchButton) {
+  TouchButton,
+  KeyboardHelper) {
   
   'use strict';
 
@@ -34,14 +36,34 @@ require(['goo/entities/GooRunner',
   
   var camera = new CameraComponent(goo.world, true);
 
-  //var sc = new StarComponent(goo.world, true);
+  var entities = [];
+  for(var i=0; i<50; i++) {
+    entities.push(new StarComponent(goo.world, false).entity);
+  }
 
   //new FinalZoneComponent(goo.world, true);
+
+  KeyboardHelper.listen(32, function() {
+    new BulletComponent(
+      goo.world, 
+      EntityHelper.getPosition(camera.entity), 
+      camera.getBulletPosition(), 
+      camera.script.yRotationAcc,
+      entities,
+      false
+    );
+  }, function() {}, null);
 
   var b = TouchButton.build('shootButton', function() {
     // var d = EntityHelper.getDistance(camera.entity, sc.entity);
     // console.log(d);
-    new BulletComponent(goo.world, EntityHelper.getPosition(camera.entity), {x:0, y:0, z:0}, false);
+    new BulletComponent(
+      goo.world, 
+      EntityHelper.getPosition(camera.entity), 
+      camera.getBulletPosition(), 
+      camera.script.yRotationAcc,
+      entities,
+      false);
   });
   document.getElementsByTagName('body')[0].appendChild(b);
   

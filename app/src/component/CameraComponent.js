@@ -9,6 +9,7 @@ define('component/CameraComponent', [
   'script/KeyboardXYZControlScript',
 
   'helper/MobileHelper',
+  'helper/EntityHelper',
   'helper/InputHelper'
 ], function (
   Component,
@@ -21,6 +22,7 @@ define('component/CameraComponent', [
   KeyboardXYZControlScript,
   
   MobileHelper,
+  EntityHelper,
   InputHelper
   ) {
   
@@ -31,18 +33,17 @@ define('component/CameraComponent', [
 
     this.camera = new Camera(35, 1, 0.1, 1000);
 
-    var script;
     if(MobileHelper.isMobile()) {
-      script = new MobileXYZControlScript();
+      this.script = new MobileXYZControlScript();
     } else {
-      script = new KeyboardXYZControlScript();
+      this.script = new KeyboardXYZControlScript();
     }
 
     this.entity =  EntityUtils.createTypicalEntity(
       world, 
       this.camera, 
       [0,0,7], 
-      script
+      this.script
     );
     this.entity.addToWorld();
 
@@ -55,6 +56,19 @@ define('component/CameraComponent', [
 
   CameraComponent.prototype.showHelper = function() {
     var div = InputHelper.entity('camera', this.entity);
+  };
+
+  CameraComponent.prototype.getBulletPosition = function() {
+    var pos = EntityHelper.getPosition(this.entity);
+    pos.z = pos.z - 10;
+    if(this.script.yRotationAcc !== 0) {
+      var angle = this.script.yRotationAcc;
+      var x = pos.x * Math.cos(angle) - pos.z * Math.sin(angle);
+      var z = pos.x * Math.sin(angle) + pos.z * Math.cos(angle);
+      pos.x = x;
+      pos.z = z;
+    }
+    return pos;
   };
 
   return CameraComponent;
