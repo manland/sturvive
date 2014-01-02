@@ -1,6 +1,7 @@
 define('helper/TouchButton', function() {
 
   var buildBound = function(e) {
+    e.preventDefault();
     var touch;
     if(e.changedTouches) {
       for(var i=0, len=e.changedTouches.length; i<len && touch === undefined; i++) {
@@ -14,9 +15,6 @@ define('helper/TouchButton', function() {
     var l = e.target.offsetLeft;
     var t = e.target.offsetTop;
     return {
-      preventDefault: function() {
-        e.preventDefault();
-      },
       originalEvent: e,
       x: x,
       y: y,
