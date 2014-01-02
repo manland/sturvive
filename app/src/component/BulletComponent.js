@@ -19,8 +19,8 @@ define('component/BulletComponent', [
   function BulletComponent(world, from, to, yRotation, allEntities, showHelper) {
     this.type = 'BulletComponent';
 
-    this.shape = ShapeCreator.createCylinder( 15, 0.1);
-    this.material = new ColoredMaterial.buildStar();
+    this.shape = ShapeCreator.createCylinder( 15, 0.01);
+    this.material = new ColoredMaterial.buildBullet();
 
     this.entity = EntityUtils.createTypicalEntity( 
       world, 

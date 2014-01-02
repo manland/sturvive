@@ -31,7 +31,7 @@ require(['goo/entities/GooRunner',
     screenHeight = 350;
   }
   goo.renderer.domElement.classList.add('canvas');
-  goo.renderer.setSize(screenWidth-5, screenHeight-5);
+  goo.renderer.setSize(screenWidth, screenHeight);
   goo.renderer.setClearColor(0, 0, 0, 1);
   document.body.appendChild(goo.renderer.domElement);
   
@@ -41,7 +41,7 @@ require(['goo/entities/GooRunner',
 
   var entities = [];
   for(var i=0; i<50; i++) {
-    entities.push(new StarComponent(goo.world, false).entity);
+    entities.push(new StarComponent(goo.world, i===0).entity);
   }
 
   //new FinalZoneComponent(goo.world, true);

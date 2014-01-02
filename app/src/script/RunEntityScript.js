@@ -5,8 +5,10 @@ define('script/RunEntityScript',
   'use strict';
 
   var speed = 1;
+  var maxLifeTime = 100;
 
   function RunEntityScript(yRotation, allEntities) {
+    this.lifeTime = 0;
     this.allEntities = allEntities;
 
     var v = MathHelper.rotateVectorByYRad(new Vector3(0, 0, speed), yRotation);
@@ -15,6 +17,11 @@ define('script/RunEntityScript',
   }
 
   RunEntityScript.prototype.run = function(entity) {
+    this.lifeTime = this.lifeTime + 1;
+    if(this.lifeTime > maxLifeTime) {
+      entity.removeFromWorld();
+      return;
+    }
     entity.transformComponent.addTranslation(this.xBy, 0, -this.zBy);
 
     for(var i=0, len=this.allEntities.length; i<len; i++) {

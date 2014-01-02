@@ -14,7 +14,6 @@ define('script/MobileXYZControlScript',
   }
 
   MobileXYZControlScript.prototype.handleXZStart = function(e) {
-    e.preventDefault();
     var middleWidth = e.width/2;
     var middleHeight = e.height/2;
     //QUART ROUND BUTTON
@@ -33,7 +32,6 @@ define('script/MobileXYZControlScript',
   };
 
   MobileXYZControlScript.prototype.handleYStart = function(e) {
-    e.preventDefault();
     var middleWidth = e.width/2;
     this.yRotation = e.insideX > middleWidth ? -0.01 : 0.01;
     DebuggerHelper.updateDebug('x', this.x, 'z', this.z, 'yRotation', this.yRotation);

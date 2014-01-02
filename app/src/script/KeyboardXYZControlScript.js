@@ -10,28 +10,28 @@ define('script/KeyboardXYZControlScript',
 
     KeyboardHelper.listen(
       38,//UP
-      function() { this.z = 0.1; },
+      function() { this.z = 0.5; },
       function() { this.z = 0; },
       this
     );
 
     KeyboardHelper.listen(
       40,//DOWN
-      function() { this.z = -0.1; },
+      function() { this.z = -0.5; },
       function() { this.z = 0; },
       this
     );
 
     KeyboardHelper.listen(
       39,//RIGHT
-      function() { this.x = 0.1; },
+      function() { this.x = 0.5; },
       function() { this.x = 0; },
       this
     );
 
     KeyboardHelper.listen(
       37,//LEFT
-      function() { this.x = -0.1; },
+      function() { this.x = -0.5; },
       function() { this.x = 0; },
       this
     );

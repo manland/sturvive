@@ -51,6 +51,18 @@ define('material/ColoredMaterial', [
         opacity: 1
       };
       return mat;
+    },
+    buildBullet: function() {
+      var mat = Material.createMaterial( ShaderLib.simpleLit, 'StarMaterial');
+      mat.uniforms = {
+        materialAmbient: [0.3, 0.1, 0.3, 0],
+        materialDiffuse: [1, 0, 1, 0],
+        materialEmissive: [0.2, 0.2, 0.9, 0],
+        materialSpecular: [0.2, 0, 0.8, 0],
+        materialSpecularPower: 0,
+        opacity: 1
+      };
+      return mat;
     }
   };
 
