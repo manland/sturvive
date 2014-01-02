@@ -28,6 +28,7 @@ require(['goo/entities/GooRunner',
   if(screenHeight > 350) {
     screenHeight = 350;
   }
+  goo.renderer.domElement.classList.add('canvas');
   goo.renderer.setSize(screenWidth-5, screenHeight-5);
   goo.renderer.setClearColor(0, 0, 0, 1);
   document.body.appendChild(goo.renderer.domElement);
@@ -54,17 +55,16 @@ require(['goo/entities/GooRunner',
     );
   }, function() {}, null);
 
-  var b = TouchButton.build('shootButton', function() {
-    // var d = EntityHelper.getDistance(camera.entity, sc.entity);
-    // console.log(d);
-    new BulletComponent(
-      goo.world, 
-      EntityHelper.getPosition(camera.entity), 
-      camera.getBulletPosition(), 
-      camera.script.yRotationAcc,
-      entities,
-      false);
-  });
-  document.getElementsByTagName('body')[0].appendChild(b);
+  document.getElementsByTagName('body')[0].appendChild(
+    TouchButton.build('shootButton', function() {
+      new BulletComponent(
+        goo.world, 
+        EntityHelper.getPosition(camera.entity), 
+        camera.getBulletPosition(), 
+        camera.script.yRotationAcc,
+        entities,
+        false);
+    })
+  );
   
 });
