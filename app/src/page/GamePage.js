@@ -59,9 +59,9 @@ define('page/GamePage', [
     }
 
     var elementsDomVisible = function elementsDomVisible(bool) {
-      canvas.style.display = ((bool === false) ? 'none' : 'block');
-      pauseButton.style.display = ((bool === false) ? 'none' : 'block');
-      crosschair.style.display = ((bool === false) ? 'none' : 'block');
+      for(var i=0, len=document.body.children.length; i<len; i++) {
+        document.body.children[i].style.display = ((bool === false) ? 'none' : 'block');
+      }
     };
 
     var startGame = function startGame() {
