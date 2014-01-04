@@ -68,6 +68,12 @@ define('helper/DomHelper',
       d.innerHTML = sentence;
       pageContainer.appendChild(d);
       return d;
+    },
+    addCrosschair: function() {
+      var d = buildContainer('crosschair');
+      d.innerHTML = '+';
+      document.body.appendChild(d);
+      return d;
     }
   };
 

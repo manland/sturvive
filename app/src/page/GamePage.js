@@ -29,6 +29,7 @@ define('page/GamePage', [
       DomHelper.clearPageContent();
       DomHelper.hidePage();
       startGame();
+      DomHelper.addCrosschair();
     }
 
     var startGame = function startGame() {
