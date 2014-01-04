@@ -44,7 +44,6 @@ define('helper/TouchButton', function() {
         div.addEventListener('touchstart', _handleStart, false);
         div.addEventListener('touchmove', _handleStart, false);
         div.addEventListener('mousedown', _handleStart, false);
-        div.addEventListener('mousemove', _handleStart, false);
       }
       if(handleStop) {
         var _handleStop = function(e) {
@@ -60,7 +59,6 @@ define('helper/TouchButton', function() {
         div.addEventListener('touchcancel', _handleStop, false);
         div.addEventListener('touchleave', _handleStop, false);
         div.addEventListener('mouseup', _handleStop, false);
-        div.addEventListener('mouseleave', _handleStop, false);
       }
       return div;
     }
