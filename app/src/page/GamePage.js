@@ -9,7 +9,8 @@ define('page/GamePage', [
   'helper/TouchButton',
   'helper/KeyboardHelper',
   'helper/MobileHelper',
-  'helper/DomHelper'
+  'helper/DomHelper',
+  'page/PausePage'
 ], function(
   GooRunner,
   CameraComponent,
@@ -21,16 +22,47 @@ define('page/GamePage', [
   TouchButton,
   KeyboardHelper,
   MobileHelper,
-  DomHelper) {
+  DomHelper,
+  PausePage) {
 
     var backCallback;
+    var canvas;
+    var pauseButton;
+    var crosschair;
 
     function build() {
       DomHelper.clearPageContent();
       DomHelper.hidePage();
-      startGame();
-      DomHelper.addCrosschair();
+      var goo = startGame();
+      crosschair = DomHelper.addCrosschair();
+      var isRunningGame = true;
+      pauseButton = DomHelper.buildButton('||', function(e) {
+        if(isRunningGame) {
+          goo.stopGameLoop();
+          isRunningGame = false;
+          elementsDomVisible(false);
+          PausePage.show(function() {
+            DomHelper.clearPageContent();
+            DomHelper.hidePage();
+            goo.startGameLoop();
+            isRunningGame = true;
+            elementsDomVisible(true);
+          });
+          DomHelper.showPage();
+        } else {
+          goo.startGameLoop();
+          isRunningGame = true;
+        }
+      });
+      pauseButton.classList.add('pause');
+      document.body.appendChild(pauseButton);
     }
+
+    var elementsDomVisible = function elementsDomVisible(bool) {
+      canvas.style.display = ((bool === false) ? 'none' : 'block');
+      pauseButton.style.display = ((bool === false) ? 'none' : 'block');
+      crosschair.style.display = ((bool === false) ? 'none' : 'block');
+    };
 
     var startGame = function startGame() {
       var goo = new GooRunner();
@@ -42,10 +74,11 @@ define('page/GamePage', [
       if(screenHeight > 350) {
         screenHeight = 350;
       }
-      goo.renderer.domElement.classList.add('canvas');
+      canvas = goo.renderer.domElement;
+      canvas.classList.add('canvas');
       goo.renderer.setSize(screenWidth, screenHeight);
       goo.renderer.setClearColor(0, 0, 0, 1);
-      document.body.appendChild(goo.renderer.domElement);
+      document.body.appendChild(canvas);
       
       var sun = new SunComponent(goo.world, true);
       
@@ -82,6 +115,7 @@ define('page/GamePage', [
           );
         }, function() {}, null);
       }
+      return goo;
     };
 
     return {

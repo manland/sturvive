@@ -1,0 +1,16 @@
+.button.pause {
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+	line-height: 1.2em;
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 22px;
+}

@@ -86,6 +86,18 @@ define('helper/LangHelper', function() {
   lang.en.compatibilityNavigatorLanguageDescription = 'Game can\'t select your language !';
   lang.fr.compatibilityNavigatorLanguageDescription = 'Le jeu ne peut pas sélectionner ta langue !';
 
+  /*************************\
+  * PAUSE PAGE              *
+  \*************************/
+  lang.en.pauseTitle = 'Pause';
+  lang.fr.pauseTitle = 'Pause';
+  lang.en.pauseHelp = 'Help';
+  lang.fr.pauseHelp = 'Aide';
+  lang.en.pauseOptions = 'Options';
+  lang.fr.pauseOptions = 'Options';
+  lang.en.pauseRestart = 'Restart';
+  lang.fr.pauseRestart = 'Redémarrer';
+
   return {
     get: function(key) {
       return lang[currentLang][key];
