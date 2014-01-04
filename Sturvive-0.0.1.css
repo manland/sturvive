@@ -1,0 +1,218 @@
+/**
+ * Sturvive - v0.0.1 - 2014-01-04
+ * 
+ *
+ * Copyright (c) 2014 Manland
+ * Licensed  <>
+ */
+.button.pause {
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+	line-height: 1.2em;
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 22px;
+}
+.langs {
+	position: absolute;
+	top:10px;
+	right:5px;
+}
+
+.lang {
+	height: 32px;
+	background:url(../assets/img/flags.png) no-repeat;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 5px;
+	opacity: 0.5;
+	padding: 0;
+}
+.lang:hover {
+	opacity: 1;
+}
+
+.lang.en {
+	background-position: 0 -32px;
+	width: 42px;
+}
+.lang.en.active {
+	background-position: 0 0;
+	opacity: 1;
+}
+
+.lang.fr {
+	background-position: -42px -32px;
+	width: 45px;
+}
+.lang.fr.active {
+	background-position: -42px 0;
+	opacity: 1;
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.canvas {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.crosschair {
+	position: absolute;
+	margin: auto;
+	font-size: 1.5em;
+	color: #fff;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 15px;
+	height: 0;
+	z-index: 100;
+}
+
+.inputHelperMainContainer {
+	position: absolute;
+	width: 400px;
+	height: 100%;
+	overflow: auto;
+	right: 0;
+	top: 0;
+	border-left: 1px solid #fff;
+}
+
+.xzButton {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+.yButton {
+	position: absolute;
+	bottom: 30px;
+	right: 5px;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.shootButton {
+	position: absolute;
+	bottom: 70px;
+	right: 50px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+.pageContainer {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.pageContainer .title {
+	font-size: 3em;
+	margin: 5%;
+}
+
+.pageContainer .button {
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+	line-height: 1.2em;
+	font-size: 1.2em;
+	padding: 20px 20%;
+	margin: 10px 20%;
+	border-radius: 5px;
+}
+
+.pageContainer .button.back {
+	padding: 5px 5%;
+	margin: 0;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+.pageContainer .button.small {
+	padding: 5px 5%;
+	margin: 5px 5%;
+	display: inline-block;
+}
+
+.pageContainer .button:hover {
+	color: #ccc;
+	background-color: #333;
+}
+
+.pageContainer img {
+	width: 50%;
+}
+
+.compatibility {
+	padding: 10px;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+.compatibility.true:after {
+	content: "OK";
+	color: green;
+	background: #FFF;
+	padding: 5px;
+	display: inline-block;
+	transform:rotate(-2deg);
+	-webkit-transform:rotate(-2deg);
+	margin-left: 10px;
+}
+
+.compatibility.false:after {
+	content: "KO";
+	color: #cb2100;
+	background: #FFF;
+	padding: 5px;
+	display: inline-block;
+	transform:rotate(-2deg);
+	-webkit-transform:rotate(-2deg);
+	margin-left: 10px;
+}
+
+.compatibility .description {
+	position: absolute;
+	right: 0;
+	margin-right: 50px;
+	line-height: 22px;
+	padding: 10px;
+	font-size: 0.8em;
+}
+
+.compatibility.true .description {
+	display: none;
+}
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
