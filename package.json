@@ -1,12 +1,12 @@
 {
-  "name": "game-off-2013",
-  "version": "0.1.0",
+  "name": "Sturvive",
+  "version": "0.0.1",
   "scripts": {
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Froggies/game-off-2013.git"
+    "url": "https://github.com/manland/sturvive.git"
   },
   "keywords": [
     "game",
@@ -14,7 +14,7 @@
   ],
   "author": "Manland",
   "bugs": {
-    "url": "https://github.com/manland/jsboilerplate/issues"
+    "url": "https://github.com/manland/sturvive/issues"
   },
   "licenses": [
     {
