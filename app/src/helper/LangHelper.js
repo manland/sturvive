@@ -89,6 +89,9 @@ define('helper/LangHelper', function() {
   return {
     get: function(key) {
       return lang[currentLang][key];
+    },
+    getCurrentLang: function() {
+      return currentLang;
     }
   };
 

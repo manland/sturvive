@@ -1,0 +1,36 @@
+.langs {
+	position: absolute;
+	top:10px;
+	right:10px;
+}
+
+.lang {
+	height: 32px;
+	background:url(../assets/img/flags.png) no-repeat;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 5px;
+	opacity: 0.5;
+	padding: 0;
+}
+.lang:hover {
+	opacity: 1;
+}
+
+.lang.en {
+	background-position: 0 -32px;
+	width: 42px;
+}
+.lang.en.active {
+	background-position: 0 0;
+	opacity: 1;
+}
+
+.lang.fr {
+	background-position: -42px -32px;
+	width: 45px;
+}
+.lang.fr.active {
+	background-position: -42px 0;
+	opacity: 1;
+}

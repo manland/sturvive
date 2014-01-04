@@ -19,6 +19,16 @@ define('helper/DomHelper',
     hidePage: function() {
       pageContainer.style.display = 'none';
     },
+    addContainer: function(classname) {
+      var c = buildContainer(classname);
+      pageContainer.appendChild(c);
+      return c;
+    },
+    buildButton: function(label, callback, ctx) {
+      var b = TouchButton.build('button', callback, null, ctx);
+      b.innerHTML = label;
+      return b;
+    },
     clearPageContent: function() {
       pageContainer.innerHTML = '';
     },
@@ -32,6 +42,7 @@ define('helper/DomHelper',
       var b = TouchButton.build('button', callback, null, ctx);
       b.innerHTML = label;
       pageContainer.appendChild(b);
+      return b;
     },
     addPageBackButton: function(label, callback, ctx) {
       var b = TouchButton.build('button', callback, null, ctx);
