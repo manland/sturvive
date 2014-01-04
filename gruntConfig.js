@@ -6,6 +6,7 @@ module.exports = {
   
   app_files: {
     first: [],
+    last: 'src/main.js',
     js: [ 'app/src/**/*.js' ],
     html: [ 'app/index.tpl.html' ],
     stylesheet: ['app/stylesheet/**/*.css'],

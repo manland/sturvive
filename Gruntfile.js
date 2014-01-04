@@ -94,6 +94,7 @@ module.exports = function ( grunt ) {
           '<%= vendor_files.js %>',
           '<%= app_files.first %>',
           '<%= build_dir %>/app/src/**/*.js',
+          '<%= app_files.last %>',
           '<%= build_dir %>/app/stylesheet/**/*.css',
         ]
       },
@@ -221,6 +222,15 @@ module.exports = function ( grunt ) {
     var lessFiles = filterForLESS( this.filesSrc ).map( function ( file ) {
       return file.replace( dirRE, '' );
     });
+
+    var last;
+    for(var i=0, len=jsFiles.length; i<len && last === undefined; i++) {
+      if(jsFiles[i] === grunt.config('app_files.last')) {
+        last = jsFiles[i];
+        jsFiles.splice(i, 1);
+        jsFiles.push(last);
+      }
+    }
 
     grunt.file.copy('app/index.tpl.html', this.data.dir + '/index.html', { 
       process: function ( contents, path ) {
