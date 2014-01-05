@@ -4,7 +4,9 @@ define('helper/DomHelper',
 
   var buildContainer = function buildContainer(classname) {
     var div = document.createElement('div');
-    div.classList.add(classname);
+    if(classname) {
+      div.classList.add(classname);
+    }
     return div;
   };
 
@@ -74,6 +76,31 @@ define('helper/DomHelper',
       d.innerHTML = '+';
       document.body.appendChild(d);
       return d;
+    },
+    addFuelAmount: function(height) {
+      var d = buildContainer('gauge');
+      d.style.height = height + 'px';
+      var percent = buildContainer();
+      d.appendChild(percent);
+      document.body.appendChild(d);
+      return {
+        update: function(p) {
+          percent.style.height = p + '%';
+          if(p > 60) {
+            percent.classList.add('relax');
+            percent.classList.remove('nervous');
+            percent.classList.remove('dead');
+          } else if(p > 30) {
+            percent.classList.add('nervous');
+            percent.classList.remove('relax');
+            percent.classList.remove('dead');
+          } else {
+            percent.classList.add('dead');
+            percent.classList.remove('nervous');
+            percent.classList.remove('relax');
+          }
+        }
+      };
     }
   };
 

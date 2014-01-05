@@ -28,21 +28,33 @@ define('component/CameraComponent', [
   
   'use strict';
 
-  function CameraComponent(world, showHelper) {
+  function CameraComponent(world, fuelZone, callbackAmountFuel, showHelper) {
     this.type = 'CameraComponent';
+    this.amountFuel = 100;
 
     this.camera = new Camera(35, 1, 0.1, 1000);
 
+    var afterRun = function afterRun(isMoving) {
+      if(EntityHelper.getDistance(this.entity, fuelZone) < 0) {
+        if(this.amountFuel < 100) {
+          this.amountFuel = this.amountFuel + 1;
+          callbackAmountFuel(this.amountFuel);
+        }
+      } else if(isMoving) {
+        this.amountFuel = this.amountFuel - 0.1;
+        callbackAmountFuel(this.amountFuel);
+      }
+    };
+
     if(MobileHelper.isMobile()) {
-      this.script = new MobileXYZControlScript();
+      this.script = new MobileXYZControlScript(afterRun, this);
     } else {
-      this.script = new KeyboardXYZControlScript();
+      this.script = new KeyboardXYZControlScript(afterRun, this);
     }
 
     this.entity =  EntityUtils.createTypicalEntity(
       world, 
       this.camera, 
-      [0,0,7], 
       this.script
     );
     this.entity.addToWorld();
@@ -69,6 +81,10 @@ define('component/CameraComponent', [
       pos.z = z;
     }
     return pos;
+  };
+
+  CameraComponent.prototype.updateFuelAmount = function(fuel) {
+    this.amountFuel = fuel;
   };
 
   return CameraComponent;

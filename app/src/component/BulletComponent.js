@@ -16,7 +16,7 @@ define('component/BulletComponent', [
   
   'use strict';
 
-  function BulletComponent(world, from, to, yRotation, allEntities, showHelper) {
+  function BulletComponent(world, from, to, yRotation, allEntities, callbackAfterRemoveEntities, showHelper) {
     this.type = 'BulletComponent';
 
     this.shape = ShapeCreator.createCylinder( 15, 0.01);
@@ -26,7 +26,7 @@ define('component/BulletComponent', [
       world, 
       this.shape, 
       this.material,
-      new RunEntityScript(yRotation, allEntities)
+      new RunEntityScript(yRotation, allEntities, callbackAfterRemoveEntities)
     );
     this.entity.transformComponent.setTranslation( from.x, from.y-0.5, from.z );
     this.entity.transformComponent.setRotation( 0.01, yRotation, 0 );
