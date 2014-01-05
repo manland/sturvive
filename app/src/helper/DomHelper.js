@@ -73,7 +73,7 @@ define('helper/DomHelper',
     },
     addCrosschair: function() {
       var d = buildContainer('crosschair');
-      d.innerHTML = '+';
+      d.innerHTML = '';
       document.body.appendChild(d);
       return d;
     },

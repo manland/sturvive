@@ -41,7 +41,7 @@ define('page/GamePage', [
       fuelDiv.update(100);
       var goo = startGame();
       var isRunningGame = true;
-      pauseButton = DomHelper.buildButton('||', function(e) {
+      pauseButton = DomHelper.buildButton('', function(e) {
         if(isRunningGame) {
           goo.stopGameLoop();
           isRunningGame = false;
@@ -111,24 +111,26 @@ define('page/GamePage', [
 
     var startNextMap = function startNextMap(world) {
       var currentMap = MapUtil.getNextMap();
-      if(currentMap.fuelZone) {
-        fuelZone.entity.transformComponent.setTranslation( 
-          currentMap.fuelZone.position.x, 
-          currentMap.fuelZone.position.y, 
-          currentMap.fuelZone.position.z 
+      if(currentMap) {
+        if(currentMap.fuelZone) {
+          fuelZone.entity.transformComponent.setTranslation( 
+            currentMap.fuelZone.position.x, 
+            currentMap.fuelZone.position.y, 
+            currentMap.fuelZone.position.z 
+          );
+        } else {
+          fuelZone.entity.transformComponent.setTranslation( 0, -100, 0 );
+        }
+        camera.updateFuelAmount(100);
+        fuelDiv.update(100);
+        camera.entity.transformComponent.setTranslation( 
+          currentMap.camera.position.x, 
+          currentMap.camera.position.y, 
+          currentMap.camera.position.z 
         );
-      } else {
-        fuelZone.entity.transformComponent.setTranslation( 0, -100, 0 );
+        camera.script.yRotationAcc = 0;
+        EntityManager.addToWorld(world, currentMap.getEntities());
       }
-      camera.updateFuelAmount(100);
-      fuelDiv.update(100);
-      camera.entity.transformComponent.setTranslation( 
-        currentMap.camera.position.x, 
-        currentMap.camera.position.y, 
-        currentMap.camera.position.z 
-      );
-      camera.script.yRotationAcc = 0;
-      EntityManager.addToWorld(world, currentMap.getEntities());
     };
 
     return {

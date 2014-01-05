@@ -1,12 +1,20 @@
-.gauge{
+.gauge {
 	background-color: #fff;
 	border-radius: 5px;
 	border: 1px solid #444;
 	box-shadow:0 0 4px rgba(0,0,0,0.5) inset;
-	overflow: hidden;
 	width: 10px;
 	margin: 30px 0 0 5px;
 	position: relative;
+}
+
+.gauge:before {
+	content: '\e800'; 
+	font-family: "fontello";
+	font-size: 1.5em;
+	position: absolute;
+	top: -1.2em;
+	left: 0;
 }
 
 .gauge div {
