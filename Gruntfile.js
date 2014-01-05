@@ -72,7 +72,7 @@ module.exports = function ( grunt ) {
         src: [ 
           '<%= app_files.stylesheet %>',
         ],
-        dest: '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+        dest: '<%= compile_dir %>/stylesheet/<%= pkg.name %>-<%= pkg.version %>.css'
       }
     },
 
