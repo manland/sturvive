@@ -1,11 +1,84 @@
 /**
- * Sturvive - v0.0.1 - 2014-01-04
+ * Sturvive - v0.0.1 - 2014-01-05
  * 
  *
  * Copyright (c) 2014 Manland
  * Licensed  <>
  */
+@font-face {
+    font-family: 'ubuntu';
+    src: url('../assets/font/UbuntuMono-B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../assets/font/fontello/font/fontello.eot?10984442');
+  src: url('../assets/font/fontello/font/fontello.eot?10984442#iefix') format('embedded-opentype'),
+       url('../assets/font/fontello/font/fontello.woff?10984442') format('woff'),
+       url('../assets/font/fontello/font/fontello.ttf?10984442') format('truetype'),
+       url('../assets/font/fontello/font/fontello.svg?10984442#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?10984442#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-help:before { content: '\e801'; } /* '' */
+.icon-road:before { content: '\e816'; } /* '' */
+.icon-move:before { content: '\e814'; } /* '' */
+.icon-pause:before { content: '\e802'; } /* '' */
+.icon-target-2:before { content: '\e810'; } /* '' */
+.icon-award:before { content: '\e811'; } /* '' */
+.icon-cog-alt:before { content: '\e815'; } /* '' */
+.icon-water:before { content: '\e80a'; } /* '' */
+.icon-arrow-curved:before { content: '\e806'; } /* '' */
+.icon-target-1:before { content: '\e808'; } /* '' */
+.icon-fuel:before { content: '\e800'; } /* '' */
+.icon-target:before { content: '\e803'; } /* '' */
+.icon-hourglass:before { content: '\e80b'; } /* '' */
 .button.pause {
+	font-family: 'fontello';
 	cursor: pointer;
 	background-color: #fff;
 	color: #000;
@@ -16,10 +89,152 @@
 	display: inline-block;
 	position: absolute;
 	margin: auto;
-	top: 0;
+	top: -5px;
 	left: 0;
 	right: 0;
-	width: 22px;
+	width: 17px;
+}
+
+.canvas {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.crosschair {
+	position: absolute;
+	margin: auto;
+	font-size: 1.5em;
+	color: #fff;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 15px;
+	height: 0;
+	z-index: 100;
+	font-family: "fontello";
+}
+
+.inputHelperMainContainer {
+	position: absolute;
+	width: 400px;
+	height: 100%;
+	overflow: auto;
+	right: 0;
+	top: 0;
+	border-left: 1px solid #fff;
+}
+
+.xzButton {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #fff;
+	text-align: center;
+}
+
+.xzButton:before { 
+	content: '\e814'; 
+	font-family: "fontello";
+	color: #000;
+	font-size: 2.5em;
+	line-height: 100px;
+}
+
+.yButton {
+	position: absolute;
+	bottom: 30px;
+	right: 5px;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.yButton:before { 
+	content: '\e806'; 
+	font-family: "fontello";
+	color: #000;
+	font-size: 1em;
+	line-height: 30px;
+	float: right;
+	margin-right: 5px;
+}
+
+.yButton:after { 
+	content: '\e806'; 
+	font-family: "fontello";
+	transform: scale(-1, 1);
+	display: inline-block;
+	color: #000;
+	font-size: 1em;
+	line-height: 30px;
+	margin-left: 5px;
+}
+
+.shootButton {
+	position: absolute;
+	bottom: 70px;
+	right: 50px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	text-align: center;
+}
+
+.shootButton:after {
+	content: '\e80a'; 
+	font-family: "fontello";
+	line-height: 50px;
+	transform: scale(1, -1);
+	display: inline-block;
+	color: #000;
+	font-size: 1.5em;
+}
+.gauge {
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #444;
+	box-shadow:0 0 4px rgba(0,0,0,0.5) inset;
+	width: 10px;
+	margin: 30px 0 0 5px;
+	position: relative;
+}
+
+.gauge:before {
+	content: '\e800'; 
+	font-family: "fontello";
+	font-size: 1.5em;
+	position: absolute;
+	top: -1.2em;
+	left: 0;
+}
+
+.gauge div {
+	width: 100%;
+	box-shadow:0 2px 4px 0 rgba(255,255,255,0.6) inset,0 -2px 4px 0 rgba(0,0,0,0.6) inset;
+	position: absolute;
+	bottom: 0;	
+}
+
+.gauge .relax {
+	background-color: green;
+}
+
+.gauge .nervous {
+	background-color: orange;
+}
+
+.gauge .dead {
+	background-color: #e02100;
 }
 .langs {
 	position: absolute;
@@ -65,69 +280,6 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-}
-
-.canvas {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-.crosschair {
-	position: absolute;
-	margin: auto;
-	font-size: 1.5em;
-	color: #fff;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 15px;
-	height: 0;
-	z-index: 100;
-}
-
-.inputHelperMainContainer {
-	position: absolute;
-	width: 400px;
-	height: 100%;
-	overflow: auto;
-	right: 0;
-	top: 0;
-	border-left: 1px solid #fff;
-}
-
-.xzButton {
-	position: absolute;
-	bottom: 5px;
-	left: 5px;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	background-color: #fff;
-}
-
-.yButton {
-	position: absolute;
-	bottom: 30px;
-	right: 5px;
-	width: 100px;
-	height: 30px;
-	border-radius: 5px;
-	background-color: #fff;
-}
-
-.shootButton {
-	position: absolute;
-	bottom: 70px;
-	right: 50px;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background-color: #fff;
 }
 .pageContainer {
 	width: 100%;
@@ -216,3 +368,8 @@ body {
 }
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+	font-family:"ubuntu";
+	font-size: 1em;
+}
