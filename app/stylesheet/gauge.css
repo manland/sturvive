@@ -1,0 +1,29 @@
+.gauge{
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #444;
+	box-shadow:0 0 4px rgba(0,0,0,0.5) inset;
+	overflow: hidden;
+	width: 10px;
+	margin: 30px 0 0 5px;
+	position: relative;
+}
+
+.gauge div {
+	width: 100%;
+	box-shadow:0 2px 4px 0 rgba(255,255,255,0.6) inset,0 -2px 4px 0 rgba(0,0,0,0.6) inset;
+	position: absolute;
+	bottom: 0;	
+}
+
+.gauge .relax {
+	background-color: green;
+}
+
+.gauge .nervous {
+	background-color: orange;
+}
+
+.gauge .dead {
+	background-color: #e02100;
+}
