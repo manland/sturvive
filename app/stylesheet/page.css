@@ -83,3 +83,30 @@
 .compatibility.true .description {
 	display: none;
 }
+
+.options .sizeScreenContainer {
+
+}
+
+.options .sizeScreenContainer .buttonContainer {
+	display: inline-block;
+	width: 45%;
+}
+
+.options .sizeScreenContainer .sizeScreenViewContainer {
+	display: inline-block;
+	width: 40%;
+	height: 150px;
+	border: 1px solid #fff;
+	position: relative;
+}
+
+.options .sizeScreenContainer .sizeScreenViewContainer .sizeScreenView {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: 1px solid #FF0000;
+}

@@ -34,6 +34,14 @@ define('helper/DomHelper',
       b.innerHTML = label;
       return b;
     },
+    buildTitle: function(label, optClassname) {
+      var h = document.createElement('h1');
+      h.innerHTML = label;
+      if(optClassname) {
+        h.classList.add(optClassname);
+      }
+      return h;
+    },
     clearPageContent: function() {
       pageContainer.innerHTML = '';
     },
