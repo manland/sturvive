@@ -73,8 +73,6 @@ define('helper/LangHelper', function() {
   lang.fr.compatibilityCssTransitionDescription = 'TODO';
   lang.en.compatibilityClassListDescription = 'TODO';
   lang.fr.compatibilityClassListDescription = 'TODO';
-  lang.en.compatibilityAjaxDescription = 'TODO';
-  lang.fr.compatibilityAjaxDescription = 'TODO';
   lang.en.compatibilityLocalStorageDescription = 'TODO';
   lang.fr.compatibilityLocalStorageDescription = 'TODO';
   lang.en.compatibilityMp3Description = 'You can\'t play mp3 songs !';

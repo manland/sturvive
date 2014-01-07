@@ -32,18 +32,6 @@ define('util/CompatibilityUtil', function() {
   }
 
   //from http://diveintohtml5.info/everything.html
-  function hasAjaxRequest() {
-    try {
-      if(window.XMLHttpRequest) {
-        return 'withCredentials' in new XMLHttpRequest();
-      }
-    } catch(e) {
-      return false;
-    }
-    return false;
-  }
-
-  //from http://diveintohtml5.info/everything.html
   function hasLocalStorage() {
     try {
       return 'localStorage' in window && window['localStorage'] !== null;
@@ -105,7 +93,6 @@ define('util/CompatibilityUtil', function() {
 
   var _hasWebGlContext = hasWebGlContext();
   var _hasCssTransition = hasCssTransition();
-  var _hasAjaxRequest = hasAjaxRequest();
   var _hasLocalStorage = hasLocalStorage();
   var _hasAudioMp3 = hasAudioMp3();
   var _hasAudioWav = hasAudioWav();
@@ -124,7 +111,6 @@ define('util/CompatibilityUtil', function() {
       return _hasWebGlContext &&
         _hasCssTransition && 
         _hasClassList &&
-        _hasAjaxRequest && 
         _hasLocalStorage &&
         _hasNavigatorLanguage &&
         (_hasAudioMp3 && _hasAudioWav && _hasAudioOgg);
@@ -133,7 +119,6 @@ define('util/CompatibilityUtil', function() {
       var nb = 0;
       nb = nb + ((_hasWebGlContext === true) ? 1 : 0);
       nb = nb + ((_hasCssTransition === true) ? 1 : 0);
-      nb = nb + ((_hasAjaxRequest === true) ? 1 : 0);
       nb = nb + ((_hasLocalStorage === true) ? 1 : 0);
       nb = nb + ((_hasAudioMp3 === true) ? 1 : 0);
       nb = nb + ((_hasAudioWav === true) ? 1 : 0);
@@ -143,16 +128,13 @@ define('util/CompatibilityUtil', function() {
       return nb;
     },
     nbItem: function() {
-      return 9;
+      return 8;
     },
     hasWebGlContext: function() {
       return _hasWebGlContext;
     },
     hasCssTransition: function() {
       return _hasCssTransition;
-    },
-    hasAjaxRequest: function() {
-      return _hasAjaxRequest;
     },
     hasLocalStorage: function() {
       return _hasLocalStorage;
