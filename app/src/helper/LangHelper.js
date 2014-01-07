@@ -98,6 +98,24 @@ define('helper/LangHelper', function() {
   lang.en.pauseRestart = 'Restart';
   lang.fr.pauseRestart = 'Redémarrer';
 
+  /*************************\
+  * GAME PAGE               *
+  \*************************/
+  lang.en.forwardKeyboardDescription = 'To go forward use up key !';
+  lang.fr.forwardKeyboardDescription = 'Pour aller en avant utilise la flêche du haut !';
+  lang.en.backwardKeyboardDescription = 'To go backward use down key !';
+  lang.fr.backwardKeyboardDescription = 'Pour aller en arrière utilise la flêche du bas !';
+  lang.en.leftKeyboardDescription = 'To go left use left key !';
+  lang.fr.leftKeyboardDescription = 'Pour aller à gauche utilise la flêche gauche !';
+  lang.en.rightKeyboardDescription = 'To go right use right key !';
+  lang.fr.rightKeyboardDescription = 'Pour aller à droite utilise la flêche droite !';
+  lang.en.tournLeftKeyboardDescription = 'To tourn righ use c key !';
+  lang.fr.tournLeftKeyboardDescription = 'Pour tourner à gauche utilise la touche c !';
+  lang.en.tournRightKeyboardDescription = 'To tourn left use v key !';
+  lang.fr.tournRightKeyboardDescription = 'Pour tourner à droite utilise la touche v !';
+  lang.en.shootKeyboardDescription = 'To shoot use space key !';
+  lang.fr.shootKeyboardDescription = 'Pour tirer utilise la touche espace !';
+
   return {
     get: function(key) {
       return lang[currentLang][key];

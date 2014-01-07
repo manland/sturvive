@@ -109,6 +109,12 @@ define('helper/DomHelper',
           }
         }
       };
+    },
+    addTouch: function(classname) {
+      var d = buildContainer('touch');
+      d.classList.add(classname);
+      document.body.appendChild(d);
+      return d;
     }
   };
 

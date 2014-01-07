@@ -2,7 +2,7 @@ define('util/MapUtil', function() {
 
 	'use strict';
 
-  var currentMap = 2;//-1;
+  var currentMap = -1;
 
   var maps = {
 
@@ -20,7 +20,7 @@ define('util/MapUtil', function() {
         position: {x:0, y:0, z:7}
       },
       getEntities: function() {
-        return [{position: {x: 5, y:0, z:-7}}];
+        return [{position: {x: 5, y:0, z:-7}}, {position: {x: 15, y:0, z:7}}];
       }
     },
 

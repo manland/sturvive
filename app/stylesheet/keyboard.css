@@ -1,0 +1,64 @@
+.touch {
+	font-size: 2em;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	line-height: 50px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-family: "fontello";
+	cursor: help;
+}
+
+.touch.up:before {
+	content: "\e807";
+}
+.touch.up {
+	bottom: 55px;
+}
+.touch.down:before {
+	content: "\e803";
+}
+.touch.down {
+}
+.touch.right:before {
+	content: "\e804";
+}
+.touch.right {
+	right: -110px;
+}
+.touch.left:before {
+	content: "\e805";
+}
+.touch.left {
+	left: -110px;
+}
+
+.touch.tournRight:before {
+	content: "\e806";
+}
+.touch.tournRight {
+	left: -550px;
+}
+.touch.tournLeft:before {
+	content: "\e806";
+	transform: scale(-1, 1);
+	display: inline-block;
+}
+.touch.tournLeft {
+	left: -660px;
+}
+
+.touch.shoot:before {
+	content: "\e80a";
+	transform: scale(1, -1);
+	display: inline-block;
+}
+.touch.shoot {
+	right: -550px;
+}
