@@ -47,10 +47,11 @@ define('component/CameraComponent', [
     };
 
     if(MobileHelper.isMobile()) {
-      this.script = new MobileXYZControlScript(afterRun, this);
+      this.script = new MobileXYZControlScript();
     } else {
-      this.script = new KeyboardXYZControlScript(afterRun, this);
+      this.script = new KeyboardXYZControlScript();
     }
+    this.script.onRun(afterRun, this);
 
     this.entity =  EntityUtils.createTypicalEntity(
       world, 

@@ -4,22 +4,26 @@ define('page/GamePage', [
   'component/SunComponent',
   'component/FinalZoneComponent',
   'component/FuelZoneComponent',
+  'component/StarshipComponent',
   'helper/DomHelper',
   'helper/ShootHelper',
   'page/PausePage',
   'manager/EntityManager',
-  'util/MapUtil'
+  'util/MapUtil',
+  'util/RadarUtil'
 ], function(
   GooRunner,
   CameraComponent,
   SunComponent,
   FinalZoneComponent,
   FuelZoneComponent,
+  StarshipComponent,
   DomHelper,
   ShootHelper,
   PausePage,
   EntityManager,
-  MapUtil) {
+  MapUtil,
+  RadarUtil) {
 
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
     var screenHeight = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
@@ -86,6 +90,8 @@ define('page/GamePage', [
       var sun = new SunComponent(goo.world, true);
 
       fuelZone = new FuelZoneComponent(goo.world, true);
+
+      //new StarshipComponent(goo.world, true);
       
       camera = new CameraComponent(
         goo.world, 
@@ -97,7 +103,7 @@ define('page/GamePage', [
 
       //new FinalZoneComponent(goo.world, true);
 
-      EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(nbEntityInGame) {
+      EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(entity, nbEntityInGame) {
         if(nbEntityInGame === 0) {
           startNextMap(goo.world);
         }
@@ -105,6 +111,7 @@ define('page/GamePage', [
 
       ShootHelper.start(goo.world, camera);
 
+      RadarUtil.draw(camera, fuelZone);
       startNextMap(goo.world);
       return goo;
     };

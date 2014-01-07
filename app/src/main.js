@@ -1,6 +1,15 @@
 require(
-  ['helper/DomHelper', 'page/HomePage', 'page/CompatibilityPage', 'util/CompatibilityUtil'], 
-  function ( DomHelper, HomePage, CompatibilityPage, CompatibilityUtil) {
+  [
+    'helper/DomHelper', 
+    'page/HomePage', 
+    'page/CompatibilityPage', 
+    'util/CompatibilityUtil'
+  ], 
+  function ( 
+    DomHelper, 
+    HomePage, 
+    CompatibilityPage, 
+    CompatibilityUtil) {
   
     'use strict';
 

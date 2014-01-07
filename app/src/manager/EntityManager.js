@@ -3,7 +3,8 @@ define('manager/EntityManager',
   function(StarComponent, EntityHelper) {
 
     var entities = [];
-    var onRemoveEntity;
+    var onNewEntities;
+    var onRemoveEntity = [];
 
     return {
       addToWorld: function(world, entitiesToAdd) {
@@ -16,22 +17,29 @@ define('manager/EntityManager',
         for(var i=0, len=entitiesToAdd.length; i<len; i++) {
           entities.push(new StarComponent(world, entitiesToAdd[i].position, i===0).entity);
         }
+        if(onNewEntities) {
+          onNewEntities(entities);
+        }
       },
       checkCollision: function(entity) {
         for(var i=0, len=entities.length; i<len; i++) {
           if(EntityHelper.getDistance(entity, entities[i]) < 0) {
             entities[i].removeFromWorld();
+            var e = entities[i];
             entities.splice(i, 1);
             entity.removeFromWorld();
-            if(onRemoveEntity) {
-              onRemoveEntity(len-1);
+            for(var c=0, l=onRemoveEntity.length; c<l; c++) {
+              onRemoveEntity[c](e, len-1);
             }
             return;
           }
         }
       },
+      onNewEntities: function(callback) {
+        onNewEntities = callback;
+      },
       onRemoveEntity: function(callback) {
-        onRemoveEntity = callback;
+        onRemoveEntity.push(callback);
       }
     };
   }

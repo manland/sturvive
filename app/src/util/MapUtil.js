@@ -2,7 +2,7 @@ define('util/MapUtil', function() {
 
 	'use strict';
 
-  var currentMap = -1;
+  var currentMap = 2;//-1;
 
   var maps = {
 

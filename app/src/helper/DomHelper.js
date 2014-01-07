@@ -26,6 +26,9 @@ define('helper/DomHelper',
       pageContainer.appendChild(c);
       return c;
     },
+    buildDiv: function(classname) {
+      return buildContainer(classname);
+    },
     buildButton: function(label, callback, ctx) {
       var b = TouchButton.build('button', callback, null, ctx);
       b.innerHTML = label;
@@ -74,6 +77,11 @@ define('helper/DomHelper',
     addCrosschair: function() {
       var d = buildContainer('crosschair');
       d.innerHTML = '';
+      document.body.appendChild(d);
+      return d;
+    },
+    addRadar: function() {
+      var d = buildContainer('radar');
       document.body.appendChild(d);
       return d;
     },

@@ -1,15 +1,9 @@
 define('script/KeyboardXYZControlScript', 
-  ['helper/KeyboardHelper', 'helper/DebuggerHelper', 'goo/math/Vector3', 'helper/MathHelper'], 
-  function(KeyboardHelper, DebuggerHelper, Vector3, MathHelper) {
+  ['helper/KeyboardHelper', 'helper/DebuggerHelper', 'script/AbstractXYZControlScript'], 
+  function(KeyboardHelper, DebuggerHelper, AbstractXYZControlScript) {
 
-  function KeyboardXYZControlScript(afterRunCallback, afterRunCtx) {
-    this.afterRunCallback = afterRunCallback;
-    this.afterRunCtx = afterRunCtx;
-    this.x = 0;
-    this.yRotation = 0;
-    this.yRotationAcc = 0;
-    this.z = 0;
-
+  function KeyboardXYZControlScript() {
+    AbstractXYZControlScript.prototype.constructor.apply(this);
     KeyboardHelper.listen(
       38,//UP
       function() { this.z = 0.5; },
@@ -53,16 +47,7 @@ define('script/KeyboardXYZControlScript',
     );
   }
 
-  KeyboardXYZControlScript.prototype.run = function(camera) {
-    this.yRotationAcc = this.yRotationAcc + this.yRotation;
-    var v = MathHelper.rotateVectorByYRad(new Vector3(this.x, 0, this.z), this.yRotationAcc);
-    camera.transformComponent.addTranslation(v.x, 0, -v.z);
-    camera.transformComponent.setRotation(0, this.yRotationAcc, 0);
-    if(this.afterRunCallback) {
-      var isMoving = this.yRotation !== 0 || this.x !== 0 || this.z !== 0;
-      this.afterRunCallback.call(this.afterRunCtx, isMoving);
-    }
-  };
+  KeyboardXYZControlScript.prototype = Object.create(AbstractXYZControlScript.prototype);
 
   return KeyboardXYZControlScript;
 

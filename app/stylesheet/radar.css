@@ -1,0 +1,36 @@
+.radar {
+	position: absolute;
+	top: 80px;
+	right: 5px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	text-align: center;
+	overflow: hidden;
+}
+
+.radar:before {
+	content: attr(nbentities);
+	font-size: 2em;
+	line-height: 100px;
+}
+
+.radarEntity, .radarCamera, .radarFuelZone {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+}
+
+.radarEntity {
+	background-color: orange;
+}
+
+.radarCamera {
+	background-color: red;
+}
+
+.radarFuelZone {
+	background-color: green;
+}
