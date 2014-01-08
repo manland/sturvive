@@ -10,7 +10,8 @@ define('page/GamePage', [
   'page/PausePage',
   'manager/EntityManager',
   'util/MapUtil',
-  'util/RadarUtil'
+  'util/RadarUtil',
+  'util/OptionsUtil'
 ], function(
   GooRunner,
   CameraComponent,
@@ -23,7 +24,8 @@ define('page/GamePage', [
   PausePage,
   EntityManager,
   MapUtil,
-  RadarUtil) {
+  RadarUtil,
+  OptionsUtil) {
 
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
     var screenHeight = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
@@ -53,6 +55,9 @@ define('page/GamePage', [
           PausePage.show(function() {
             DomHelper.clearPageContent();
             DomHelper.hidePage();
+            var w = screenWidth * OptionsUtil.get('screenSize');
+            var h = screenHeight * OptionsUtil.get('screenSize');
+            goo.renderer.setSize(w, h);
             goo.startGameLoop();
             isRunningGame = true;
             elementsDomVisible(true);
@@ -75,15 +80,11 @@ define('page/GamePage', [
 
     var startGame = function startGame() {
       var goo = new GooRunner();
-      if(screenWidth > 500) {
-        screenWidth = 500;
-      }
-      if(screenHeight > 350) {
-        screenHeight = 350;
-      }
+      var w = screenWidth * OptionsUtil.get('screenSize');
+      var h = screenHeight * OptionsUtil.get('screenSize');
       canvas = goo.renderer.domElement;
       canvas.classList.add('canvas');
-      goo.renderer.setSize(screenWidth, screenHeight);
+      goo.renderer.setSize(w, h);
       goo.renderer.setClearColor(0, 0, 0, 1);
       document.body.appendChild(canvas);
       
