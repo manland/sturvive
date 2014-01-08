@@ -55,9 +55,7 @@ define('page/GamePage', [
           PausePage.show(function() {
             DomHelper.clearPageContent();
             DomHelper.hidePage();
-            var w = screenWidth * OptionsUtil.get('screenSize');
-            var h = screenHeight * OptionsUtil.get('screenSize');
-            goo.renderer.setSize(w, h);
+            updateSceneSize(goo);
             goo.startGameLoop();
             isRunningGame = true;
             elementsDomVisible(true);
@@ -78,13 +76,17 @@ define('page/GamePage', [
       }
     };
 
-    var startGame = function startGame() {
-      var goo = new GooRunner();
+    var updateSceneSize = function updateSceneSize(goo) {
       var w = screenWidth * OptionsUtil.get('screenSize');
       var h = screenHeight * OptionsUtil.get('screenSize');
+      goo.renderer.setSize(w, h);
+    };
+
+    var startGame = function startGame() {
+      var goo = new GooRunner();
       canvas = goo.renderer.domElement;
       canvas.classList.add('canvas');
-      goo.renderer.setSize(w, h);
+      updateSceneSize(goo);
       goo.renderer.setClearColor(0, 0, 0, 1);
       document.body.appendChild(canvas);
       
