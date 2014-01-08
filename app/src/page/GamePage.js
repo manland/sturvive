@@ -55,6 +55,7 @@ define('page/GamePage', [
           PausePage.show(function() {
             DomHelper.clearPageContent();
             DomHelper.hidePage();
+            EntityManager.redrawAllEntities(goo.world);
             updateSceneSize(goo);
             goo.startGameLoop();
             isRunningGame = true;

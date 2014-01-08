@@ -84,11 +84,13 @@
 	display: none;
 }
 
-.options .sizeScreenContainer {
-
+.options h1 {
+	margin: 5%;
+	font-size: 1.5em;
 }
 
-.options .sizeScreenContainer .buttonContainer {
+.options .sizeScreenContainer .buttonContainer,
+.options .meshDetailsContainer .buttonContainer {
 	display: inline-block;
 	width: 45%;
 }
@@ -109,4 +111,18 @@
 	left: 0;
 	right: 0;
 	border: 1px solid #FF0000;
+	font-size: 2em;
+}
+
+.options .meshDetailsContainer .meshDetailsView {
+	color: transparent;
+	text-shadow: 0 0 8px rgba(0,0,0,0.5);
+	background-color: #FFF;
+	display: inline-block;
+	font-size: 2em;
+	height: 150px;
+	line-height: 150px;
+	vertical-align: top;
+	width: 40%;
+	margin-top: 40px;
 }

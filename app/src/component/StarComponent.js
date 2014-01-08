@@ -3,13 +3,15 @@ define('component/StarComponent', [
   'goo/shapes/ShapeCreator',
   'goo/entities/EntityUtils',
   'material/ColoredMaterial',
-  'helper/InputHelper'
+  'helper/InputHelper',
+  'util/OptionsUtil'
 ], function (
   Component,
   ShapeCreator,
   EntityUtils,
   ColoredMaterial,
-  InputHelper
+  InputHelper,
+  OptionsUtil
   ) {
   
   'use strict';
@@ -17,7 +19,8 @@ define('component/StarComponent', [
   function StarComponent(world, position, showHelper) {
     this.type = 'StarComponent';
 
-    this.shape = ShapeCreator.createSphere(8, 8, 1);
+    var meshDetails = OptionsUtil.get('meshDetails');
+    this.shape = ShapeCreator.createSphere(5*meshDetails, 5*meshDetails, 1);
     this.material = new ColoredMaterial.buildStar();
 
     this.entity = EntityUtils.createTypicalEntity( world, this.shape, this.material );

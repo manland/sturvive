@@ -3,21 +3,24 @@ define('component/FuelZoneComponent', [
   'goo/shapes/ShapeCreator',
   'goo/entities/EntityUtils',
   'material/ColoredMaterial',
-  'helper/InputHelper'
+  'helper/InputHelper',
+  'util/OptionsUtil'
 ], function (
   Component,
   ShapeCreator,
   EntityUtils,
   ColoredMaterial,
-  InputHelper
+  InputHelper,
+  OptionsUtil
   ) {
   
   'use strict';
 
   function SunComponent(world, showHelper) {
     this.type = 'FuelZoneComponent';
-
-    this.shape = ShapeCreator.createSphere( 10, 10, 0.5);
+    
+    var meshDetails = OptionsUtil.get('meshDetails');
+    this.shape = ShapeCreator.createSphere( 5*meshDetails, 5*meshDetails, 0.8);
     this.material = new ColoredMaterial.buildFuelZone();
     this.material.wireframe = true;
 

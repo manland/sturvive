@@ -35,6 +35,17 @@ define('manager/EntityManager',
           }
         }
       },
+      redrawAllEntities: function(world) {
+        var temp = [], i, len;
+        for(i=entities.length-1; i>-1; i--) {
+          entities[i].removeFromWorld();
+          temp.push({position: EntityHelper.getPosition(entities[i])});
+        }
+        entities = [];
+        for(i=0, len=temp.length; i<len; i++) {
+          entities.push(new StarComponent(world, temp[i].position, i===0).entity);
+        }
+      },
       onNewEntities: function(callback) {
         onNewEntities = callback;
       },

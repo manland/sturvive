@@ -6,7 +6,7 @@ define('util/OptionsUtil',
 
   var defaultOptions = {
     screenSize: 0.3,
-    detailsLevel: 1
+    meshDetails: 1
   };
 
   if(MobileHelper.isMobile()) {
