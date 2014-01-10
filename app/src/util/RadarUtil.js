@@ -20,7 +20,7 @@ define('util/RadarUtil',
       camera.script.onRun(updateCamera);
     }
     if(lastEntities) {
-      refresh();
+      refresh(lastEntities);
     }
   };
 
@@ -39,7 +39,7 @@ define('util/RadarUtil',
       var zoneSize = 100;
       var maxX=zoneSize, maxZ=zoneSize, i=0, len=entities.length, pos, divElem;
       for(i=0; i<len; i++) {
-        pos = EntityHelper.getPosition(entities[i]);
+        pos = EntityHelper.getPosition(entities[i].entity);
         if(Math.abs(pos.x) > maxX) {
           maxX = pos.x;
         }
@@ -51,11 +51,11 @@ define('util/RadarUtil',
       widthZoneMax = zoneSize / (maxX * 2);
       for(i=0; i<len; i++) {
         divElem = DomHelper.buildDiv('radarEntity');
-        pos = EntityHelper.getPosition(entities[i]);
+        pos = EntityHelper.getPosition(entities[i].entity);
         divElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
         divElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
         div.appendChild(divElem);
-        entityByDiv[entities[i].name] = divElem;
+        entityByDiv[entities[i].entity.name] = divElem;
       }
 
       divElem = DomHelper.buildDiv('radarFuelZone');

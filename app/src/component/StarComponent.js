@@ -4,14 +4,16 @@ define('component/StarComponent', [
   'goo/entities/EntityUtils',
   'material/ColoredMaterial',
   'helper/InputHelper',
-  'util/OptionsUtil'
+  'util/OptionsUtil',
+  'manager/PlayerManager'
 ], function (
   Component,
   ShapeCreator,
   EntityUtils,
   ColoredMaterial,
   InputHelper,
-  OptionsUtil
+  OptionsUtil,
+  PlayerManager
   ) {
   
   'use strict';
@@ -19,6 +21,7 @@ define('component/StarComponent', [
   function StarComponent(world, position, showHelper) {
     this.type = 'StarComponent';
 
+    this.life = PlayerManager.get('starLife');
     var meshDetails = OptionsUtil.get('meshDetails');
     this.shape = ShapeCreator.createSphere(5*meshDetails, 5*meshDetails, 1);
     this.material = new ColoredMaterial.buildStar();
@@ -38,6 +41,18 @@ define('component/StarComponent', [
   StarComponent.prototype.showHelper = function() {
     var div = InputHelper.entity('Star', this.entity);
     InputHelper.coloredMaterial('color', this.material, div);
+  };
+
+  StarComponent.prototype.collide = function(otherEntity) {
+    console.log(otherEntity.power);
+    this.life = this.life - otherEntity.power;
+    if(this.life <= 0) {
+      this.entity.removeFromWorld();
+    }
+  };
+
+  StarComponent.prototype.isDead = function() {
+    return this.life <= 0;
   };
 
   return StarComponent;

@@ -123,6 +123,20 @@ define('helper/DomHelper',
       d.classList.add(classname);
       document.body.appendChild(d);
       return d;
+    },
+    addLifeContainer: function() {
+      var d = buildContainer('lifeContainer');
+      document.body.appendChild(d);
+      return d;
+    },
+    buildLife: function(isActive) {
+      var d = document.createElement('span');
+      d.classList.add('life');
+      if(!isActive) {
+        d.classList.add('inactive');
+      }
+      document.body.appendChild(d);
+      return d;
     }
   };
 

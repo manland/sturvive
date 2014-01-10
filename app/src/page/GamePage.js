@@ -9,6 +9,8 @@ define('page/GamePage', [
   'helper/ShootHelper',
   'page/PausePage',
   'manager/EntityManager',
+  'manager/PlayerManager',
+  'manager/LifeManager',
   'util/MapUtil',
   'util/RadarUtil',
   'util/OptionsUtil',
@@ -24,6 +26,8 @@ define('page/GamePage', [
   ShootHelper,
   PausePage,
   EntityManager,
+  PlayerManager,
+  LifeManager,
   MapUtil,
   RadarUtil,
   OptionsUtil,
@@ -65,6 +69,7 @@ define('page/GamePage', [
       });
       pauseButton.classList.add('pause');
       document.body.appendChild(pauseButton);
+      LifeManager.start();
     }
 
     var elementsDomVisible = function elementsDomVisible(bool) {
@@ -116,6 +121,7 @@ define('page/GamePage', [
     var startNextMap = function startNextMap(world) {
       var currentMap = MapUtil.getNextMap();
       if(currentMap) {
+        PlayerManager.reinitNbBullet();
         if(currentMap.fuelZone) {
           fuelZone.entity.transformComponent.setTranslation( 
             currentMap.fuelZone.position.x, 

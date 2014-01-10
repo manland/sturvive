@@ -10,7 +10,9 @@ define('component/CameraComponent', [
 
   'helper/MobileHelper',
   'helper/EntityHelper',
-  'helper/InputHelper'
+  'helper/InputHelper',
+
+  'manager/PlayerManager'
 ], function (
   Component,
   Camera,
@@ -23,7 +25,9 @@ define('component/CameraComponent', [
   
   MobileHelper,
   EntityHelper,
-  InputHelper
+  InputHelper,
+
+  PlayerManager
   ) {
   
   'use strict';
@@ -41,7 +45,7 @@ define('component/CameraComponent', [
           fuelZone.update(this.amountFuel);
         }
       } else if(isMoving) {
-        this.amountFuel = this.amountFuel - 0.1;
+        this.amountFuel = this.amountFuel - PlayerManager.get('fuelLoss');
         fuelZone.update(this.amountFuel);
       }
     };

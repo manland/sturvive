@@ -6,11 +6,12 @@
 .icon-left:before { content: '\e804'; } /* '' */
 .icon-right:before { content: '\e805'; } /* '' */
 .icon-up:before { content: '\e807'; } /* '' */
+.icon-pause:before { content: '\e802'; } /* '' */
 .icon-cog-alt:before { content: '\e815'; } /* '' */
-.icon-award:before { content: '\e811'; } /* '' */
+.icon-rocket:before { content: '\e809'; } /* '' */
 .icon-hourglass:before { content: '\e80b'; } /* '' */
 .icon-water:before { content: '\e80a'; } /* '' */
 .icon-arrow-curved:before { content: '\e806'; } /* '' */
 .icon-target-1:before { content: '\e808'; } /* '' */
 .icon-fuel:before { content: '\e800'; } /* '' */
-.icon-pause:before { content: '\e802'; } /* '' */
+.icon-award:before { content: '\e811'; } /* '' */

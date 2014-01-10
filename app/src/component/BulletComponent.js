@@ -4,14 +4,16 @@ define('component/BulletComponent', [
   'goo/entities/EntityUtils',
   'material/ColoredMaterial',
   'script/RunEntityScript',
-  'helper/InputHelper'
+  'helper/InputHelper',
+  'manager/PlayerManager'
 ], function (
   Component,
   ShapeCreator,
   EntityUtils,
   ColoredMaterial,
   RunEntityScript,
-  InputHelper
+  InputHelper,
+  PlayerManager
   ) {
   
   'use strict';
@@ -19,6 +21,8 @@ define('component/BulletComponent', [
   function BulletComponent(world, from, to, yRotation, allEntities, callbackAfterRemoveEntities, showHelper) {
     this.type = 'BulletComponent';
 
+    this.life = PlayerManager.get('bulletLife');
+    this.power = PlayerManager.get('bulletPower');
     this.shape = ShapeCreator.createCylinder( 15, 0.01);
     this.material = new ColoredMaterial.buildBullet();
 
@@ -43,6 +47,17 @@ define('component/BulletComponent', [
   BulletComponent.prototype.showHelper = function() {
     var div = InputHelper.entity('Bullet', this.entity);
     InputHelper.coloredMaterial('color', this.material, div);
+  };
+
+  BulletComponent.prototype.collide = function(otherEntity) {
+    this.life = this.life - 1;
+    if(this.life <= 0) {
+      this.entity.removeFromWorld();
+    }
+  };
+
+  BulletComponent.prototype.isDead = function() {
+    return this.life <= 0;
   };
 
   return BulletComponent;
