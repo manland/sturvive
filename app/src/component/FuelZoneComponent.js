@@ -4,17 +4,23 @@ define('component/FuelZoneComponent', [
   'goo/entities/EntityUtils',
   'material/ColoredMaterial',
   'helper/InputHelper',
-  'util/OptionsUtil'
+  'helper/DomHelper',
+  'util/OptionsUtil',
+  'util/ScreenUtil'
 ], function (
   Component,
   ShapeCreator,
   EntityUtils,
   ColoredMaterial,
   InputHelper,
-  OptionsUtil
+  DomHelper,
+  OptionsUtil,
+  ScreenUtil
   ) {
   
   'use strict';
+
+  var fuelDiv;
 
   function SunComponent(world, showHelper) {
     this.type = 'FuelZoneComponent';
@@ -31,6 +37,10 @@ define('component/FuelZoneComponent', [
     );
     this.entity.beeDataComponent = this;
     this.entity.addToWorld();
+
+    fuelDiv = DomHelper.addFuelAmount(ScreenUtil.getHeight() - (ScreenUtil.getHeight() * 0.5));
+    fuelDiv.update(100);
+
     if(showHelper) {
       this.showHelper();
     }
@@ -41,6 +51,10 @@ define('component/FuelZoneComponent', [
   SunComponent.prototype.showHelper = function() {
     var div = InputHelper.entity('FuelZone', this.entity);
     InputHelper.coloredMaterial('color', this.material, div);
+  };
+
+  SunComponent.prototype.update = function(fuelAmount) {
+    fuelDiv.update(fuelAmount);
   };
 
   return SunComponent;

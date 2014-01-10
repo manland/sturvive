@@ -11,7 +11,8 @@ define('page/GamePage', [
   'manager/EntityManager',
   'util/MapUtil',
   'util/RadarUtil',
-  'util/OptionsUtil'
+  'util/OptionsUtil',
+  'util/ScreenUtil'
 ], function(
   GooRunner,
   CameraComponent,
@@ -25,16 +26,13 @@ define('page/GamePage', [
   EntityManager,
   MapUtil,
   RadarUtil,
-  OptionsUtil) {
-
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
-    var screenHeight = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+  OptionsUtil,
+  ScreenUtil) {
 
     var backCallback;
     var canvas;
     var pauseButton;
     var crosschair;
-    var fuelDiv;
 
     var fuelZone;
     var camera;
@@ -43,8 +41,6 @@ define('page/GamePage', [
       DomHelper.clearPageContent();
       DomHelper.hidePage();
       crosschair = DomHelper.addCrosschair();
-      fuelDiv = DomHelper.addFuelAmount(screenHeight - (screenHeight * 0.5));
-      fuelDiv.update(100);
       var goo = startGame();
       var isRunningGame = true;
       pauseButton = DomHelper.buildButton('', function(e) {
@@ -78,8 +74,8 @@ define('page/GamePage', [
     };
 
     var updateSceneSize = function updateSceneSize(goo) {
-      var w = screenWidth * OptionsUtil.get('screenSize');
-      var h = screenHeight * OptionsUtil.get('screenSize');
+      var w = ScreenUtil.getWidth() * OptionsUtil.get('screenSize');
+      var h = ScreenUtil.getHeight() * OptionsUtil.get('screenSize');
       goo.renderer.setSize(w, h);
     };
 
@@ -99,10 +95,7 @@ define('page/GamePage', [
       
       camera = new CameraComponent(
         goo.world, 
-        fuelZone.entity, 
-        function(fuelAmount) {
-          fuelDiv.update(fuelAmount);
-        },
+        fuelZone, 
         true);
 
       //new FinalZoneComponent(goo.world, true);
@@ -133,7 +126,7 @@ define('page/GamePage', [
           fuelZone.entity.transformComponent.setTranslation( 0, -100, 0 );
         }
         camera.updateFuelAmount(100);
-        fuelDiv.update(100);
+        fuelZone.update(100);
         camera.entity.transformComponent.setTranslation( 
           currentMap.camera.position.x, 
           currentMap.camera.position.y, 

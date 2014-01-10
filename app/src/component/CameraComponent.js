@@ -28,21 +28,21 @@ define('component/CameraComponent', [
   
   'use strict';
 
-  function CameraComponent(world, fuelZone, callbackAmountFuel, showHelper) {
+  function CameraComponent(world, fuelZone, showHelper) {
     this.type = 'CameraComponent';
     this.amountFuel = 100;
 
     this.camera = new Camera(35, 1, 0.1, 1000);
 
     var afterRun = function afterRun(isMoving) {
-      if(EntityHelper.getDistance(this.entity, fuelZone) < 0) {
+      if(EntityHelper.getDistance(this.entity, fuelZone.entity) < 0) {
         if(this.amountFuel < 100) {
           this.amountFuel = this.amountFuel + 1;
-          callbackAmountFuel(this.amountFuel);
+          fuelZone.update(this.amountFuel);
         }
       } else if(isMoving) {
         this.amountFuel = this.amountFuel - 0.1;
-        callbackAmountFuel(this.amountFuel);
+        fuelZone.update(this.amountFuel);
       }
     };
 
