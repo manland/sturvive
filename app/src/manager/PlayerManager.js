@@ -3,19 +3,20 @@ define('manager/PlayerManager', function() {
   var initNbLife = 3;
   var initNbBullet = 50;
 
-  var onLooseLifeCallback;
-  var onWinLifeCallback;
+  var onLooseLifeCallback = [];
+  var onWinLifeCallback = [];
 
   var defaultOptions = {
     nbLife: initNbLife,//IN PROGRESS, cabler win and loose life
-    nbBullet: initNbBullet,
+    nbBullet: initNbBullet,//IN PROGRESS, display nb bullets
     nbBulletAtStart: initNbBullet,
     nbBulletPerShoot: 1,//TODO
     bulletPower: 1,
     bulletLife: 1,
-    fuelLoss: 0.5,
+    fuelLoss: 0.1,
     speed: 1,
-    starLife: 1
+    starLife: 1,
+    score: 0
   };
 
   var options = defaultOptions;
@@ -46,21 +47,21 @@ define('manager/PlayerManager', function() {
     },
     looseLife: function() {
       options.nbLife = options.nbLife - 1;
-      if(onLooseLifeCallback) {
-        onLooseLifeCallback();
+      for(var i=0, len=onLooseLifeCallback.length; i<len; i++) {
+        onLooseLifeCallback[i]();
       }
     },
     onLooseLife: function(callback) {
-      onLooseLifeCallback = callback;
+      onLooseLifeCallback.push(callback);
     },
     winLife: function() {
       options.nbLife = options.nbLife + 1;
-      if(onWinLifeCallback) {
-        onWinLifeCallback();
+      for(var i=0, len=onWinLifeCallback.length; i<len; i++) {
+        onWinLifeCallback[i]();
       }
     },
     onWinLife: function(callback) {
-      onWinLifeCallback = callback;
+      onWinLifeCallback.push(callback);
     }
 
   };

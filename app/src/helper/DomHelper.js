@@ -115,6 +115,9 @@ define('helper/DomHelper',
             percent.classList.remove('nervous');
             percent.classList.remove('relax');
           }
+        },
+        refreshHeight: function(height) {
+          d.style.height = height + 'px';
         }
       };
     },

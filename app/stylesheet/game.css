@@ -124,12 +124,13 @@
 .lifeContainer {
 	font-size: 1.5em;
 	position: absolute;
-	width: 50%;
+	width: 60%;
 	height: 30px;
 	left: 0;
 	right: 0;
 	top: 0;
 	margin: auto;
+	z-index: -1;
 }
 
 .life:before {

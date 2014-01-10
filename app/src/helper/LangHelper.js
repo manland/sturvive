@@ -114,6 +114,14 @@ define('helper/LangHelper', function() {
   lang.en.shootKeyboardDescription = 'To shoot use space key !';
   lang.fr.shootKeyboardDescription = 'Pour tirer utilise la touche espace !';
 
+  /*************************\
+  * BONUS PAGE              *
+  \*************************/
+  lang.en.bonusTitle = 'Bonus';
+  lang.fr.bonusTitle = 'Bonus';
+  lang.en.speedBonus = 'Speed';
+  lang.fr.speedBonus = 'Vitesse';
+
   return {
     get: function(key) {
       return lang[currentLang][key];

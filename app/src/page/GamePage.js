@@ -14,7 +14,8 @@ define('page/GamePage', [
   'util/MapUtil',
   'util/RadarUtil',
   'util/OptionsUtil',
-  'util/ScreenUtil'
+  'util/ScreenUtil',
+  'page/BonusPage'
 ], function(
   GooRunner,
   CameraComponent,
@@ -31,7 +32,8 @@ define('page/GamePage', [
   MapUtil,
   RadarUtil,
   OptionsUtil,
-  ScreenUtil) {
+  ScreenUtil,
+  BonusPage) {
 
     var backCallback;
     var canvas;
@@ -41,35 +43,55 @@ define('page/GamePage', [
     var fuelZone;
     var camera;
 
+    var isRunningGame = false;
+
+    var pause = function pause(goo) {
+      goo.stopGameLoop();
+      isRunningGame = false;
+      elementsDomVisible(false);
+      DomHelper.showPage();
+    };
+
+    var resume = function resume(goo) {
+      DomHelper.clearPageContent();
+      DomHelper.hidePage();
+      goo.startGameLoop();
+      isRunningGame = true;
+      elementsDomVisible(true);
+      updateSceneSize(goo);
+      EntityManager.redrawAllEntities(goo.world);
+    };
+
     function build() {
       DomHelper.clearPageContent();
       DomHelper.hidePage();
       crosschair = DomHelper.addCrosschair();
       var goo = startGame();
-      var isRunningGame = true;
+      isRunningGame = true;
       pauseButton = DomHelper.buildButton('', function(e) {
         if(isRunningGame) {
-          goo.stopGameLoop();
-          isRunningGame = false;
-          elementsDomVisible(false);
+          pause(goo);
           PausePage.show(function() {
-            DomHelper.clearPageContent();
-            DomHelper.hidePage();
-            EntityManager.redrawAllEntities(goo.world);
-            updateSceneSize(goo);
-            goo.startGameLoop();
-            isRunningGame = true;
-            elementsDomVisible(true);
+            resume(goo);
           });
-          DomHelper.showPage();
         } else {
           goo.startGameLoop();
           isRunningGame = true;
         }
       });
+      PlayerManager.onLooseLife(function() {
+        if(PlayerManager.get('nbLife') < 0) {
+          window.alert('Loooooser !');
+        }
+      });
       pauseButton.classList.add('pause');
       document.body.appendChild(pauseButton);
       LifeManager.start();
+
+      ScreenUtil.onResize(function() {
+        updateSceneSize(goo);
+        fuelZone.refreshHeight();
+      });
     }
 
     var elementsDomVisible = function elementsDomVisible(bool) {
@@ -107,7 +129,11 @@ define('page/GamePage', [
 
       EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(entity, nbEntityInGame) {
         if(nbEntityInGame === 0) {
-          startNextMap(goo.world);
+          pause(goo);
+          BonusPage.show(function() {
+            resume(goo);
+            startNextMap(goo.world);
+          });
         }
       });
 

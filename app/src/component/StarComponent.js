@@ -44,8 +44,8 @@ define('component/StarComponent', [
   };
 
   StarComponent.prototype.collide = function(otherEntity) {
-    console.log(otherEntity.power);
-    this.life = this.life - otherEntity.power;
+    var nb = otherEntity.power || 1;
+    this.life = this.life - nb;
     if(this.life <= 0) {
       this.entity.removeFromWorld();
     }

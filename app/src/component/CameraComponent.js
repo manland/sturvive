@@ -12,7 +12,8 @@ define('component/CameraComponent', [
   'helper/EntityHelper',
   'helper/InputHelper',
 
-  'manager/PlayerManager'
+  'manager/PlayerManager',
+  'manager/EntityManager'
 ], function (
   Component,
   Camera,
@@ -27,7 +28,8 @@ define('component/CameraComponent', [
   EntityHelper,
   InputHelper,
 
-  PlayerManager
+  PlayerManager,
+  EntityManager
   ) {
   
   'use strict';
@@ -39,6 +41,7 @@ define('component/CameraComponent', [
     this.camera = new Camera(35, 1, 0.1, 1000);
 
     var afterRun = function afterRun(isMoving) {
+      EntityManager.checkCollision(this.entity);
       if(EntityHelper.getDistance(this.entity, fuelZone.entity) < 0) {
         if(this.amountFuel < 100) {
           this.amountFuel = this.amountFuel + 1;
@@ -46,6 +49,10 @@ define('component/CameraComponent', [
         }
       } else if(isMoving) {
         this.amountFuel = this.amountFuel - PlayerManager.get('fuelLoss');
+        if(this.amountFuel < 0) {
+          PlayerManager.looseLife();
+          this.amountFuel = 100;
+        }
         fuelZone.update(this.amountFuel);
       }
     };
@@ -63,6 +70,8 @@ define('component/CameraComponent', [
       this.script
     );
     this.entity.addToWorld();
+
+    this.entity.beeDataComponent = this;
 
     if(showHelper) {
       this.showHelper();
@@ -90,6 +99,14 @@ define('component/CameraComponent', [
 
   CameraComponent.prototype.updateFuelAmount = function(fuel) {
     this.amountFuel = fuel;
+  };
+
+  CameraComponent.prototype.collide = function(otherEntity) {
+    PlayerManager.looseLife();
+  };
+
+  CameraComponent.prototype.isDead = function() {
+    return PlayerManager.get('nbLife');
   };
 
   return CameraComponent;

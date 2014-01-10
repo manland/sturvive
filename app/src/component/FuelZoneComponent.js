@@ -57,6 +57,10 @@ define('component/FuelZoneComponent', [
     fuelDiv.update(fuelAmount);
   };
 
+  SunComponent.prototype.refreshHeight = function() {
+    fueldDiv.refreshHeight(ScreenUtil.getHeight() - (ScreenUtil.getHeight() * 0.5));
+  };
+
   return SunComponent;
 
 });
