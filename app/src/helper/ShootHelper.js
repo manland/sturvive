@@ -1,13 +1,29 @@
 define('helper/ShootHelper', 
   ['component/BulletComponent', 
   'manager/PlayerManager',
-  'helper/MobileHelper', 'helper/KeyboardHelper', 'helper/TouchButton', 'helper/EntityHelper'], 
+  'helper/MobileHelper', 
+  'helper/KeyboardHelper', 
+  'helper/TouchButton', 
+  'helper/EntityHelper',
+  'helper/DomHelper'], 
   function(BulletComponent, 
     PlayerManager,
-    MobileHelper, KeyboardHelper, TouchButton, EntityHelper) {
+    MobileHelper, 
+    KeyboardHelper, 
+    TouchButton, 
+    EntityHelper,
+    DomHelper) {
+
+    var divBullets;
+
+    var build = function build() {
+      divBullets = DomHelper.addBulletAmount();
+      divBullets.update(PlayerManager.getBulletPercent());
+    };
 
     return {
       start: function(world, camera) {
+        build();
         if(MobileHelper.isMobile()) {
           document.getElementsByTagName('body')[0].appendChild(
             TouchButton.build('shootButton', function() {
@@ -20,6 +36,7 @@ define('helper/ShootHelper',
                   false
                 );
                 PlayerManager.minusBullet();
+                divBullets.update(PlayerManager.getBulletPercent());
               }
             })
           );
@@ -34,9 +51,13 @@ define('helper/ShootHelper',
                 false
               );
               PlayerManager.minusBullet();
+              divBullets.update(PlayerManager.getBulletPercent());
             }
           }, function() {}, null);
         }
+      },
+      refresh: function() {
+        divBullets.update(PlayerManager.getBulletPercent());
       }
     };
   }

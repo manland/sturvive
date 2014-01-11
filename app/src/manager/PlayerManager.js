@@ -87,6 +87,9 @@ define('manager/PlayerManager', function() {
     },
     onWinLife: function(callback) {
       onWinLifeCallback.push(callback);
+    },
+    getBulletPercent: function() {
+      return Math.round((options.nbBullet / options.nbBulletAtStart) * 100);
     }
 
   };

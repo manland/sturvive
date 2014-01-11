@@ -154,6 +154,7 @@ define('page/GamePage', [
       currentMap = MapUtil.getNextMap();
       if(currentMap) {
         PlayerManager.reinitNbBullet();
+        ShootHelper.refresh();
         if(currentMap.fuelZone) {
           fuelZone.entity.transformComponent.setTranslation( 
             currentMap.fuelZone.position.x, 

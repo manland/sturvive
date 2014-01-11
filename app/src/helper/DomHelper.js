@@ -95,6 +95,7 @@ define('helper/DomHelper',
     },
     addFuelAmount: function(height) {
       var d = buildContainer('gauge');
+      d.classList.add('fuel');
       d.style.height = height + 'px';
       var percent = buildContainer();
       d.appendChild(percent);
@@ -118,6 +119,31 @@ define('helper/DomHelper',
         },
         refreshHeight: function(height) {
           d.style.height = height + 'px';
+        }
+      };
+    },
+    addBulletAmount: function() {
+      var d = buildContainer('gauge');
+      d.classList.add('bullet');
+      var percent = buildContainer();
+      d.appendChild(percent);
+      document.body.appendChild(d);
+      return {
+        update: function(p) {
+          percent.style.width = p + '%';
+          if(p > 60) {
+            percent.classList.add('relax');
+            percent.classList.remove('nervous');
+            percent.classList.remove('dead');
+          } else if(p > 30) {
+            percent.classList.add('nervous');
+            percent.classList.remove('relax');
+            percent.classList.remove('dead');
+          } else {
+            percent.classList.add('dead');
+            percent.classList.remove('nervous');
+            percent.classList.remove('relax');
+          }
         }
       };
     },
