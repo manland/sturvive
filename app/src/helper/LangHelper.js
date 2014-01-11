@@ -133,6 +133,16 @@ define('helper/LangHelper', function() {
   lang.fr.bulletLifeBonus = 'Vie des balles';
   lang.en.fuelLossBonus = 'Fuel loss';
   lang.fr.fuelLossBonus = 'Perte du carburant';
+  lang.en.backBonus = 'No, I save !';
+  lang.fr.backBonus = 'Non, j\'économise !';
+
+  /*************************\
+  * CHOOSE NEXT MAP PAGE    *
+  \*************************/
+  lang.en.chooseNextMapTitle = 'Next map';
+  lang.fr.chooseNextMapTitle = 'Prochaine carte';
+  lang.en.backChooseNextMap = 'Random';
+  lang.fr.backChooseNextMap = 'Aléatoire';
 
   return {
     get: function(key) {

@@ -127,19 +127,6 @@ define('helper/DomHelper',
       return {
         update: function(p) {
           percent.style.width = p + '%';
-          if(p > 60) {
-            percent.classList.add('relax');
-            percent.classList.remove('nervous');
-            percent.classList.remove('dead');
-          } else if(p > 30) {
-            percent.classList.add('nervous');
-            percent.classList.remove('relax');
-            percent.classList.remove('dead');
-          } else {
-            percent.classList.add('dead');
-            percent.classList.remove('nervous');
-            percent.classList.remove('relax');
-          }
         }
       };
     },

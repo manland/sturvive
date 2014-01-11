@@ -56,7 +56,7 @@ define('page/GamePage', [
     var resume = function resume(goo) {
       DomHelper.clearPageContent();
       DomHelper.hidePage();
-      goo.startGameLoop();
+      //goo.startGameLoop();
       isRunningGame = true;
       elementsDomVisible(true);
       updateSceneSize(goo);

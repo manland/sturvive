@@ -20,7 +20,7 @@ define('page/BonusPage',
       mainDiv.appendChild(buildBonus('fuelLoss'));
 
       DomHelper.addPageBackButton(
-        LangHelper.get('back'),
+        LangHelper.get('backBonus'),
         backCallback
       );
     }

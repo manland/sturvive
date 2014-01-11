@@ -55,6 +55,10 @@
 	top: 50%;
 }
 
+.gauge.bullet div {
+	background-color: #8C1A8C;
+}
+
 .gauge.bullet:before {
 	content: '\e80a';
 	display: inline-block; 

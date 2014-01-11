@@ -12,12 +12,12 @@ define('page/HomePage',
     GamePage, HelpPage, OptionsPage, CompatibilityPage, 
     CompatibilityUtil, ScreenUtil) {
 
-    document.body.style.height = ScreenUtil.getHeight() + 'px';
-    document.body.style.width = ScreenUtil.getWidth() + 'px';
+    // document.body.style.height = ScreenUtil.getHeight() + 'px';
+    // document.body.style.width = ScreenUtil.getWidth() + 'px';
 
     ScreenUtil.onResize(function() {
-      document.body.style.height = ScreenUtil.getHeight() + 'px';
-      document.body.style.width = ScreenUtil.getWidth() + 'px';
+      // document.body.style.height = ScreenUtil.getHeight() + 'px';
+      // document.body.style.width = ScreenUtil.getWidth() + 'px';
     });
 
     var build = function build() {
