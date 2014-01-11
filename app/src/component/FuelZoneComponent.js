@@ -22,7 +22,7 @@ define('component/FuelZoneComponent', [
 
   var fuelDiv;
 
-  function SunComponent(world, showHelper) {
+  function FuelZoneComponent(world, showHelper) {
     this.type = 'FuelZoneComponent';
     
     var meshDetails = OptionsUtil.get('meshDetails');
@@ -46,21 +46,21 @@ define('component/FuelZoneComponent', [
     }
   }
 
-  SunComponent.prototype = Object.create(Component.prototype);
+  FuelZoneComponent.prototype = Object.create(Component.prototype);
 
-  SunComponent.prototype.showHelper = function() {
+  FuelZoneComponent.prototype.showHelper = function() {
     var div = InputHelper.entity('FuelZone', this.entity);
     InputHelper.coloredMaterial('color', this.material, div);
   };
 
-  SunComponent.prototype.update = function(fuelAmount) {
+  FuelZoneComponent.prototype.update = function(fuelAmount) {
     fuelDiv.update(fuelAmount);
   };
 
-  SunComponent.prototype.refreshHeight = function() {
+  FuelZoneComponent.prototype.refreshHeight = function() {
     fueldDiv.refreshHeight(ScreenUtil.getHeight() - (ScreenUtil.getHeight() * 0.5));
   };
 
-  return SunComponent;
+  return FuelZoneComponent;
 
 });

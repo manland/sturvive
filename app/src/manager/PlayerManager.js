@@ -13,7 +13,7 @@ define('manager/PlayerManager', function() {
     nbBulletPerShoot: 1,//TODO
     bulletPower: 1,
     bulletLife: 1,
-    fuelLoss: 0.1,
+    fuelLoss: 0.5,
     speed: 1,
     starLife: 1,
     score: 0

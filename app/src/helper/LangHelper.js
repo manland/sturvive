@@ -121,6 +121,16 @@ define('helper/LangHelper', function() {
   lang.fr.bonusTitle = 'Bonus';
   lang.en.speedBonus = 'Speed';
   lang.fr.speedBonus = 'Vitesse';
+  lang.en.nbLifeBonus = 'Life\'s number';
+  lang.fr.nbLifeBonus = 'Nombre de vies';
+  lang.en.nbBulletAtStartBonus = 'Bullets\' reserve';
+  lang.fr.nbBulletAtStartBonus = 'Taille du chargeur';
+  lang.en.bulletPowerBonus = 'Bullets\' power';
+  lang.fr.bulletPowerBonus = 'Destruction des balles';
+  lang.en.bulletLifeBonus = 'Bullets\' life';
+  lang.fr.bulletLifeBonus = 'Vie des balles';
+  lang.en.fuelLossBonus = 'Fuel loss';
+  lang.fr.fuelLossBonus = 'Perte du carburant';
 
   return {
     get: function(key) {

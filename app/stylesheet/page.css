@@ -127,6 +127,12 @@
 	margin-top: 40px;
 }
 
-.bonus .bonusScore {
+.bonusSymbol {
+	font-family: "fontello";
+}
+
+.bonusExplanation {
+	font-family: "fontello";
 	font-size: 1.5em;
+	margin-bottom: 30px;
 }

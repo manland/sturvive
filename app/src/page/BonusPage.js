@@ -7,11 +7,17 @@ define('page/BonusPage',
 
     function build() {
       DomHelper.clearPageContent();
-      DomHelper.addPageTitle(LangHelper.get('bonusTitle'));
+      scoreDiv = DomHelper.addPageTitle(LangHelper.get('bonusTitle'));
+      refreshScore();
 
-      var mainDiv = DomHelper.addContainer('options');
-      mainDiv.appendChild(buildScore());
+      var mainDiv = DomHelper.addContainer('bonus');
+      mainDiv.appendChild(buildExplanation());
       mainDiv.appendChild(buildBonus('speed'));
+      mainDiv.appendChild(buildBonus('nbLife'));
+      mainDiv.appendChild(buildBonus('nbBulletAtStart'));
+      mainDiv.appendChild(buildBonus('bulletPower'));
+      mainDiv.appendChild(buildBonus('bulletLife'));
+      mainDiv.appendChild(buildBonus('fuelLoss'));
 
       DomHelper.addPageBackButton(
         LangHelper.get('back'),
@@ -19,14 +25,18 @@ define('page/BonusPage',
       );
     }
 
-    var buildScore = function buildScore() {
-      scoreDiv = DomHelper.addContainer('bonusScore');
-      refreshScore();
-      return scoreDiv;
+    var buildExplanation = function buildExplanation() {
+      var div = DomHelper.addContainer('bonusExplanation');
+      div.innerHTML = 'TODO';//LangHelper.get('');
+      return div;
     };
 
     var refreshScore = function refreshScore() {
-      scoreDiv.innerHTML = PlayerManager.get('score') + ' ';
+      scoreDiv.innerHTML = LangHelper.get('bonusTitle') + ' : ' + PlayerManager.get('score') + ' ';
+      var span = document.createElement('span');
+      span.classList.add('bonusSymbol');
+      span.innerHTML = '';
+      scoreDiv.appendChild(span);
     };
 
     var buildBonus = function buildBonus(key) {
