@@ -5,9 +5,20 @@ define('page/HomePage',
   'page/HelpPage', 
   'page/OptionsPage', 
   'page/CompatibilityPage',
-  'util/CompatibilityUtil'],
+  'util/CompatibilityUtil',
+  'util/ScreenUtil'
+  ],
   function(DomHelper, LangHelper, 
-    GamePage, HelpPage, OptionsPage, CompatibilityPage, CompatibilityUtil) {
+    GamePage, HelpPage, OptionsPage, CompatibilityPage, 
+    CompatibilityUtil, ScreenUtil) {
+
+    document.body.style.height = ScreenUtil.getHeight() + 'px';
+    document.body.style.width = ScreenUtil.getWidth() + 'px';
+
+    ScreenUtil.onResize(function() {
+      document.body.style.height = ScreenUtil.getHeight() + 'px';
+      document.body.style.width = ScreenUtil.getWidth() + 'px';
+    });
 
     var build = function build() {
       DomHelper.clearPageContent();

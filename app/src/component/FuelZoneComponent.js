@@ -5,8 +5,7 @@ define('component/FuelZoneComponent', [
   'material/ColoredMaterial',
   'helper/InputHelper',
   'helper/DomHelper',
-  'util/OptionsUtil',
-  'util/ScreenUtil'
+  'util/OptionsUtil'
 ], function (
   Component,
   ShapeCreator,
@@ -14,8 +13,7 @@ define('component/FuelZoneComponent', [
   ColoredMaterial,
   InputHelper,
   DomHelper,
-  OptionsUtil,
-  ScreenUtil
+  OptionsUtil
   ) {
   
   'use strict';
@@ -38,7 +36,7 @@ define('component/FuelZoneComponent', [
     this.entity.beeDataComponent = this;
     this.entity.addToWorld();
 
-    fuelDiv = DomHelper.addFuelAmount(ScreenUtil.getHeight() - (ScreenUtil.getHeight() * 0.5));
+    fuelDiv = DomHelper.addFuelAmount();
     fuelDiv.update(100);
 
     if(showHelper) {
@@ -55,10 +53,6 @@ define('component/FuelZoneComponent', [
 
   FuelZoneComponent.prototype.update = function(fuelAmount) {
     fuelDiv.update(fuelAmount);
-  };
-
-  FuelZoneComponent.prototype.refreshHeight = function() {
-    fueldDiv.refreshHeight(ScreenUtil.getHeight() - (ScreenUtil.getHeight() * 0.5));
   };
 
   return FuelZoneComponent;

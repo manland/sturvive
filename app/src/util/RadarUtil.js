@@ -60,9 +60,11 @@ define('util/RadarUtil',
 
       divElem = DomHelper.buildDiv('radarFuelZone');
       pos = EntityHelper.getPosition(fuelZone.entity);
-      divElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
-      divElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
-      div.appendChild(divElem);
+      if(pos.y === 0) {//else not use
+        divElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
+        divElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
+        div.appendChild(divElem);
+      }
 
       div.appendChild(divCameraElem);
       updateCamera();

@@ -93,10 +93,9 @@ define('helper/DomHelper',
       document.body.appendChild(d);
       return d;
     },
-    addFuelAmount: function(height) {
+    addFuelAmount: function() {
       var d = buildContainer('gauge');
       d.classList.add('fuel');
-      d.style.height = height + 'px';
       var percent = buildContainer();
       d.appendChild(percent);
       document.body.appendChild(d);
@@ -116,9 +115,6 @@ define('helper/DomHelper',
             percent.classList.remove('nervous');
             percent.classList.remove('relax');
           }
-        },
-        refreshHeight: function(height) {
-          d.style.height = height + 'px';
         }
       };
     },

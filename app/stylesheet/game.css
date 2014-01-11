@@ -14,6 +14,7 @@
 	left: 0;
 	right: 0;
 	width: 17px;
+	z-index: 1;
 }
 
 .canvas {
@@ -124,13 +125,13 @@
 .lifeContainer {
 	font-size: 1.5em;
 	position: absolute;
-	width: 60%;
+	width: 80px;
 	height: 30px;
 	left: 0;
 	right: 0;
 	top: 0;
 	margin: auto;
-	z-index: -1;
+	padding-right: 50%;
 }
 
 .life:before {
