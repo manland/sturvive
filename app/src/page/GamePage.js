@@ -130,8 +130,8 @@ define('page/GamePage', [
 
       EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(entity, nbEntityInGame) {
         if(nbEntityInGame === 0) {
-          pause(goo);
           if(currentMap.scoreToWin > 0) {
+            pause(goo);
             PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
             BonusPage.show(function() {
               resume(goo);

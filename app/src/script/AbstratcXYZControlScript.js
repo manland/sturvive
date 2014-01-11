@@ -16,8 +16,8 @@ define('script/AbstractXYZControlScript',
 
     AbstractXYZControlScript.prototype.run = function(camera) {
       this.yRotationAcc = this.yRotationAcc + this.yRotation;
-      var v = MathHelper.rotateVectorByYRad(new Vector3(this.x, 0, this.z), this.yRotationAcc);
-      v.z = v.z * PlayerManager.get('speed');
+      var z = this.z * PlayerManager.get('speed');
+      var v = MathHelper.rotateVectorByYRad(new Vector3(this.x, 0, z), this.yRotationAcc);
       camera.transformComponent.addTranslation(v.x, 0, -v.z);
       camera.transformComponent.setRotation(0, this.yRotationAcc, 0);
       var isMoving = this.yRotation !== 0 || this.x !== 0 || this.z !== 0;

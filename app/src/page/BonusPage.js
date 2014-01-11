@@ -45,20 +45,28 @@ define('page/BonusPage',
       return LangHelper.get(key+'Bonus') + ' ' + value + '/' + max;
     };
 
-    var buildBonus = function buildBonus(key) {
+    var isEnableBonus = function isEnableBonus(key) {
       var isMinBonus = key === 'fuelLoss';
+      return PlayerManager.get(key) < PlayerManager.getMax(key) || 
+      (isMinBonus && PlayerManager.get(key) > PlayerManager.getMax(key));
+    };
+
+    var buildBonus = function buildBonus(key) {
       var b = DomHelper.buildButton(labelBonus(key), function() {
-        if(PlayerManager.get(key) < PlayerManager.getMax(key) || (isMinBonus && PlayerManager.get(key) > PlayerManager.getMax(key))) {
+        if(isEnableBonus(key)) {
           PlayerManager.update(key);
           PlayerManager.update('score', PlayerManager.get('score') - 1);
           refreshScore();
           b.innerHTML = labelBonus(key);
           if(PlayerManager.get('score') <= 0) {
             backCallback();
+          } else if(!isEnableBonus(key)) {
+            b.classList.add('disabled');
+            b.disabled = true;
           }
         }
       });
-      if(PlayerManager.get(key) >= PlayerManager.getMax(key) && (isMinBonus && PlayerManager.get(key) <= PlayerManager.getMax(key))) {
+      if(!isEnableBonus(key)) {
         b.classList.add('disabled');
         b.disabled = true;
       }

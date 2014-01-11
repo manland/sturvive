@@ -13,7 +13,7 @@ define('util/MapUtil', function() {
       getEntities: function() {
         return [{position: {x: 0, y:0, z:-7}}];
       },
-      scoreToWin: 1
+      scoreToWin: 0
     },
 
     1: {
