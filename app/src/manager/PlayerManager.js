@@ -1,14 +1,23 @@
 define('manager/PlayerManager', function() {
 
-  var initNbLife = 3;
-  var initNbBullet = 50;
+  var initNbBullet = 10;
 
   var onLooseLifeCallback = [];
   var onWinLifeCallback = [];
 
+  var maxOptions = {
+    nbLife: 3,
+    nbBulletAtStart: 150,//IN PROGRESS, display nb bullets in game
+    nbBulletPerShoot: 3,//TODO
+    bulletPower: 5,
+    bulletLife: 10,
+    fuelLoss: 0.1,
+    speed: 2
+  };
+
   var defaultOptions = {
-    nbLife: initNbLife,//IN PROGRESS, cabler win and loose life
-    nbBullet: initNbBullet,//IN PROGRESS, display nb bullets
+    nbLife: maxOptions.nbLife,
+    nbBullet: initNbBullet,//IN PROGRESS, display nb bullets in game
     nbBulletAtStart: initNbBullet,
     nbBulletPerShoot: 1,//TODO
     bulletPower: 1,
@@ -26,16 +35,32 @@ define('manager/PlayerManager', function() {
     } catch(e) {}
   }
 
-  options.nbLife = initNbLife;//At begin we have always 3 lifes
+  options.nbLife = maxOptions.nbLife;//At begin we have always 3 lifes
   options.nbBullet = options.nbBulletAtStart;
 
   return {
 
-    maxNbLife: initNbLife,
     get: function(key) {
       return options[key];
     },
-    update: function(key, value) {
+    getMax: function(key) {
+      return maxOptions[key];
+    },
+    update: function(key, v) {
+      var value = v !== undefined ? v : options[key];
+      if(key === 'nbLife') {
+        value = value + 1;
+      } else if(key === 'nbBulletAtStart') {
+        value = value + 10;
+      } else if(key === 'bulletPower') {
+        value = value + 1;
+      } else if(key === 'bulletLife') {
+        value = value + 1;
+      } else if(key === 'speed') {
+        value = ((value * 10) + 1) / 10;
+      } else if(key === 'fuelLoss') {
+        value = ((value * 10) - 1) / 10;
+      }
       options[key] = value;
       localStorage.optionsPlayer = JSON.stringify(options);
     },

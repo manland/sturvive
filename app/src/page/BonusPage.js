@@ -12,11 +12,11 @@ define('page/BonusPage',
 
       var mainDiv = DomHelper.addContainer('bonus');
       mainDiv.appendChild(buildExplanation());
-      mainDiv.appendChild(buildBonus('speed'));
       mainDiv.appendChild(buildBonus('nbLife'));
       mainDiv.appendChild(buildBonus('nbBulletAtStart'));
       mainDiv.appendChild(buildBonus('bulletPower'));
       mainDiv.appendChild(buildBonus('bulletLife'));
+      mainDiv.appendChild(buildBonus('speed'));
       mainDiv.appendChild(buildBonus('fuelLoss'));
 
       DomHelper.addPageBackButton(
@@ -27,7 +27,7 @@ define('page/BonusPage',
 
     var buildExplanation = function buildExplanation() {
       var div = DomHelper.addContainer('bonusExplanation');
-      div.innerHTML = 'TODO';//LangHelper.get('');
+      div.innerHTML = LangHelper.get('bonusExplanation');
       return div;
     };
 
@@ -39,16 +39,30 @@ define('page/BonusPage',
       scoreDiv.appendChild(span);
     };
 
+    var labelBonus = function labelBonus(key) {
+      var value = PlayerManager.get(key);
+      var max = PlayerManager.getMax(key);
+      return LangHelper.get(key+'Bonus') + ' ' + value + '/' + max;
+    };
+
     var buildBonus = function buildBonus(key) {
-      var label = LangHelper.get(key+'Bonus') + ' ' + PlayerManager.get(key) + '/10';
-      return DomHelper.buildButton(label, function() {
-        PlayerManager.update(key, PlayerManager.get(key) + 1);
-        PlayerManager.update('score', PlayerManager.get('score') - 1);
-        refreshScore();
-        if(PlayerManager.get('score') <= 0) {
-          backCallback();
+      var isMinBonus = key === 'fuelLoss';
+      var b = DomHelper.buildButton(labelBonus(key), function() {
+        if(PlayerManager.get(key) < PlayerManager.getMax(key) || (isMinBonus && PlayerManager.get(key) > PlayerManager.getMax(key))) {
+          PlayerManager.update(key);
+          PlayerManager.update('score', PlayerManager.get('score') - 1);
+          refreshScore();
+          b.innerHTML = labelBonus(key);
+          if(PlayerManager.get('score') <= 0) {
+            backCallback();
+          }
         }
       });
+      if(PlayerManager.get(key) >= PlayerManager.getMax(key) && (isMinBonus && PlayerManager.get(key) <= PlayerManager.getMax(key))) {
+        b.classList.add('disabled');
+        b.disabled = true;
+      }
+      return b;
     };
 
     return {

@@ -12,7 +12,8 @@ define('util/MapUtil', function() {
       },
       getEntities: function() {
         return [{position: {x: 0, y:0, z:-7}}];
-      }
+      },
+      scoreToWin: 1
     },
 
     1: {
@@ -21,7 +22,8 @@ define('util/MapUtil', function() {
       },
       getEntities: function() {
         return [{position: {x: 5, y:0, z:-7}}, {position: {x: 15, y:0, z:7}}];
-      }
+      },
+      scoreToWin: 1
     },
 
     2: {
@@ -33,7 +35,8 @@ define('util/MapUtil', function() {
       },
       getEntities: function() {
         return [{position: {x: 0, y:0, z:-100}}];
-      }
+      },
+      scoreToWin: 2
     },
 
     3: {
@@ -51,7 +54,8 @@ define('util/MapUtil', function() {
           entities.push({position: {x: x, y:0, z:z}});
         }
         return entities;
-      }
+      },
+      scoreToWin: 5
     }
 
   };

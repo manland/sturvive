@@ -44,6 +44,7 @@ define('page/GamePage', [
     var camera;
 
     var isRunningGame = false;
+    var currentMap;
 
     var pause = function pause(goo) {
       goo.stopGameLoop();
@@ -130,10 +131,15 @@ define('page/GamePage', [
       EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(entity, nbEntityInGame) {
         if(nbEntityInGame === 0) {
           pause(goo);
-          BonusPage.show(function() {
-            resume(goo);
+          if(currentMap.scoreToWin > 0) {
+            PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
+            BonusPage.show(function() {
+              resume(goo);
+              startNextMap(goo.world);
+            });
+          } else {
             startNextMap(goo.world);
-          });
+          }
         }
       });
 
@@ -145,7 +151,7 @@ define('page/GamePage', [
     };
 
     var startNextMap = function startNextMap(world) {
-      var currentMap = MapUtil.getNextMap();
+      currentMap = MapUtil.getNextMap();
       if(currentMap) {
         PlayerManager.reinitNbBullet();
         if(currentMap.fuelZone) {

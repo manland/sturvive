@@ -12,7 +12,7 @@ define('manager/LifeManager',
   var refresh = function refresh() {
     divLife.innerHTML = '';
     var life = '';
-    for(var i=0; i<PlayerManager.maxNbLife; i++) {
+    for(var i=0; i<PlayerManager.getMax('nbLife'); i++) {
       divLife.appendChild(DomHelper.buildLife(i < PlayerManager.get('nbLife')));
     }
   };

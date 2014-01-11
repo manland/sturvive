@@ -119,6 +119,8 @@ define('helper/LangHelper', function() {
   \*************************/
   lang.en.bonusTitle = 'Bonus';
   lang.fr.bonusTitle = 'Bonus';
+  lang.en.bonusExplanation = 'Well done ! Choose a bonus for your job !';
+  lang.fr.bonusExplanation = 'Bien joué ! Choisis un bonus pour ce boulot !';
   lang.en.speedBonus = 'Speed';
   lang.fr.speedBonus = 'Vitesse';
   lang.en.nbLifeBonus = 'Life\'s number';
