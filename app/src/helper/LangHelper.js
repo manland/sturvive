@@ -143,6 +143,14 @@ define('helper/LangHelper', function() {
   lang.fr.chooseNextMapTitle = 'Choisis une carte';
   lang.en.backChooseNextMap = 'Random';
   lang.fr.backChooseNextMap = 'Aléatoire';
+  lang.en.chooseNextMaptutos = 'Learn';
+  lang.fr.chooseNextMaptutos = 'Enseignement';
+  lang.en.chooseNextMapcleanZone = 'Clean Zone';
+  lang.fr.chooseNextMapcleanZone = 'Nettoyer Zone';
+  lang.en.chooseNextMapprotect = 'Protect';
+  lang.fr.chooseNextMapprotect = 'Protéger';
+  lang.en.chooseNextMaprace = 'Race';
+  lang.fr.chooseNextMaprace = 'Course';
 
   return {
     get: function(key) {

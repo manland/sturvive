@@ -24,7 +24,7 @@ define('page/ChooseNextMapPage',
 
     var buildColumn = function buildColumn(category, maps, level, forceDesable) {
       var columnContainer = DomHelper.buildDiv('columnContainer');
-      var titleDiv = DomHelper.buildTitle(category);
+      var titleDiv = DomHelper.buildTitle(LangHelper.get('chooseNextMap' + category));
       columnContainer.appendChild(titleDiv);
       
       function makeCallback(isDisable, map) {

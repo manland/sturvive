@@ -149,6 +149,11 @@
 	width: 25%;
 }
 
+.chooseNextMap .columnContainer h1 {
+	margin: 5%;
+	font-size: 1.5em;
+}
+
 .chooseNextMap .columnContainer .button {
 	position: relative;
 }
