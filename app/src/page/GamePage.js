@@ -56,7 +56,7 @@ define('page/GamePage', [
     var resume = function resume(goo) {
       DomHelper.clearPageContent();
       DomHelper.hidePage();
-      //goo.startGameLoop();
+      goo.startGameLoop();
       isRunningGame = true;
       elementsDomVisible(true);
       updateSceneSize(goo);
@@ -111,6 +111,8 @@ define('page/GamePage', [
       var goo = new GooRunner();
       canvas = goo.renderer.domElement;
       canvas.classList.add('canvas');
+      canvas.addEventListener('touchstart', function(e) {e.preventDefault();}, false);
+      canvas.addEventListener('touchmove', function(e) {e.preventDefault();}, false);
       updateSceneSize(goo);
       goo.renderer.setClearColor(0, 0, 0, 1);
       document.body.appendChild(canvas);
