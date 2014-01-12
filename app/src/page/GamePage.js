@@ -17,6 +17,7 @@ define('page/GamePage', [
   'util/RadarUtil',
   'util/OptionsUtil',
   'util/ScreenUtil',
+  'util/TimeUtil',
   'page/BonusPage',
   'page/ChooseNextMapPage'
 ], function(
@@ -38,6 +39,7 @@ define('page/GamePage', [
   RadarUtil,
   OptionsUtil,
   ScreenUtil,
+  TimeUtil,
   BonusPage,
   ChooseNextMapPage) {
 
@@ -61,6 +63,7 @@ define('page/GamePage', [
       isRunningGame = false;
       elementsDomVisible(false);
       DomHelper.showPage();
+      TimeUtil.pause();
     };
 
     var resume = function resume(goo) {
@@ -71,6 +74,7 @@ define('page/GamePage', [
       elementsDomVisible(true);
       updateSceneSize(goo);
       EntityManager.redrawAllEntities(goo.world);
+      TimeUtil.resume();
     };
 
     function build() {
@@ -231,6 +235,13 @@ define('page/GamePage', [
           finishZone.entity.removeFromWorld();
         }
         EntityManager.addToWorld(goo.world, currentMap.getEntities());
+        if(currentMap.maxTime) {
+          TimeUtil.start(currentMap.maxTime, function() {
+            looseMap(goo);
+          });
+        } else {
+          TimeUtil.hide();
+        }
       });
     };
 

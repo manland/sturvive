@@ -61,6 +61,7 @@ define('util/MapUtil', function() {
       name: '10 in 2\'',
       category: 'cleanZone',
       level: 0,
+      maxTime: 120,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -79,6 +80,7 @@ define('util/MapUtil', function() {
       name: '20 in 2\'',
       category: 'cleanZone',
       level: 1,
+      maxTime: 120,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -97,6 +99,7 @@ define('util/MapUtil', function() {
       name: '30 in 2\'',
       category: 'cleanZone',
       level: 2,
+      maxTime: 120,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -118,6 +121,7 @@ define('util/MapUtil', function() {
       name: '40 in 2\'',
       category: 'cleanZone',
       level: 3,
+      maxTime: 120,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -139,6 +143,7 @@ define('util/MapUtil', function() {
       name: '50 in 2\'',
       category: 'cleanZone',
       level: 4,
+      maxTime: 120,
       camera: {
         position: {x:0, y:0, z:0}
       },
