@@ -14,6 +14,7 @@ define('util/MapUtil', function() {
     0: {
       name: 'Shoot',
       category: 'tutos',
+      level: 0,
       camera: {
         position: {x:0, y:0, z:7}
       },
@@ -26,6 +27,7 @@ define('util/MapUtil', function() {
     1: {
       name: 'Move',
       category: 'tutos',
+      level: 1,
       camera: {
         position: {x:0, y:0, z:7}
       },
@@ -38,6 +40,7 @@ define('util/MapUtil', function() {
     2: {
       name: 'Fuel',
       category: 'tutos',
+      level: 2,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -57,6 +60,7 @@ define('util/MapUtil', function() {
     0: {
       name: '10 in 2\'',
       category: 'cleanZone',
+      level: 0,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -74,6 +78,7 @@ define('util/MapUtil', function() {
     1: {
       name: '20 in 2\'',
       category: 'cleanZone',
+      level: 1,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -91,6 +96,7 @@ define('util/MapUtil', function() {
     2: {
       name: '30 in 2\'',
       category: 'cleanZone',
+      level: 2,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -111,6 +117,7 @@ define('util/MapUtil', function() {
     3: {
       name: '50 in 2\'',
       category: 'cleanZone',
+      level: 3,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -136,6 +143,7 @@ define('util/MapUtil', function() {
     0: {
       name: '10',
       category: 'protect',
+      level: 0,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -161,6 +169,7 @@ define('util/MapUtil', function() {
     0: {
       name: '1',
       category: 'race',
+      level: 0,
       camera: {
         position: {x:0, y:0, z:0}
       },
@@ -196,8 +205,11 @@ define('util/MapUtil', function() {
     getLevels: function() {
       return currentMap;
     },
-    increment: function(category) {
-      currentMap[category] = currentMap[category] + 1;
+    increment: function(map) {
+      var category = map.category;
+      if(map.level > currentMap[category]) {
+        currentMap[category] = currentMap[category] + 1;
+      }
     }
 
   };

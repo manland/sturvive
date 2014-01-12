@@ -157,7 +157,7 @@ define('page/GamePage', [
     var startNextMap = function startNextMap(goo) {
       pause(goo);
       if(currentMap !== undefined) {
-        MapUtil.increment(currentMap.category);
+        MapUtil.increment(currentMap);
       }
       ChooseNextMapPage.show(function(map) {
         currentMap = map;

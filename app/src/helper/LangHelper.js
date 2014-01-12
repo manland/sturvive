@@ -139,8 +139,8 @@ define('helper/LangHelper', function() {
   /*************************\
   * CHOOSE NEXT MAP PAGE    *
   \*************************/
-  lang.en.chooseNextMapTitle = 'Next map';
-  lang.fr.chooseNextMapTitle = 'Carte suivante';
+  lang.en.chooseNextMapTitle = 'Choose a map';
+  lang.fr.chooseNextMapTitle = 'Choisis une carte';
   lang.en.backChooseNextMap = 'Random';
   lang.fr.backChooseNextMap = 'Aléatoire';
 

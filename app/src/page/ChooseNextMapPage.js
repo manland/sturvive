@@ -16,10 +16,10 @@ define('page/ChooseNextMapPage',
       mainDiv.appendChild(buildColumn('protect', maps.protect, levels.protect, levels.cleanZone === -1));
       mainDiv.appendChild(buildColumn('race', maps.race, levels.race, levels.protect === -1));
 
-      DomHelper.addPageBackButton(
-        LangHelper.get('backChooseNextMap'),
-        backCallback
-      );
+      // DomHelper.addPageBackButton(
+      //   LangHelper.get('backChooseNextMap'),
+      //   backCallback
+      // );
     }
 
     var buildColumn = function buildColumn(category, maps, level, forceDesable) {
@@ -27,19 +27,22 @@ define('page/ChooseNextMapPage',
       var titleDiv = DomHelper.buildTitle(category);
       columnContainer.appendChild(titleDiv);
       
-      function makeCallback(map) {
+      function makeCallback(isDisable, map) {
         return function() {
-          backCallback(map);
+          if(!isDisable) {
+            backCallback(map);
+          }
         };
       }
 
       for(var key in maps) {
         var map = maps[key];
-        var b = DomHelper.buildButton(map.name, makeCallback(map));
+        var isDisable = forceDesable || (level+1) < key;
+        var b = DomHelper.buildButton(map.name, makeCallback(isDisable, map));
         var divScore = DomHelper.buildDiv('mapScoreToWin');
         divScore.innerHTML = map.scoreToWin + '';
         b.appendChild(divScore);
-        if(forceDesable || (level+1) < key) {
+        if(isDisable) {
           b.classList.add('disabled');
         }
         columnContainer.appendChild(b);
