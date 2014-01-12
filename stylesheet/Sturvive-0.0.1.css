@@ -1,5 +1,5 @@
 /**
- * Sturvive - v0.0.1 - 2014-01-11
+ * Sturvive - v0.0.1 - 2014-01-13
  * 
  *
  * Copyright (c) 2014 Manland
@@ -176,6 +176,7 @@
 	content: '\e806'; 
 	font-family: "fontello";
 	transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
 	display: inline-block;
 	color: #000;
 	font-size: 1em;
@@ -199,6 +200,7 @@
 	font-family: "fontello";
 	line-height: 50px;
 	transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
 	display: inline-block;
 	color: #000;
 	font-size: 1.5em;
@@ -223,6 +225,18 @@
 
 .life.inactive {
 	color: #555;
+}
+
+.time {
+	font-size: 1.5em;
+	position: absolute;
+	width: 80px;
+	height: 30px;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+	padding-left: 50%;
 }
 .gauge {
 	background-color: #fff;
@@ -291,6 +305,7 @@
 	right: -1.5em;
 	top: -0.3em;
 	transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
 }
 
 
@@ -344,6 +359,7 @@
 .touch.tournLeft:before {
 	content: "\e806";
 	transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
 	display: inline-block;
 }
 .touch.tournLeft {
@@ -353,6 +369,7 @@
 .touch.shoot:before {
 	content: "\e80a";
 	transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
 	display: inline-block;
 }
 .touch.shoot {
@@ -548,6 +565,34 @@ body {
 	font-size: 1.5em;
 	margin-bottom: 30px;
 }
+
+.chooseNextMap .columnContainer {
+	display: inline-block;
+	vertical-align: top;
+	width: 25%;
+}
+
+.chooseNextMap .columnContainer h1 {
+	margin: 5%;
+	font-size: 1.5em;
+}
+
+.chooseNextMap .columnContainer .button {
+	position: relative;
+}
+
+.chooseNextMap .columnContainer .mapScoreToWin {
+	position: absolute;
+	bottom: -12px;
+	right: -5px;
+	border: 3px solid #000;
+	border-radius: 5px;
+	width: 24px;
+	height: 24px;
+	font-family: "fontello";
+	line-height: 17px;
+	font-size: 0.6em;
+}
 .radar {
 	position: absolute;
 	top: 80px;
@@ -566,7 +611,9 @@ body {
 	line-height: 100px;
 }
 
-.radarEntity, .radarCamera, .radarFuelZone {
+.radarEntity, .radarCamera, 
+.radarFuelZone, .radarStarship,
+.radarFinishZone {
 	position: absolute;
 	width: 5px;
 	height: 5px;
@@ -583,6 +630,16 @@ body {
 
 .radarFuelZone {
 	background-color: green;
+}
+
+.radarStarship {
+	background-color: blue;
+	height: 15px;
+	border-radius: 0;
+}
+
+.radarFinishZone {
+	background-color: blue;
 }
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
