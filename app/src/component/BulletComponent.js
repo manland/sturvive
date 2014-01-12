@@ -30,7 +30,7 @@ define('component/BulletComponent', [
       world, 
       this.shape, 
       this.material,
-      new RunEntityScript(yRotation, allEntities, callbackAfterRemoveEntities)
+      new RunEntityScript(yRotation, 1, 100)
     );
     this.entity.transformComponent.setTranslation( from.x, from.y-0.5, from.z );
     this.entity.transformComponent.setRotation( 0.01, yRotation, 0 );

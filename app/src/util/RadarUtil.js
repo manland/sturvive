@@ -7,17 +7,23 @@ define('util/RadarUtil',
   var div;
   var lastEntities, heightZoneMax = 50, widthZoneMax = 50;
   var entityByDiv = {};
-  var camera, fuelZone;
-  var divCameraElem;
+  var camera, fuelZone, starship, finishZone;
+  var divCameraElem, divStarshipElem;
 
-  var draw = function draw(c, f) {
+  var draw = function draw(c, f, s, fz) {
     camera = c;
     fuelZone = f;
+    starship = s;
+    finishZone = fz;
     if(!div) {
       div = DomHelper.addRadar();
       divCameraElem = DomHelper.buildDiv('radarCamera');
       div.appendChild(divCameraElem);
       camera.script.onRun(updateCamera);
+      divStarshipElem = DomHelper.buildDiv('radarStarship');
+      div.appendChild(divStarshipElem);
+      starship.script.onRun(updateStarship);
+      starship.onDead(updateStarship);
     }
     if(lastEntities) {
       refresh(lastEntities);
@@ -28,6 +34,17 @@ define('util/RadarUtil',
     var pos = EntityHelper.getPosition(camera.entity);
     divCameraElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
     divCameraElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
+  };
+
+  var updateStarship = function updateStarship() {
+    var pos = EntityHelper.getPosition(starship.entity);
+    if(pos.y === 0 && !starship.isDead()) {
+      divStarshipElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
+      divStarshipElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
+      divStarshipElem.style.display = 'block';
+    } else {
+      divStarshipElem.style.display = 'none';
+    }
   };
       
   var refresh = function refresh(entities) {
@@ -66,8 +83,18 @@ define('util/RadarUtil',
         div.appendChild(divElem);
       }
 
+      divElem = DomHelper.buildDiv('radarFinishZone');
+      pos = EntityHelper.getPosition(finishZone.entity);
+      if(pos.y === 0) {//else not use
+        divElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
+        divElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
+        div.appendChild(divElem);
+      }
+
       div.appendChild(divCameraElem);
       updateCamera();
+      div.appendChild(divStarshipElem);
+      updateStarship();
     }
   };
 
@@ -84,8 +111,8 @@ define('util/RadarUtil',
 
   return {
 
-    draw: function(camera, fuelZone) {
-      draw(camera, fuelZone);
+    draw: function(camera, fuelZone, starship, finishZone) {
+      draw(camera, fuelZone, starship, finishZone);
     }
 
   };

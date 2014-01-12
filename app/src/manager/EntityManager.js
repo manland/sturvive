@@ -38,15 +38,6 @@ define('manager/EntityManager',
             if(entity.beeDataComponent.isDead()) {
               return;
             }
-
-            // entities[i].entity.removeFromWorld();
-            // var e = entities[i].entity;
-            // entities.splice(i, 1);
-            // entity.removeFromWorld();
-            // for(var c=0, l=onRemoveEntity.length; c<l; c++) {
-            //   onRemoveEntity[c](e, len-1);
-            // }
-            // return;
           }
         }
       },

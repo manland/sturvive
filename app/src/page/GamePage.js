@@ -5,8 +5,10 @@ define('page/GamePage', [
   'component/FinalZoneComponent',
   'component/FuelZoneComponent',
   'component/StarshipComponent',
+  'component/FinishZoneComponent',
   'helper/DomHelper',
   'helper/ShootHelper',
+  'helper/EntityHelper',
   'page/PausePage',
   'manager/EntityManager',
   'manager/PlayerManager',
@@ -24,8 +26,10 @@ define('page/GamePage', [
   FinalZoneComponent,
   FuelZoneComponent,
   StarshipComponent,
+  FinishZoneComponent,
   DomHelper,
   ShootHelper,
+  EntityHelper,
   PausePage,
   EntityManager,
   PlayerManager,
@@ -37,6 +41,8 @@ define('page/GamePage', [
   BonusPage,
   ChooseNextMapPage) {
 
+    'use strict';
+
     var backCallback;
     var canvas;
     var pauseButton;
@@ -44,6 +50,8 @@ define('page/GamePage', [
 
     var fuelZone;
     var camera;
+    var finishZone;
+    var starship;
 
     var isRunningGame = false;
     var currentMap;
@@ -84,7 +92,7 @@ define('page/GamePage', [
       });
       PlayerManager.onLooseLife(function() {
         if(PlayerManager.get('nbLife') < 0) {
-          window.alert('Loooooser !');
+          looseMap(goo);
         }
       });
       pauseButton.classList.add('pause');
@@ -124,9 +132,9 @@ define('page/GamePage', [
       var sun = new SunComponent(goo.world, true);
 
       fuelZone = new FuelZoneComponent(goo.world, true);
+      starship = new StarshipComponent(goo.world, true);
+      finishZone = new FinishZoneComponent(goo.world, true);
 
-      //new StarshipComponent(goo.world, true);
-      
       camera = new CameraComponent(
         goo.world, 
         fuelZone, 
@@ -136,22 +144,39 @@ define('page/GamePage', [
 
       EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(entity, nbEntityInGame) {
         if(nbEntityInGame === 0) {
-          if(currentMap.scoreToWin > 0) {
-            pause(goo);
-            PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
-            BonusPage.show(function() {
-              startNextMap(goo);
-            });
-          } else {
-            startNextMap(goo);
-          }
+          winMap(goo);
         }
       });
+      starship.script.onRun(function() {
+        if(currentMap.starship && EntityHelper.getDistance(starship.entity, finishZone.entity) < 0) {
+          starship.entity.removeFromWorld();
+          winMap(goo);
+        }
+      });
+      starship.onDead(function() {looseMap(goo);});
 
       ShootHelper.start(goo.world, camera);
 
-      RadarUtil.draw(camera, fuelZone);
+      RadarUtil.draw(camera, fuelZone, starship, finishZone);
       return goo;
+    };
+
+    var winMap = function winMap(goo) {
+      pause(goo);
+      if(currentMap.scoreToWin > 0) {
+        PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
+        BonusPage.show(function() {
+          startNextMap(goo);
+        });
+      } else {
+        startNextMap(goo);
+      }
+    };
+
+    var looseMap = function looseMap(goo) {
+      pause(goo);
+      currentMap = undefined;
+      startNextMap(goo);
     };
 
     var startNextMap = function startNextMap(goo) {
@@ -181,6 +206,30 @@ define('page/GamePage', [
           currentMap.camera.position.z 
         );
         camera.script.yRotationAcc = 0;
+
+        if(currentMap.starship) {
+          starship.entity.transformComponent.setTranslation( 
+            currentMap.starship.position.x, 
+            currentMap.starship.position.y, 
+            currentMap.starship.position.z 
+          );
+          starship.entity.addToWorld();
+        } else {
+          starship.entity.transformComponent.setTranslation( 0, -100, 0 );
+          starship.entity.removeFromWorld();
+        }
+
+        if(currentMap.finishZone) {
+          finishZone.entity.transformComponent.setTranslation( 
+            currentMap.finishZone.position.x, 
+            currentMap.finishZone.position.y, 
+            currentMap.finishZone.position.z 
+          );
+          finishZone.entity.addToWorld();
+        } else {
+          finishZone.entity.transformComponent.setTranslation( 0, -100, 0 );
+          finishZone.entity.removeFromWorld();
+        }
         EntityManager.addToWorld(goo.world, currentMap.getEntities());
       });
     };

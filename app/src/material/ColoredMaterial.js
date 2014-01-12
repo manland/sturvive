@@ -54,7 +54,7 @@ define('material/ColoredMaterial', [
       return mat;
     },
     buildBullet: function() {
-      var mat = Material.createMaterial( ShaderLib.simpleLit, 'StarMaterial');
+      var mat = Material.createMaterial( ShaderLib.simpleLit, 'BulletMaterial');
       mat.uniforms = {
         materialAmbient: [0.3, 0.1, 0.3, 0],
         materialDiffuse: [1, 0, 1, 0],
@@ -66,12 +66,24 @@ define('material/ColoredMaterial', [
       return mat;
     },
     buildFuelZone: function() {
-      var mat = Material.createMaterial( ShaderLib.simpleLit, 'StarMaterial');
+      var mat = Material.createMaterial( ShaderLib.simpleLit, 'FuelZoneMaterial');
       mat.uniforms = {
         materialAmbient: [0, 0.3, 0, 0],
         materialDiffuse: [0, 0.3, 0, 0],
         materialEmissive: [0, 0.3, 0, 0],
         materialSpecular: [0.2, 0, 0.8, 0],
+        materialSpecularPower: 0,
+        opacity: 1
+      };
+      return mat;
+    },
+    buildFinishZone: function() {
+      var mat = Material.createMaterial( ShaderLib.simpleLit, 'FInishZoneMaterial');
+      mat.uniforms = {
+        materialAmbient: [0, 0, 0.3, 0],
+        materialDiffuse: [0, 0, 0.3, 0],
+        materialEmissive: [0, 0, 0.3, 0],
+        materialSpecular: [0.2, 0.8, 0, 0],
         materialSpecularPower: 0,
         opacity: 1
       };

@@ -16,7 +16,9 @@
 	line-height: 100px;
 }
 
-.radarEntity, .radarCamera, .radarFuelZone {
+.radarEntity, .radarCamera, 
+.radarFuelZone, .radarStarship,
+.radarFinishZone {
 	position: absolute;
 	width: 5px;
 	height: 5px;
@@ -33,4 +35,14 @@
 
 .radarFuelZone {
 	background-color: green;
+}
+
+.radarStarship {
+	background-color: blue;
+	height: 15px;
+	border-radius: 0;
+}
+
+.radarFinishZone {
+	background-color: blue;
 }
