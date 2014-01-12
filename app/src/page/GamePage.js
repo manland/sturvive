@@ -15,7 +15,8 @@ define('page/GamePage', [
   'util/RadarUtil',
   'util/OptionsUtil',
   'util/ScreenUtil',
-  'page/BonusPage'
+  'page/BonusPage',
+  'page/ChooseNextMapPage'
 ], function(
   GooRunner,
   CameraComponent,
@@ -33,7 +34,8 @@ define('page/GamePage', [
   RadarUtil,
   OptionsUtil,
   ScreenUtil,
-  BonusPage) {
+  BonusPage,
+  ChooseNextMapPage) {
 
     var backCallback;
     var canvas;
@@ -93,6 +95,8 @@ define('page/GamePage', [
         updateSceneSize(goo);
         fuelZone.refreshHeight();
       });
+
+      startNextMap(goo);
     }
 
     var elementsDomVisible = function elementsDomVisible(bool) {
@@ -136,11 +140,10 @@ define('page/GamePage', [
             pause(goo);
             PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
             BonusPage.show(function() {
-              resume(goo);
-              startNextMap(goo.world);
+              startNextMap(goo);
             });
           } else {
-            startNextMap(goo.world);
+            startNextMap(goo);
           }
         }
       });
@@ -148,13 +151,17 @@ define('page/GamePage', [
       ShootHelper.start(goo.world, camera);
 
       RadarUtil.draw(camera, fuelZone);
-      startNextMap(goo.world);
       return goo;
     };
 
-    var startNextMap = function startNextMap(world) {
-      currentMap = MapUtil.getNextMap();
-      if(currentMap) {
+    var startNextMap = function startNextMap(goo) {
+      pause(goo);
+      if(currentMap !== undefined) {
+        MapUtil.increment(currentMap.category);
+      }
+      ChooseNextMapPage.show(function(map) {
+        currentMap = map;
+        resume(goo);
         PlayerManager.reinitNbBullet();
         ShootHelper.refresh();
         if(currentMap.fuelZone) {
@@ -174,8 +181,8 @@ define('page/GamePage', [
           currentMap.camera.position.z 
         );
         camera.script.yRotationAcc = 0;
-        EntityManager.addToWorld(world, currentMap.getEntities());
-      }
+        EntityManager.addToWorld(goo.world, currentMap.getEntities());
+      });
     };
 
     return {

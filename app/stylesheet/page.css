@@ -142,3 +142,26 @@
 	font-size: 1.5em;
 	margin-bottom: 30px;
 }
+
+.chooseNextMap .columnContainer {
+	display: inline-block;
+	vertical-align: top;
+	width: 25%;
+}
+
+.chooseNextMap .columnContainer .button {
+	position: relative;
+}
+
+.chooseNextMap .columnContainer .mapScoreToWin {
+	position: absolute;
+	bottom: -12px;
+	right: -5px;
+	border: 3px solid #000;
+	border-radius: 5px;
+	width: 24px;
+	height: 24px;
+	font-family: "fontello";
+	line-height: 17px;
+	font-size: 0.6em;
+}
