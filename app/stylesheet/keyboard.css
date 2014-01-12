@@ -48,6 +48,7 @@
 .touch.tournLeft:before {
 	content: "\e806";
 	transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
 	display: inline-block;
 }
 .touch.tournLeft {
@@ -57,6 +58,7 @@
 .touch.shoot:before {
 	content: "\e80a";
 	transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
 	display: inline-block;
 }
 .touch.shoot {

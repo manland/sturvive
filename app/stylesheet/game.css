@@ -94,6 +94,7 @@
 	content: '\e806'; 
 	font-family: "fontello";
 	transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
 	display: inline-block;
 	color: #000;
 	font-size: 1em;
@@ -117,6 +118,7 @@
 	font-family: "fontello";
 	line-height: 50px;
 	transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
 	display: inline-block;
 	color: #000;
 	font-size: 1.5em;
