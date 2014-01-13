@@ -133,6 +133,10 @@
 	margin-top: 40px;
 }
 
+.options .resetOptionsContainer {
+	padding: 10%;
+}
+
 .bonusSymbol {
 	font-family: "fontello";
 }

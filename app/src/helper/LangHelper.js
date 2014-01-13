@@ -56,6 +56,9 @@ define('helper/LangHelper', function() {
   lang.en.optionsTitle = 'Options';
   lang.fr.optionsTitle = 'Options';
 
+  lang.en.optionsResetOptions = 'Reset options';
+  lang.fr.optionsResetOptions = 'ré-initialiser mes options';
+
   /*************************\
   * COMPATIBILITY PAGE      *
   \*************************/

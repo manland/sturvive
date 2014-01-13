@@ -14,6 +14,7 @@ define('page/OptionsPage',
       var mainDiv = DomHelper.addContainer('options');
       mainDiv.appendChild(buildScreenSize());
       mainDiv.appendChild(buildMeshDetails());
+      mainDiv.appendChild(buildResetOptions());
     }
 
     var buildScreenSize = function buildScreenSize() {
@@ -92,6 +93,17 @@ define('page/OptionsPage',
       meshDetailsDiv.appendChild(buttonsDiv);
       meshDetailsDiv.appendChild(meshDetailsViewDiv);
       return meshDetailsDiv;
+    };
+
+    var buildResetOptions = function buildResetOptions() {
+      var resetOptionsDiv = DomHelper.buildDiv('resetOptionsContainer');
+      resetOptionsDiv.appendChild(DomHelper.buildButton(LangHelper.get('optionsResetOptions'), function() {
+        localStorage.options = undefined;
+        localStorage.levelUser = undefined;
+        localStorage.optionsPlayer = undefined;
+        location.reload();
+      }));
+      return resetOptionsDiv;
     };
 
     return {
