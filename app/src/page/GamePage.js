@@ -170,6 +170,7 @@ define('page/GamePage', [
 
     var winMap = function winMap(goo) {
       pause(goo);
+      PlayerManager.reinitLife('nbLife');
       if(currentMap.scoreToWin > 0) {
         PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
         BonusPage.show(function() {
