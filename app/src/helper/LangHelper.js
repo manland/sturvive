@@ -49,6 +49,52 @@ define('helper/LangHelper', function() {
   \*************************/
   lang.en.helpTitle = 'Help';
   lang.fr.helpTitle = 'Aide';
+  lang.en.help_start = 'In this game, there are 4 types of map. At start you can choose only Learn. But when you win map, you can choose other type.';
+  lang.fr.help_start = 'Dans ce jeu, il y a 4 types de cartes différentes. Au début tu ne peux choisir que entrainement, mais au fur et mesure que tu gagnes, tu débloques de nouvelles cartes.';
+  lang.en.help_bonus = 'After some maps you can choose to improve your starship.';
+  lang.fr.help_bonus = 'Après certaines cartes tu peux choisir d\'améliorer ton vaisseau.';
+  lang.en.help_0 = 'General';
+  lang.fr.help_0 = 'Generalités';
+  lang.en.help_0_1 = 'Pause button';
+  lang.fr.help_0_1 = 'Bouton de pause';
+  lang.en.help_0_2 = 'Nb lifes';
+  lang.fr.help_0_2 = 'Nb vies';
+  lang.en.help_0_3 = 'Fuel gauge';
+  lang.fr.help_0_3 = 'Jauge d\'essence';
+  lang.en.help_0_4 = 'Meteorite to be destroyed';
+  lang.fr.help_0_4 = 'Meteorite à détruire';
+  lang.en.help_0_5 = 'Bullets gauge';
+  lang.fr.help_0_5 = 'Jauge de balles';
+  lang.en.help_0_6 = 'Radar';
+  lang.fr.help_0_6 = 'Radar';
+  lang.en.help_0_7 = 'Shoot';
+  lang.fr.help_0_7 = 'Tire';
+  lang.en.help_0_8 = 'Turn';
+  lang.fr.help_0_8 = 'Tourne';
+  lang.en.help_0_9 = 'Move';
+  lang.fr.help_0_9 = 'Avance, recule, à droite ou à gauche';
+  lang.en.help_1 = 'Stay in green zone to refuel gasoline';
+  lang.fr.help_1 = 'Reste dans la zone verte pour faire le plein';
+  lang.en.help_1_1 = 'Fuel Zone';
+  lang.fr.help_1_1 = 'Zone pour l\'essence';
+  lang.en.help_1_2 = 'Fuel gauge';
+  lang.fr.help_1_2 = 'Jauge  à essence';
+  lang.en.help_2 = 'In protect map';
+  lang.fr.help_2 = 'Carte de type protection';
+  lang.en.help_2_1 = 'Starship to protect';
+  lang.fr.help_2_1 = 'Vaisseau à protéger';
+  lang.en.help_2_2 = 'Look radar to know where starship must go (blue disk)';
+  lang.fr.help_2_2 = 'Regarde le radar pour savoir où le vaisseau doit aller (rond bleu)';
+  lang.en.help_3 = 'In race map';
+  lang.fr.help_3 = 'Carte de type course';
+  lang.en.help_3_1 = 'Look radar to know where you must go (red disk)';
+  lang.fr.help_3_1 = 'Regarde le radar pour savoir où tu dois aller (rond rouge)';
+  lang.en.help_3_2 = 'In this type of map you haven\'t life';
+  lang.fr.help_3_2 = 'Dans ce type de carte tu n\'as pas de vie';
+  lang.en.help_4 = 'In clean zone map';
+  lang.fr.help_4 = 'Carte de type nettoyer zone';
+  lang.en.help_4_1 = 'Destroy all meteorites (orange disk) before time end';
+  lang.fr.help_4_1 = 'Détruit toutes les météorites (rond orange) avant la fin du temps';
 
   /*************************\
   * OPTIONS PAGE            *

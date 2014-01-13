@@ -1,0 +1,33 @@
+.pageContainer img {
+	width: 50%;
+	display: inline-block;
+}
+
+.pageContainer .sentences {
+	width: 30%;
+	display: inline-block;
+	padding-left: 10px;
+	text-align: left;
+	vertical-align: top;
+	font-size: 1.25em;
+}
+
+.pageContainer .sentences ol {
+	counter-reset: help;
+}
+
+.pageContainer .sentences li {
+	counter-increment: help;
+}
+
+.pageContainer .sentences li:before {
+    content: counter(help);
+    font-size: 0.8em;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin-right: 10px;
+    text-align: center;
+}

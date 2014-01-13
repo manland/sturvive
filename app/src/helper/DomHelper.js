@@ -68,6 +68,7 @@ define('helper/DomHelper',
       b.classList.add('small');
       b.innerHTML = label;
       pageContainer.appendChild(b);
+      return b;
     },
     addPageImg: function(src, title) {
       var img = document.createElement('img');

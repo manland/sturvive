@@ -108,7 +108,6 @@ define('page/GamePage', [
 
       ScreenUtil.onResize(function() {
         updateSceneSize(goo);
-        fuelZone.refreshHeight();
       });
 
       startNextMap(goo);
@@ -188,6 +187,7 @@ define('page/GamePage', [
     };
 
     var looseMap = function looseMap(goo) {
+      console.trace();
       pause(goo);
       currentMap = undefined;
       PlayerManager.reinitLife('nbLife');
@@ -264,6 +264,7 @@ define('page/GamePage', [
 
         if(currentMap.nbBullet !== undefined) {
           PlayerManager.setNbBullet(currentMap.nbBullet);
+          ShootHelper.refresh();
         }
 
         EntityManager.addToWorld(goo.world, currentMap.getEntities());
