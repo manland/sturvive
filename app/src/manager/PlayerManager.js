@@ -90,6 +90,12 @@ define('manager/PlayerManager', function() {
     },
     getBulletPercent: function() {
       return Math.round((options.nbBullet / options.nbBulletAtStart) * 100);
+    },
+    reinitLife: function() {
+      options.nbLife = maxOptions.nbLife;
+      for(var i=0, len=onWinLifeCallback.length; i<len; i++) {
+        onWinLifeCallback[i]();
+      }
     }
 
   };

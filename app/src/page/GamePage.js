@@ -183,6 +183,7 @@ define('page/GamePage', [
     var looseMap = function looseMap(goo) {
       pause(goo);
       currentMap = undefined;
+      PlayerManager.reinitLife('nbLife');
       startNextMap(goo);
     };
 
