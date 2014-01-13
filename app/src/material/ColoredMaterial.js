@@ -28,18 +28,6 @@ define('material/ColoredMaterial', [
       mat.uniforms[prop] = val;
       return mat;
     },
-    buildToon: function() {
-      var mat = Material.createMaterial( ShaderLib.toon, 'ToonMaterial');
-      mat.uniforms = {
-        HighlightColour: [0, 0.2, 0, 0],
-        MidColour: [0, 0.1, 0, 0],
-        ShadowColour: [0, 0.1, 0, 0],
-        HighlightSize: 1,
-        OutlineWidth: 1,
-        ShadowSize: 0.12
-      };
-      return mat;
-    },
     buildStar: function() {
       var rand = Math.random();
       var mat = Material.createMaterial( ShaderLib.simpleLit, 'StarMaterial');
@@ -93,6 +81,18 @@ define('material/ColoredMaterial', [
       var mat = Material.createMaterial( ShaderLib.simpleLit, 'FInishZoneMaterial');
       mat.uniforms = {
         materialAmbient: [1, 1, 1, 0],
+        materialDiffuse: [0.3, 0.7, 0, 0],
+        materialEmissive: [0.4, 0, 0, 0],
+        materialSpecular: [0, 0, 0, 0],
+        materialSpecularPower: 0,
+        opacity: 1
+      };
+      return mat;
+    },
+    buildFinalZone: function() {
+      var mat = Material.createMaterial( ShaderLib.simpleLit, 'FInishZoneMaterial');
+      mat.uniforms = {
+        materialAmbient: [0.9, 0, 0.1, 0],
         materialDiffuse: [0.3, 0.7, 0, 0],
         materialEmissive: [0.4, 0, 0, 0],
         materialSpecular: [0, 0, 0, 0],

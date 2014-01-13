@@ -70,6 +70,9 @@ define('manager/PlayerManager', function() {
     reinitNbBullet: function() {
       options.nbBullet = options.nbBulletAtStart;
     },
+    setNbBullet: function(nb) {
+      options.nbBullet = nb;
+    },
     looseLife: function() {
       options.nbLife = options.nbLife - 1;
       for(var i=0, len=onLooseLifeCallback.length; i<len; i++) {
@@ -93,6 +96,12 @@ define('manager/PlayerManager', function() {
     },
     reinitLife: function() {
       options.nbLife = maxOptions.nbLife;
+      for(var i=0, len=onWinLifeCallback.length; i<len; i++) {
+        onWinLifeCallback[i]();
+      }
+    },
+    setNbLife: function(nbLife) {
+      options.nbLife = nbLife;
       for(var i=0, len=onWinLifeCallback.length; i<len; i++) {
         onWinLifeCallback[i]();
       }

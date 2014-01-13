@@ -18,7 +18,7 @@
 
 .radarEntity, .radarCamera, 
 .radarFuelZone, .radarStarship,
-.radarFinishZone {
+.radarFinishZone, .radarFinalZone {
 	position: absolute;
 	width: 5px;
 	height: 5px;
@@ -45,4 +45,8 @@
 
 .radarFinishZone {
 	background-color: blue;
+}
+
+.radarFinalZone {
+	background-color: red;
 }

@@ -56,6 +56,7 @@ define('page/GamePage', [
     var camera;
     var finishZone;
     var starship;
+    var finalZone;
 
     var isRunningGame = false;
     var currentMap;
@@ -140,6 +141,7 @@ define('page/GamePage', [
       fuelZone = new FuelZoneComponent(goo.world, true);
       starship = new StarshipComponent(goo.world, true);
       finishZone = new FinishZoneComponent(goo.world, true);
+      finalZone = new FinalZoneComponent(goo.world, true);
       new SkydomComponent(goo.world);
 
       camera = new CameraComponent(
@@ -147,37 +149,41 @@ define('page/GamePage', [
         fuelZone, 
         true);
 
-      //new FinalZoneComponent(goo.world, true);
-
       EntityManager.onRemoveEntity(function callbackAfterRemoveEntities(entity, nbEntityInGame) {
         if(nbEntityInGame === 0) {
           winMap(goo);
         }
       });
       starship.script.onRun(function() {
-        if(currentMap.starship && EntityHelper.getDistance(starship.entity, finishZone.entity) < 0) {
-          starship.entity.removeFromWorld();
+        if(currentMap && currentMap.starship && EntityHelper.getDistance(starship.entity, finishZone.entity) < 0) {
           winMap(goo);
         }
       });
       starship.onDead(function() {looseMap(goo);});
+      camera.script.onRun(function() {
+        if(currentMap && currentMap.finalZone && EntityHelper.getDistance(camera.entity, finalZone.entity) < 0) {
+          winMap(goo);
+        }
+      });
 
       ShootHelper.start(goo.world, camera);
 
-      RadarUtil.draw(camera, fuelZone, starship, finishZone);
+      RadarUtil.draw(camera, fuelZone, starship, finishZone, finalZone);
       return goo;
     };
 
     var winMap = function winMap(goo) {
-      pause(goo);
-      PlayerManager.reinitLife('nbLife');
-      if(currentMap.scoreToWin > 0) {
-        PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
-        BonusPage.show(function() {
+      if(isRunningGame === true) {
+        pause(goo);
+        PlayerManager.reinitLife('nbLife');
+        if(currentMap.scoreToWin > 0) {
+          PlayerManager.update('score', PlayerManager.get('score') + currentMap.scoreToWin);
+          BonusPage.show(function() {
+            startNextMap(goo);
+          });
+        } else {
           startNextMap(goo);
-        });
-      } else {
-        startNextMap(goo);
+        }
       }
     };
 
@@ -239,6 +245,27 @@ define('page/GamePage', [
           finishZone.entity.transformComponent.setTranslation( 0, -100, 0 );
           finishZone.entity.removeFromWorld();
         }
+
+        if(currentMap.finalZone) {
+          finalZone.entity.transformComponent.setTranslation( 
+            currentMap.finalZone.position.x, 
+            currentMap.finalZone.position.y, 
+            currentMap.finalZone.position.z 
+          );
+          finalZone.entity.addToWorld();
+        } else {
+          finalZone.entity.transformComponent.setTranslation( 0, -100, 0 );
+          finalZone.entity.removeFromWorld();
+        }
+
+        if(currentMap.nbLife !== undefined) {
+          PlayerManager.setNbLife(currentMap.nbLife);
+        }
+
+        if(currentMap.nbBullet !== undefined) {
+          PlayerManager.setNbBullet(currentMap.nbBullet);
+        }
+
         EntityManager.addToWorld(goo.world, currentMap.getEntities());
         if(currentMap.maxTime) {
           TimeUtil.start(currentMap.maxTime, function() {

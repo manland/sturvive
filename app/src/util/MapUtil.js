@@ -304,14 +304,108 @@ define('util/MapUtil', function() {
       camera: {
         position: {x:0, y:0, z:0}
       },
-      starship: {
-        position: {x:0, y:0, z:7}
+      finalZone: {
+        position: {x:-10, y:0, z:-30}
       },
+      nbLife: 0,
+      nbBullet: 0,
       getEntities: function() {
         var entities = [];
-        for(var i=0; i<10; i++) {
-          var x = ((Math.random()*100)+1)-50;
-          var z = ((Math.random()*100)+1)-50;
+        for(var i=0; i<50; i++) {
+          var x = ((Math.random()*50)+1)-25;
+          var z = ((Math.random()*50)+1)-50;
+          entities.push({position: {x: x, y:0, z:z}});
+        }
+        return entities;
+      },
+      scoreToWin: 1
+    },
+    1: {
+      name: '2',
+      category: 'race',
+      level: 1,
+      camera: {
+        position: {x:0, y:0, z:0}
+      },
+      finalZone: {
+        position: {x:0, y:0, z:-50}
+      },
+      nbLife: 0,
+      nbBullet: 0,
+      getEntities: function() {
+        var entities = [];
+        for(var i=0; i<80; i++) {
+          var x = ((Math.random()*50)+1)-25;
+          var z = ((Math.random()*50)+1)-50;
+          entities.push({position: {x: x, y:0, z:z}});
+        }
+        return entities;
+      },
+      scoreToWin: 1
+    },
+    2: {
+      name: '3',
+      category: 'race',
+      level: 2,
+      camera: {
+        position: {x:0, y:0, z:0}
+      },
+      finalZone: {
+        position: {x:10, y:0, z:-50}
+      },
+      nbLife: 0,
+      nbBullet: 0,
+      getEntities: function() {
+        var entities = [];
+        for(var i=0; i<100; i++) {
+          var x = ((Math.random()*50)+1)-25;
+          var z = ((Math.random()*50)+1)-50;
+          entities.push({position: {x: x, y:0, z:z}});
+        }
+        return entities;
+      },
+      scoreToWin: 1
+    },
+    3: {
+      name: '4',
+      category: 'race',
+      level: 3,
+      camera: {
+        position: {x:0, y:0, z:0}
+      },
+      finalZone: {
+        position: {x:10, y:0, z:-50}
+      },
+      nbLife: 0,
+      nbBullet: 0,
+      getEntities: function() {
+        var entities = [];
+        for(var i=0; i<120; i++) {
+          var x = ((Math.random()*50)+1)-25;
+          var z = ((Math.random()*50)+1)-80;
+          entities.push({position: {x: x, y:0, z:z}});
+        }
+        return entities;
+      },
+      scoreToWin: 1
+    },
+    4: {
+      name: '5',
+      category: 'race',
+      level: 3,
+      camera: {
+        position: {x:0, y:0, z:0}
+      },
+      finalZone: {
+        position: {x:10, y:0, z:-50}
+      },
+      nbLife: 0,
+      nbBullet: 0,
+      getEntities: function() {
+        var entities = [];
+        for(var i=0; i<150; i++) {
+          var x = ((Math.random()*50)+1)-25;
+          var z = ((Math.random()*50)+1)-80;
           entities.push({position: {x: x, y:0, z:z}});
         }
         return entities;

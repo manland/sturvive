@@ -7,14 +7,15 @@ define('util/RadarUtil',
   var div;
   var lastEntities, heightZoneMax = 50, widthZoneMax = 50;
   var entityByDiv = {};
-  var camera, fuelZone, starship, finishZone;
+  var camera, fuelZone, starship, finishZone, finalZone;
   var divCameraElem, divStarshipElem;
 
-  var draw = function draw(c, f, s, fz) {
+  var draw = function draw(c, f, s, fz, finalZ) {
     camera = c;
     fuelZone = f;
     starship = s;
     finishZone = fz;
+    finalZone = finalZ;
     if(!div) {
       div = DomHelper.addRadar();
       divCameraElem = DomHelper.buildDiv('radarCamera');
@@ -91,6 +92,14 @@ define('util/RadarUtil',
         div.appendChild(divElem);
       }
 
+      divElem = DomHelper.buildDiv('radarFinalZone');
+      pos = EntityHelper.getPosition(finalZone.entity);
+      if(pos.y === 0) {//else not use
+        divElem.style.top = ((pos.z*heightZoneMax) + 50) + 'px';
+        divElem.style.left = ((pos.x*widthZoneMax) + 50) + 'px';
+        div.appendChild(divElem);
+      }
+
       div.appendChild(divCameraElem);
       updateCamera();
       div.appendChild(divStarshipElem);
@@ -111,8 +120,8 @@ define('util/RadarUtil',
 
   return {
 
-    draw: function(camera, fuelZone, starship, finishZone) {
-      draw(camera, fuelZone, starship, finishZone);
+    draw: function(camera, fuelZone, starship, finishZone, finalZone) {
+      draw(camera, fuelZone, starship, finishZone, finalZone);
     }
 
   };
