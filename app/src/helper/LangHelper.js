@@ -140,6 +140,8 @@ define('helper/LangHelper', function() {
   lang.fr.pauseTitle = 'Pause';
   lang.en.pauseHelp = 'Help';
   lang.fr.pauseHelp = 'Aide';
+  lang.en.pauseMainMenu = 'Main menu';
+  lang.fr.pauseMainMenu = 'Menu principal';
   lang.en.pauseOptions = 'Options';
   lang.fr.pauseOptions = 'Options';
   lang.en.pauseRestart = 'Restart';

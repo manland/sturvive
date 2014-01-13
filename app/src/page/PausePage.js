@@ -10,11 +10,16 @@ define('page/PausePage',
     GamePage, HelpPage, OptionsPage, CompatibilityPage, CompatibilityUtil) {
 
     var backCallback;
+    var showMenuCallback;
 
     var build = function build() {
       DomHelper.clearPageContent();
 
       DomHelper.addPageTitle(LangHelper.get('pauseTitle'));
+      DomHelper.addPageButton(
+        LangHelper.get('pauseMainMenu'),
+        showMenuCallback
+      );
       DomHelper.addPageButton(
         LangHelper.get('pauseHelp'),
         function(e) { HelpPage.show(build); }
@@ -30,8 +35,9 @@ define('page/PausePage',
     };
 
     return {
-      show: function(back) {
+      show: function(back, showMenu) {
         backCallback = back;
+        showMenuCallback = showMenu;
         build();
       }
     };

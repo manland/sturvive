@@ -3,6 +3,7 @@ define('page/ChooseNextMapPage',
   function(DomHelper, LangHelper, MapUtil) {
 
     var backCallback;
+    var chooseCallback;
 
     function build() {
       DomHelper.clearPageContent();
@@ -16,10 +17,10 @@ define('page/ChooseNextMapPage',
       mainDiv.appendChild(buildColumn('protect', maps.protect, levels.protect, levels.cleanZone === -1));
       mainDiv.appendChild(buildColumn('race', maps.race, levels.race, levels.protect === -1));
 
-      // DomHelper.addPageBackButton(
-      //   LangHelper.get('backChooseNextMap'),
-      //   backCallback
-      // );
+      DomHelper.addPageBackButton(
+        LangHelper.get('back'),
+        backCallback
+      );
     }
 
     var buildColumn = function buildColumn(category, maps, level, forceDesable) {
@@ -30,7 +31,7 @@ define('page/ChooseNextMapPage',
       function makeCallback(isDisable, map) {
         return function() {
           if(!isDisable) {
-            backCallback(map);
+            chooseCallback(map);
           }
         };
       }
@@ -51,8 +52,9 @@ define('page/ChooseNextMapPage',
     };
 
     return {
-      show: function(back) {
+      show: function(back, choose) {
         backCallback = back;
+        chooseCallback = choose;
         build();
       }
     };

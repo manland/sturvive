@@ -48,6 +48,8 @@ define('page/GamePage', [
     'use strict';
 
     var backCallback;
+
+    var goo;
     var canvas;
     var pauseButton;
     var crosschair;
@@ -84,13 +86,18 @@ define('page/GamePage', [
       DomHelper.clearPageContent();
       DomHelper.hidePage();
       crosschair = DomHelper.addCrosschair();
-      var goo = startGame();
+      if(goo === undefined) {
+        goo = startGame();
+      }
       isRunningGame = true;
       pauseButton = DomHelper.buildButton('', function(e) {
         if(isRunningGame) {
           pause(goo);
           PausePage.show(function() {
             resume(goo);
+          }, function() {
+            currentMap = undefined;
+            backCallback();
           });
         } else {
           goo.startGameLoop();
@@ -187,7 +194,6 @@ define('page/GamePage', [
     };
 
     var looseMap = function looseMap(goo) {
-      console.trace();
       pause(goo);
       currentMap = undefined;
       PlayerManager.reinitLife('nbLife');
@@ -199,7 +205,7 @@ define('page/GamePage', [
       if(currentMap !== undefined) {
         MapUtil.increment(currentMap);
       }
-      ChooseNextMapPage.show(function(map) {
+      ChooseNextMapPage.show(backCallback, function(map) {
         currentMap = map;
         resume(goo);
         PlayerManager.reinitNbBullet();
