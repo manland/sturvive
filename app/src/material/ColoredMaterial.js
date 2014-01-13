@@ -88,6 +88,18 @@ define('material/ColoredMaterial', [
         opacity: 1
       };
       return mat;
+    },
+    buildFarStar: function() {
+      var mat = Material.createMaterial( ShaderLib.simpleLit, 'FInishZoneMaterial');
+      mat.uniforms = {
+        materialAmbient: [1, 1, 1, 0],
+        materialDiffuse: [0.3, 0.7, 0, 0],
+        materialEmissive: [0.4, 0, 0, 0],
+        materialSpecular: [0, 0, 0, 0],
+        materialSpecularPower: 0,
+        opacity: 1
+      };
+      return mat;
     }
   };
 

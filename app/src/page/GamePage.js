@@ -6,6 +6,7 @@ define('page/GamePage', [
   'component/FuelZoneComponent',
   'component/StarshipComponent',
   'component/FinishZoneComponent',
+  'component/SkydomComponent',
   'helper/DomHelper',
   'helper/ShootHelper',
   'helper/EntityHelper',
@@ -28,6 +29,7 @@ define('page/GamePage', [
   FuelZoneComponent,
   StarshipComponent,
   FinishZoneComponent,
+  SkydomComponent,
   DomHelper,
   ShootHelper,
   EntityHelper,
@@ -138,6 +140,7 @@ define('page/GamePage', [
       fuelZone = new FuelZoneComponent(goo.world, true);
       starship = new StarshipComponent(goo.world, true);
       finishZone = new FinishZoneComponent(goo.world, true);
+      new SkydomComponent(goo.world);
 
       camera = new CameraComponent(
         goo.world, 
