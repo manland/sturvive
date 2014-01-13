@@ -1,5 +1,5 @@
 /**
- * Sturvive - v0.0.1 - 2014-01-13
+ * Sturvive - v0.0.1 - 2014-01-14
  * 
  *
  * Copyright (c) 2014 Manland
@@ -309,6 +309,39 @@
 }
 
 
+.pageContainer img {
+	width: 50%;
+	display: inline-block;
+}
+
+.pageContainer .sentences {
+	width: 30%;
+	display: inline-block;
+	padding-left: 10px;
+	text-align: left;
+	vertical-align: top;
+	font-size: 1.25em;
+}
+
+.pageContainer .sentences ol {
+	counter-reset: help;
+}
+
+.pageContainer .sentences li {
+	counter-increment: help;
+}
+
+.pageContainer .sentences li:before {
+    content: counter(help);
+    font-size: 0.8em;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin-right: 10px;
+    text-align: center;
+}
 .touch {
 	font-size: 2em;
 	border: 1px solid #fff;
@@ -468,10 +501,6 @@ body {
 	cursor: default;
 }
 
-.pageContainer img {
-	width: 50%;
-}
-
 .compatibility {
 	padding: 10px;
 	text-align: center;
@@ -556,6 +585,10 @@ body {
 	margin-top: 40px;
 }
 
+.options .resetOptionsContainer {
+	padding: 10%;
+}
+
 .bonusSymbol {
 	font-family: "fontello";
 }
@@ -613,7 +646,7 @@ body {
 
 .radarEntity, .radarCamera, 
 .radarFuelZone, .radarStarship,
-.radarFinishZone {
+.radarFinishZone, .radarFinalZone {
 	position: absolute;
 	width: 5px;
 	height: 5px;
@@ -640,6 +673,10 @@ body {
 
 .radarFinishZone {
 	background-color: blue;
+}
+
+.radarFinalZone {
+	background-color: red;
 }
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
