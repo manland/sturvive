@@ -9,6 +9,12 @@ define('util/MapUtil', function() {
     race: -1
   };
 
+  if(localStorage.levelUser) {
+    try {
+      currentMap = JSON.parse(localStorage.levelUser);
+    } catch(e) {}
+  }
+
   var tutos = {
 
     0: {
@@ -335,6 +341,7 @@ define('util/MapUtil', function() {
       if(map.level > currentMap[category]) {
         currentMap[category] = currentMap[category] + 1;
       }
+      localStorage.levelUser = JSON.stringify(currentMap);
     }
 
   };
