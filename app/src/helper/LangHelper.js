@@ -49,12 +49,12 @@ define('helper/LangHelper', function() {
   \*************************/
   lang.en.helpTitle = 'Help';
   lang.fr.helpTitle = 'Aide';
-  lang.en.help_start = 'In this game, there are 4 types of map. At start you can choose only Learn. But when you win map, you can choose other type.';
-  lang.fr.help_start = 'Dans ce jeu, il y a 4 types de cartes différentes. Au début tu ne peux choisir que entrainement, mais au fur et mesure que tu gagnes, tu débloques de nouvelles cartes.';
+  lang.en.help_start = 'In this game, there are 4 types of map. At the beginning you can choose only Learn. But when you win map, you can choose other type.';
+  lang.fr.help_start = 'Dans ce jeu, il y a 4 types de cartes différentes. Au début tu ne peux choisir que Entrainement, mais au fur et mesure que tu gagnes, tu débloques de nouvelles cartes.';
   lang.en.help_bonus = 'After some maps you can choose to improve your starship.';
-  lang.fr.help_bonus = 'Après certaines cartes tu peux choisir d\'améliorer ton vaisseau.';
+  lang.fr.help_bonus = 'Après quelques cartes tu peux choisir d\'améliorer ton vaisseau.';
   lang.en.help_0 = 'General';
-  lang.fr.help_0 = 'Generalités';
+  lang.fr.help_0 = 'Généralités';
   lang.en.help_0_1 = 'Pause button';
   lang.fr.help_0_1 = 'Bouton de pause';
   lang.en.help_0_2 = 'Nb lifes';
@@ -62,7 +62,7 @@ define('helper/LangHelper', function() {
   lang.en.help_0_3 = 'Fuel gauge';
   lang.fr.help_0_3 = 'Jauge d\'essence';
   lang.en.help_0_4 = 'Meteorite to be destroyed';
-  lang.fr.help_0_4 = 'Meteorite à détruire';
+  lang.fr.help_0_4 = 'Météorite à détruire';
   lang.en.help_0_5 = 'Bullets gauge';
   lang.fr.help_0_5 = 'Jauge de balles';
   lang.en.help_0_6 = 'Radar';
@@ -73,8 +73,8 @@ define('helper/LangHelper', function() {
   lang.fr.help_0_8 = 'Tourne';
   lang.en.help_0_9 = 'Move';
   lang.fr.help_0_9 = 'Avance, recule, à droite ou à gauche';
-  lang.en.help_1 = 'Stay in green zone to refuel gasoline';
-  lang.fr.help_1 = 'Reste dans la zone verte pour faire le plein';
+  lang.en.help_1 = 'Stay in the green zone to refuel gasoline';
+  lang.fr.help_1 = 'Restes dans la zone verte pour faire le plein';
   lang.en.help_1_1 = 'Fuel Zone';
   lang.fr.help_1_1 = 'Zone pour l\'essence';
   lang.en.help_1_2 = 'Fuel gauge';
@@ -83,18 +83,18 @@ define('helper/LangHelper', function() {
   lang.fr.help_2 = 'Carte de type protection';
   lang.en.help_2_1 = 'Starship to protect';
   lang.fr.help_2_1 = 'Vaisseau à protéger';
-  lang.en.help_2_2 = 'Look radar to know where starship must go (blue disk)';
-  lang.fr.help_2_2 = 'Regarde le radar pour savoir où le vaisseau doit aller (rond bleu)';
+  lang.en.help_2_2 = 'Look your radar to know where starship should go (blue disk)';
+  lang.fr.help_2_2 = 'Regardes le radar pour savoir où le vaisseau doit aller (rond bleu)';
   lang.en.help_3 = 'In race map';
   lang.fr.help_3 = 'Carte de type course';
-  lang.en.help_3_1 = 'Look radar to know where you must go (red disk)';
-  lang.fr.help_3_1 = 'Regarde le radar pour savoir où tu dois aller (rond rouge)';
+  lang.en.help_3_1 = 'Look your radar to know where you should go (red disk)';
+  lang.fr.help_3_1 = 'Regardes le radar pour savoir où tu dois aller (rond rouge)';
   lang.en.help_3_2 = 'In this type of map you haven\'t life';
   lang.fr.help_3_2 = 'Dans ce type de carte tu n\'as pas de vie';
   lang.en.help_4 = 'In clean zone map';
   lang.fr.help_4 = 'Carte de type nettoyer zone';
-  lang.en.help_4_1 = 'Destroy all meteorites (orange disk) before time end';
-  lang.fr.help_4_1 = 'Détruit toutes les météorites (rond orange) avant la fin du temps';
+  lang.en.help_4_1 = 'Destroy all meteorites (orange disk) before time\'s up';
+  lang.fr.help_4_1 = 'Détruits toutes les météorites (rond orange) avant la fin du temps';
 
   /*************************\
   * OPTIONS PAGE            *
@@ -118,12 +118,12 @@ define('helper/LangHelper', function() {
   lang.fr.compatibilityPageTryBack = 'Essayer quand même';
   lang.en.compatibilityWebGLDescription = 'All the game is based on this system !';
   lang.fr.compatibilityWebGLDescription = 'Le jeu est en 3d grâce à ce système !';
-  lang.en.compatibilityCssTransitionDescription = 'TODO';
-  lang.fr.compatibilityCssTransitionDescription = 'TODO';
-  lang.en.compatibilityClassListDescription = 'TODO';
-  lang.fr.compatibilityClassListDescription = 'TODO';
-  lang.en.compatibilityLocalStorageDescription = 'TODO';
-  lang.fr.compatibilityLocalStorageDescription = 'TODO';
+  lang.en.compatibilityCssTransitionDescription = 'All the game is based on this system !';
+  lang.fr.compatibilityCssTransitionDescription = 'Le jeu est en 3d grâce à ce système !';
+  lang.en.compatibilityClassListDescription = 'All the game is based on this system !';
+  lang.fr.compatibilityClassListDescription = 'Le jeu est en 3d grâce à ce système !';
+  lang.en.compatibilityLocalStorageDescription = 'Your game options and progression are saved with localStorage !';
+  lang.fr.compatibilityLocalStorageDescription = 'Vos options et votre progression sont sauvegardés avec !';
   lang.en.compatibilityMp3Description = 'You can\'t play mp3 songs !';
   lang.fr.compatibilityMp3Description = 'Tu ne peux pas écouter le son au format mp3 !';
   lang.en.compatibilityWavDescription = 'You can\'t play wav songs !';
@@ -150,20 +150,20 @@ define('helper/LangHelper', function() {
   /*************************\
   * GAME PAGE               *
   \*************************/
-  lang.en.forwardKeyboardDescription = 'To go forward use up key !';
-  lang.fr.forwardKeyboardDescription = 'Pour aller en avant utilise la flêche du haut !';
-  lang.en.backwardKeyboardDescription = 'To go backward use down key !';
-  lang.fr.backwardKeyboardDescription = 'Pour aller en arrière utilise la flêche du bas !';
-  lang.en.leftKeyboardDescription = 'To go left use left key !';
-  lang.fr.leftKeyboardDescription = 'Pour aller à gauche utilise la flêche gauche !';
-  lang.en.rightKeyboardDescription = 'To go right use right key !';
-  lang.fr.rightKeyboardDescription = 'Pour aller à droite utilise la flêche droite !';
-  lang.en.tournLeftKeyboardDescription = 'To tourn righ use c key !';
-  lang.fr.tournLeftKeyboardDescription = 'Pour tourner à gauche utilise la touche c !';
-  lang.en.tournRightKeyboardDescription = 'To tourn left use v key !';
-  lang.fr.tournRightKeyboardDescription = 'Pour tourner à droite utilise la touche v !';
-  lang.en.shootKeyboardDescription = 'To shoot use space key !';
-  lang.fr.shootKeyboardDescription = 'Pour tirer utilise la touche espace !';
+  lang.en.forwardKeyboardDescription = 'To go forward use the up key !';
+  lang.fr.forwardKeyboardDescription = 'Pour aller en avant utilises la flêche du haut !';
+  lang.en.backwardKeyboardDescription = 'To go backward use the down key !';
+  lang.fr.backwardKeyboardDescription = 'Pour aller en arrière utilisess la flêche du bas !';
+  lang.en.leftKeyboardDescription = 'To go left use the left key !';
+  lang.fr.leftKeyboardDescription = 'Pour aller à gauche utilises la flêche gauche !';
+  lang.en.rightKeyboardDescription = 'To go right use the right key !';
+  lang.fr.rightKeyboardDescription = 'Pour aller à droite utilises la flêche droite !';
+  lang.en.tournLeftKeyboardDescription = 'To turn left use c key !';
+  lang.fr.tournLeftKeyboardDescription = 'Pour tourner à gauche utilises la touche c !';
+  lang.en.tournRightKeyboardDescription = 'To turn right use the v key !';
+  lang.fr.tournRightKeyboardDescription = 'Pour tourner à droite utilises la touche v !';
+  lang.en.shootKeyboardDescription = 'To shoot use the space key !';
+  lang.fr.shootKeyboardDescription = 'Pour tirer utilises la touche espace !';
 
   /*************************\
   * BONUS PAGE              *
