@@ -1,6 +1,6 @@
 define('manager/PlayerManager', function() {
 
-  var initNbBullet = 10;
+  var initNbBullet = 30;
 
   var onLooseLifeCallback = [];
   var onWinLifeCallback = [];

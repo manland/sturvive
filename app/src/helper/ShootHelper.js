@@ -5,14 +5,16 @@ define('helper/ShootHelper',
   'helper/KeyboardHelper', 
   'helper/TouchButton', 
   'helper/EntityHelper',
-  'helper/DomHelper'], 
+  'helper/DomHelper',
+  'util/AudioUtil'], 
   function(BulletComponent, 
     PlayerManager,
     MobileHelper, 
     KeyboardHelper, 
     TouchButton, 
     EntityHelper,
-    DomHelper) {
+    DomHelper,
+    AudioUtil) {
 
     var divBullets;
 
@@ -36,6 +38,7 @@ define('helper/ShootHelper',
                   false
                 );
                 PlayerManager.minusBullet();
+                AudioUtil.shoot();
                 divBullets.update(PlayerManager.getBulletPercent());
               }
             })
@@ -51,6 +54,7 @@ define('helper/ShootHelper',
                 false
               );
               PlayerManager.minusBullet();
+              AudioUtil.shoot();
               divBullets.update(PlayerManager.getBulletPercent());
             }
           }, function() {}, null);

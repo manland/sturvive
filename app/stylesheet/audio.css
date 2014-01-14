@@ -1,0 +1,19 @@
+.audio {
+	position: absolute;
+	top: 15px;
+	right: 150px;
+	background-image: url('../assets/img/sound.png');
+	border: none;
+	background-color: transparent;
+	opacity: 0.5;
+	width: 24px;
+	height: 24px;
+	background-position: 24px 0;
+	cursor: pointer;
+}
+
+.audio.active {
+	background-image: url('../assets/img/sound.png');
+	opacity: 1;
+	background-position: 1px 1px;
+}

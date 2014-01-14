@@ -6,11 +6,12 @@ define('page/HomePage',
   'page/OptionsPage', 
   'page/CompatibilityPage',
   'util/CompatibilityUtil',
-  'util/ScreenUtil'
+  'util/ScreenUtil',
+  'util/AudioUtil'
   ],
   function(DomHelper, LangHelper, 
     GamePage, HelpPage, OptionsPage, CompatibilityPage, 
-    CompatibilityUtil, ScreenUtil) {
+    CompatibilityUtil, ScreenUtil, AudioUtil) {
 
     // document.body.style.height = ScreenUtil.getHeight() + 'px';
     // document.body.style.width = ScreenUtil.getWidth() + 'px';
@@ -20,9 +21,12 @@ define('page/HomePage',
       // document.body.style.width = ScreenUtil.getWidth() + 'px';
     });
 
+    var audioManager;
+
     var build = function build() {
       DomHelper.clearPageContent();
 
+      //LANGS
       var langs = DomHelper.addContainer('langs');
       var enButton = DomHelper.buildButton('', function(e) { location.hash = '#en'; location.reload(); });
       enButton.classList.remove('button');
@@ -41,6 +45,30 @@ define('page/HomePage',
       }
       langs.appendChild(frButton);
 
+      //AUDIO
+      if(!audioManager) {
+        audioManager = DomHelper.buildButton('', function() {
+          if(AudioUtil.isEnable() === true) {
+            AudioUtil.disable();
+            audioManager.classList.remove('active');
+          } else if(AudioUtil.canBeEnable()) {
+            AudioUtil.enable();
+            audioManager.classList.add('active');
+          }
+        });
+        audioManager.classList.remove('button');
+        audioManager.classList.add('audio');
+        if(AudioUtil.canBeEnable() === true) {
+          audioManager.classList.add('active');
+          //load all songs (in songs array on top of this class) at start 
+          AudioUtil.loadAllSongs();
+        } else {
+          AudioUtil.disable();
+        }
+        document.body.appendChild(audioManager);
+      }
+
+      //HOME PAGE
       DomHelper.addPageTitle(LangHelper.get('title'));
       DomHelper.addPageButton(
         LangHelper.get('homeStart'),

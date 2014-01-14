@@ -19,6 +19,7 @@ define('page/GamePage', [
   'util/OptionsUtil',
   'util/ScreenUtil',
   'util/TimeUtil',
+  'util/AudioUtil',
   'page/BonusPage',
   'page/ChooseNextMapPage'
 ], function(
@@ -42,6 +43,7 @@ define('page/GamePage', [
   OptionsUtil,
   ScreenUtil,
   TimeUtil,
+  AudioUtil,
   BonusPage,
   ChooseNextMapPage) {
 
@@ -105,6 +107,7 @@ define('page/GamePage', [
         }
       });
       PlayerManager.onLooseLife(function() {
+        AudioUtil.loose();
         if(PlayerManager.get('nbLife') < 0) {
           looseMap(goo);
         }
