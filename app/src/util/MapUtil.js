@@ -318,7 +318,7 @@ define('util/MapUtil', function() {
         }
         return entities;
       },
-      scoreToWin: 1
+      scoreToWin: 2
     },
     1: {
       name: '2',
@@ -341,7 +341,7 @@ define('util/MapUtil', function() {
         }
         return entities;
       },
-      scoreToWin: 1
+      scoreToWin: 3
     },
     2: {
       name: '3',
@@ -364,7 +364,7 @@ define('util/MapUtil', function() {
         }
         return entities;
       },
-      scoreToWin: 1
+      scoreToWin: 3
     },
     3: {
       name: '4',
@@ -387,7 +387,7 @@ define('util/MapUtil', function() {
         }
         return entities;
       },
-      scoreToWin: 1
+      scoreToWin: 4
     },
     4: {
       name: '5',
@@ -410,7 +410,7 @@ define('util/MapUtil', function() {
         }
         return entities;
       },
-      scoreToWin: 1
+      scoreToWin: 5
     }
 
   };

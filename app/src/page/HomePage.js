@@ -66,6 +66,8 @@ define('page/HomePage',
           AudioUtil.disable();
         }
         document.body.appendChild(audioManager);
+      } else {
+        audioManager.style.display = 'block';
       }
 
       //HOME PAGE
