@@ -1,0 +1,24 @@
+{
+  "name": "Sturvive",
+  "description": "A starship survive 3d game.",
+  "launch_path": "/",
+  "developer": {
+    "name": "Maneschi Romain",
+    "url": "http://romain.maneschi.fr"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Sturvive",
+      "description": "A starship survive 3d game."
+    },
+    "fr": {
+      "name": "Sturvive",
+      "description": "Un jeu de vaisseau spatial en 3d."
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "128": "assets/img/128.png"
+  },
+  "orientation": "portrait-primary"
+}
