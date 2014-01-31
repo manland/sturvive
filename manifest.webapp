@@ -18,7 +18,10 @@
   },
   "default_locale": "en-US",
   "icons": {
-    "128": "assets/img/128.png"
+    "32": "http://manland.github.io/sturvive/assets/img/32.png",
+    "60": "http://manland.github.io/sturvive/assets/img/60.png",
+    "128": "http://manland.github.io/sturvive/assets/img/128.png",
+    "256": "http://manland.github.io/sturvive/assets/img/256.png"
   },
   "orientation": "portrait-primary"
 }
