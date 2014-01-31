@@ -3,8 +3,15 @@ module.exports = {
   build_dir: 'build',
   compile_dir: 'bin',
 
-  
+  nojs_sentence: 'Please, activate javascript in your browser !',
+  description: 'A starship survive 3d game.',
+  descriptionFr: 'Un jeu de vaisseau spatial en 3d.',
+  author: 'Maneschi Romain',
+  authorUrl: 'http://romain.maneschi.fr',
+  icon128: 'assets/img/128.png',
+
   app_files: {
+    favicon: 'assets/img/favicon.png',
     first: [],
     last: 'src/main.js',
     js: [ 'app/src/**/*.js' ],

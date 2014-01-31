@@ -108,6 +108,15 @@ module.exports = function ( grunt ) {
       }
     },
 
+    manifest: {
+      build: {
+        dir: '<%= build_dir %>/app'
+      },
+      compile: {
+        dir: '<%= compile_dir %>'
+      }
+    },
+
     watch: {
       files: [ '<%= app_files.html %>', 
                '<%= app_files.js %>', 
@@ -189,9 +198,9 @@ module.exports = function ( grunt ) {
 
   grunt.initConfig( grunt.util._.extend( taskConfig, gruntConfig ) );
 
-  grunt.registerTask( 'build', [ 'clean', 'copy:build', 'index:build'] );
+  grunt.registerTask( 'build', [ 'clean', 'copy:build', 'index:build', 'manifest:build'] );
   
-  grunt.registerTask( 'compile', [ 'jshint', /*'karma:compile:start',*/ 'build', 'concat:compile_js', 'concat:compile_css', 'uglify:compile', 'copy:compile', 'index:compile'] );
+  grunt.registerTask( 'compile', [ 'jshint', /*'karma:compile:start',*/ 'build', 'concat:compile_js', 'concat:compile_css', 'uglify:compile', 'copy:compile', 'index:compile', 'manifest:compile'] );
 
   grunt.registerTask( 'compile-dev', [ 'compile', 'connect:compile' ] );
 
@@ -238,7 +247,34 @@ module.exports = function ( grunt ) {
           data: {
             scripts: jsFiles,
             styles: lessFiles,
-            version: grunt.config( 'pkg.version' )
+            version: grunt.config( 'pkg.version' ),
+            description: grunt.config( 'description' ),
+            descriptionFr: grunt.config( 'descriptionFr' ),
+            name: grunt.config('pkg.name'),
+            favicon: grunt.config('app_files.favicon'),
+            nojs_sentence: grunt.config('nojs_sentence'),
+            author: grunt.config('author'),
+            authorUrl: grunt.config('authorUrl')
+          }
+        });
+      }
+    });
+  });
+
+  grunt.registerMultiTask( 'manifest', 'Process manifest template', function () {
+
+    grunt.file.copy('app/manifest.tpl.webapp', this.data.dir + '/manifest.webapp', { 
+      process: function ( contents, path ) {
+        return grunt.template.process( contents, {
+          data: {
+            name: grunt.config('pkg.name'),
+            description: grunt.config( 'description' ),
+            descriptionFr: grunt.config( 'descriptionFr' ),
+            favicon: grunt.config('app_files.favicon'),
+            nojs_sentence: grunt.config('nojs_sentence'),
+            author: grunt.config('author'),
+            authorUrl: grunt.config('authorUrl'),
+            icon128: grunt.config('icon128')
           }
         });
       }

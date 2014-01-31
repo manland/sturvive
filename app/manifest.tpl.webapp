@@ -1,0 +1,24 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "launch_path": "/",
+  "developer": {
+    "name": "<%= author %>",
+    "url": "<%= authorUrl %>"
+  },
+  "locales": {
+    "en-US": {
+      "name": "<%= name %>",
+      "description": "<%= description %>"
+    },
+    "fr": {
+      "name": "<%= name %>",
+      "description": "<%= descriptionFr %>"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "128": "<%= icon128 %>"
+  },
+  "orientation": "portrait-primary"
+}
