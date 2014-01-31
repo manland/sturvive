@@ -16,8 +16,11 @@ define('helper/MobileHelper', function() {
     Windows: function() {
       return navigator.userAgent.match(/IEMobile/i);
     },
+    FirefoxOs: function() {
+      return (!!(navigator.mozApps) && navigator.userAgent.search('Mobile') !== -1);
+    },
     any: function() {
-      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows() || isMobile.FirefoxOs());
     }
   };
 
