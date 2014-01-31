@@ -274,7 +274,10 @@ module.exports = function ( grunt ) {
             nojs_sentence: grunt.config('nojs_sentence'),
             author: grunt.config('author'),
             authorUrl: grunt.config('authorUrl'),
-            icon128: grunt.config('icon128')
+            icon32: grunt.config('icon32'),
+            icon60: grunt.config('icon60'),
+            icon128: grunt.config('icon128'),
+            icon256: grunt.config('icon256')
           }
         });
       }

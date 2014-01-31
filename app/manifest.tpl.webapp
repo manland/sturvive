@@ -18,7 +18,10 @@
   },
   "default_locale": "en-US",
   "icons": {
-    "128": "<%= icon128 %>"
+    "32": "<%= icon32 %>",
+    "60": "<%= icon60 %>",
+    "128": "<%= icon128 %>",
+    "256": "<%= icon256 %>"
   },
   "orientation": "portrait-primary"
 }
