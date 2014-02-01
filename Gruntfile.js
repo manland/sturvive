@@ -110,10 +110,12 @@ module.exports = function ( grunt ) {
 
     manifest: {
       build: {
-        dir: '<%= build_dir %>/app'
+        dir: '<%= build_dir %>/app',
+        path: '/'
       },
       compile: {
-        dir: '<%= compile_dir %>'
+        dir: '<%= compile_dir %>',
+        path: '<%= lanchPath %>'
       }
     },
 
@@ -262,11 +264,12 @@ module.exports = function ( grunt ) {
   });
 
   grunt.registerMultiTask( 'manifest', 'Process manifest template', function () {
-
+    var launch_path = this.data.path;
     grunt.file.copy('app/manifest.tpl.webapp', this.data.dir + '/manifest.webapp', { 
       process: function ( contents, path ) {
         return grunt.template.process( contents, {
           data: {
+            launch_path: launch_path,
             name: grunt.config('pkg.name'),
             description: grunt.config( 'description' ),
             descriptionFr: grunt.config( 'descriptionFr' ),
@@ -276,6 +279,7 @@ module.exports = function ( grunt ) {
             authorUrl: grunt.config('authorUrl'),
             icon32: grunt.config('icon32'),
             icon60: grunt.config('icon60'),
+            icon90: grunt.config('icon90'),
             icon128: grunt.config('icon128'),
             icon256: grunt.config('icon256')
           }

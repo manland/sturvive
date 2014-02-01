@@ -1,7 +1,7 @@
 {
   "name": "<%= name %>",
   "description": "<%= description %>",
-  "launch_path": "/",
+  "launch_path": "<%= launch_path %>",
   "developer": {
     "name": "<%= author %>",
     "url": "<%= authorUrl %>"
@@ -20,6 +20,7 @@
   "icons": {
     "32": "<%= icon32 %>",
     "60": "<%= icon60 %>",
+    "90": "<%= icon90 %>",
     "128": "<%= icon128 %>",
     "256": "<%= icon256 %>"
   },

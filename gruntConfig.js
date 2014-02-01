@@ -8,8 +8,10 @@ module.exports = {
   descriptionFr: 'Un jeu de vaisseau spatial en 3d.',
   author: 'Maneschi Romain',
   authorUrl: 'http://romain.maneschi.fr',
+  lanchPath: '/sturvive',
   icon32: 'http://manland.github.io/sturvive/assets/img/32.png',
   icon60: 'http://manland.github.io/sturvive/assets/img/60.png',
+  icon90: 'http://manland.github.io/sturvive/assets/img/90.png',
   icon128: 'http://manland.github.io/sturvive/assets/img/128.png',
   icon256: 'http://manland.github.io/sturvive/assets/img/256.png',
 
