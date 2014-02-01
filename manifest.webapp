@@ -1,7 +1,7 @@
 {
   "name": "Sturvive",
   "description": "A starship survive 3d game.",
-  "launch_path": "/",
+  "launch_path": "/sturvive",
   "developer": {
     "name": "Maneschi Romain",
     "url": "http://romain.maneschi.fr"
@@ -20,6 +20,7 @@
   "icons": {
     "32": "http://manland.github.io/sturvive/assets/img/32.png",
     "60": "http://manland.github.io/sturvive/assets/img/60.png",
+    "90": "http://manland.github.io/sturvive/assets/img/90.png",
     "128": "http://manland.github.io/sturvive/assets/img/128.png",
     "256": "http://manland.github.io/sturvive/assets/img/256.png"
   },
